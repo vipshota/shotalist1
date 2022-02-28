@@ -1,0 +1,1255 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>ショタリスト検索</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+<p>ショタ検索
+<a href="https://docs.google.com/spreadsheets/d/1o1L-nnwGRYqcafC5emABMD5SHpSZCFkCxM9b5z0RVn0/edit#gid=0">ショタキャラ一覧(元ファイル)</a>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSd2O5zYi3fFq8O62u97EnzOfx_cvVrlG9O_ZuLZlFZ9bhBG5w/viewform">追加リクエスト</a>
+<p>
+<input type="text" id="search">
+<input type="button" value="絞り込む" id="button1">
+<input type="button" value="すべて表示" id="button2">
+</p>
+<table id="result">
+<thead>
+<tr><td>名前</td><td>ふりがな</td><td>年齢or学年</td><td>換算年齢</td><td>初登場タイトル名(作品名)</td><td>原作者</td></tr>
+</thead>
+<tbody>
+<tr><td>阿</td><td>あ</td><td>nan</td><td>nan</td><td>京騒戯画</td><td>東堂いづみ</td></tr>
+<tr><td>アーキッド・オルター</td><td>あーきっどおるたー</td><td>nan</td><td>nan</td><td>ナイツ＆マジック</td><td>天酒之瓢</td></tr>
+<tr><td>相川凪</td><td>あいかわなぎ</td><td>中3</td><td>15</td><td>歌恋</td><td>桜井ひかる</td></tr>
+<tr><td>藍川ヒロム</td><td>あいかわひろむ</td><td>中学生</td><td>nan</td><td>P2! - let's Play Pingpong! -</td><td>江尻立真</td></tr>
+<tr><td>逢沢歩</td><td>あいざわあゆむ</td><td>中学生</td><td>nan</td><td>絶対少年</td><td>ＮＨＫ</td></tr>
+<tr><td>逢沢大樹</td><td>あいざわだいき</td><td>nan</td><td>nan</td><td>夏色キセキ</td><td>左</td></tr>
+<tr><td>相沢たける</td><td>あいざわたける</td><td>小3</td><td>9</td><td>侵略!イカ娘</td><td>安部真弘</td></tr>
+<tr><td>相葉昴治</td><td>あいばこうじ</td><td>16歳</td><td>16</td><td>無限のリヴァイアス</td><td>サンライズ</td></tr>
+<tr><td>相羽タクミ</td><td>あいばたくみ</td><td>nan</td><td>nan</td><td>デジモンストーリー サイバースルゥース</td><td>バンダイナムコゲームス</td></tr>
+<tr><td>相葉祐希</td><td>あいばゆうき</td><td>15歳</td><td>15</td><td>無限のリヴァイアス</td><td>サンライズ</td></tr>
+<tr><td>碧井方</td><td>あおいたかし</td><td>nan</td><td>nan</td><td>クリオネの灯り</td><td>ナチュラルレイン</td></tr>
+<tr><td>蒼井常夏</td><td>あおいとこなつ</td><td>小2</td><td>8</td><td>ベイブレードバースト</td><td>森多ヒロ</td></tr>
+<tr><td>蒼井バルト</td><td>あおいばると</td><td>小5</td><td>11</td><td>ベイブレードバースト</td><td>森多ヒロ</td></tr>
+<tr><td>蒼月潮</td><td>あおつきうしお</td><td>中2</td><td>14</td><td>うしおととら</td><td>藤田和日郎</td></tr>
+<tr><td>アオト</td><td>あおと</td><td>16歳</td><td>16</td><td>ディバインゲート</td><td>ガンホー</td></tr>
+<tr><td>青砥ゴンザレス琢馬</td><td>あおとごんざれすたくま</td><td>小6</td><td>12</td><td>銀河へキックオフ!!</td><td>宇田鋼之介</td></tr>
+<tr><td>青沼瞬</td><td>あおぬましゅん</td><td>14歳</td><td>14</td><td>新世界より</td><td>貴志祐介</td></tr>
+<tr><td>青葉弾道</td><td>あおばただみち</td><td>小5</td><td>11</td><td>DAN DOH!!</td><td>坂田信弘</td></tr>
+<tr><td>青柳立夏</td><td>あおやぎりつか</td><td>11歳</td><td>11</td><td>LOVELESS</td><td>高河ゆん</td></tr>
+<tr><td>アオヤマ君</td><td>あおやまくん</td><td>小4</td><td>10</td><td>ペンギン・ハイウェイ</td><td>森見登美彦</td></tr>
+<tr><td>赤城健太</td><td>あかぎけんた</td><td>nan</td><td>nan</td><td>R2 rise R to the second power</td><td>箱田真紀</td></tr>
+<tr><td>赤城緑(グリーン)</td><td>あかぎみどり(ぐりーん)</td><td>小3</td><td>9</td><td>ジュエルペット きら☆デコッ!</td><td>サンリオ</td></tr>
+<tr><td>赤城烈(レッド)</td><td>あかぎれつ(れっど)</td><td>中3</td><td>15</td><td>ジュエルペット きら☆デコッ!</td><td>サンリオ</td></tr>
+<tr><td>明石タイガ</td><td>あかしたいが</td><td>nan</td><td>nan</td><td>パズドラ</td><td>ガンホー</td></tr>
+<tr><td>明石タギル</td><td>あかしたぎる</td><td>中1</td><td>13</td><td>デジモンクロスウォーズ</td><td>テレビ朝日</td></tr>
+<tr><td>阿形勝平</td><td>あがたかつひら</td><td>高2</td><td>17</td><td>キズナイーバー</td><td>TRIGGER</td></tr>
+<tr><td>アカツキ・アキラ</td><td>あかつきあきら</td><td>nan</td><td>nan</td><td>ディスク・ウォーズ:アベンジャーズ</td><td>マーベル・コミックス</td></tr>
+<tr><td>暁佐助</td><td>あかつきさすけ</td><td>nan</td><td>nan</td><td>バトルスピリッツ 烈火魂</td><td>矢立肇</td></tr>
+<tr><td>アカツキ・ヒカル</td><td>あかつきひかる</td><td>nan</td><td>nan</td><td>ディスク・ウォーズ:アベンジャーズ</td><td>マーベル・コミックス</td></tr>
+<tr><td>我妻善逸</td><td>あがつまぜんいつ</td><td>16歳</td><td>16</td><td>鬼滅の刃</td><td>吾峠呼世晴</td></tr>
+<tr><td>アカネ</td><td>あかね</td><td>16歳</td><td>16</td><td>ディバインゲート</td><td>ガンホー</td></tr>
+<tr><td>赤刃アイガ</td><td>あかばあいが</td><td>小5</td><td>11</td><td>ベイブレードバーストガチ</td><td>森多ヒロ</td></tr>
+<tr><td>赤羽業</td><td>あかばねかるま</td><td>中3</td><td>15</td><td>暗殺教室</td><td>松井優征</td></tr>
+<tr><td>秋川勇太</td><td>あきかわゆうた</td><td>小5</td><td>11</td><td>ネットゴーストPIPOPA</td><td>テレビ東京／ミルキーカートゥン</td></tr>
+<tr><td>秋月涼</td><td>あきづきりょう</td><td>15歳</td><td>15</td><td>アイドルマスター ディアリースターズ</td><td>バンダイナムコゲームス</td></tr>
+<tr><td>アキュラス</td><td>あきゅらす</td><td>nan</td><td>nan</td><td>B-伝説! バトルビーダマン</td><td>橋本みつお</td></tr>
+<tr><td>アキラ</td><td>あきら</td><td>小6</td><td>12</td><td>真・女神転生Dチルドレン ライト&ダーク</td><td>アトラス</td></tr>
+<tr><td>アキラ</td><td>あきら</td><td>nan</td><td>nan</td><td>トランスフォーマーZ</td><td>タカラ</td></tr>
+<tr><td>晶 (岩木山雪里 白那之五十六子 晶)</td><td>あきら(いわきやまゆきさとしろなのごじゅうろくしあきら)</td><td>15</td><td>15</td><td>怪物事変</td><td>藍本松</td></tr>
+<tr><td>アクト</td><td>あくと</td><td>製造は4年前</td><td>4</td><td>エイダ</td><td>五所川原エルム</td></tr>
+<tr><td>アグリッピ</td><td>あぐりっぴ</td><td>13歳</td><td>13</td><td>ソウルクレイドル 世界を喰らう者</td><td>日本一ソフトウェア</td></tr>
+<tr><td>アゲート・フローライト</td><td>あげーとふろーらいと</td><td>15歳</td><td>15</td><td>クラスターエッジ</td><td>池田成</td></tr>
+<tr><td>麻倉葉</td><td>あさくらよう</td><td>13歳</td><td>13</td><td>シャーマンキング</td><td>武井宏之</td></tr>
+<tr><td>浅田マコト</td><td>あさだまこと</td><td>中2</td><td>14</td><td>カードファイト!! ヴァンガードG NEXT</td><td>ブシロード</td></tr>
+<tr><td>麻中蓬</td><td>あさなかよもぎ</td><td>高1</td><td>16</td><td>SSSS.DYNAZENON</td><td>グリッドマン</td></tr>
+<tr><td>朝比奈覚</td><td>あさひなさとる</td><td>14歳</td><td>14</td><td>新世界より</td><td>貴志祐介</td></tr>
+<tr><td>足利飆太</td><td>あしかがひょうた</td><td>中1</td><td>13</td><td>美少年探偵団</td><td>西尾維新</td></tr>
+<tr><td>芦川美鶴</td><td>あしかわみつる</td><td>小5</td><td>11</td><td>ブレイブストーリー</td><td>宮部みゆき</td></tr>
+<tr><td>芦屋アシベ</td><td>あしやあしべ</td><td>小1</td><td>7</td><td>少年アシベ</td><td>森下裕美</td></tr>
+<tr><td>味吉陽一</td><td>あじよしよういち</td><td>14歳=中2</td><td>14</td><td>ミスター味っ子</td><td>寺沢大介</td></tr>
+<tr><td>アスガー</td><td>あすがー</td><td>6歳</td><td>6</td><td>英国一家、日本を食べる</td><td>マイケル・ブース</td></tr>
+<tr><td>飛鳥ソーマ</td><td>あすかそーま</td><td>10歳</td><td>10</td><td>陰陽大戦記</td><td>WiZ</td></tr>
+<tr><td>飛鳥虎次郎</td><td>あすかとらじろう</td><td>小5</td><td>11</td><td>デジモンユニバース アプリモンスターズ</td><td>本郷あきよし</td></tr>
+<tr><td>明日川タイヨウ</td><td>あすかわたいよう</td><td>nan</td><td>nan</td><td>カードファイト!! ヴァンガードG</td><td>ブシロード</td></tr>
+<tr><td>アスタ</td><td>あすた</td><td>15歳</td><td>15</td><td>ブラッククローバー</td><td>田畠裕基</td></tr>
+<tr><td>アストルフォ</td><td>あすとるふぉ</td><td>nan</td><td>nan</td><td>Fate/Apocrypha</td><td>TYPE-MOON</td></tr>
+<tr><td>東一希</td><td>あずまかずき</td><td>16歳</td><td>16</td><td>ブブキ・ブランキ</td><td>Quadrangle</td></tr>
+<tr><td>安曇小太郎</td><td>あずみこうたろう</td><td>中3</td><td>15</td><td>月がきれい</td><td>feel.</td></tr>
+<tr><td>アセム・アスノ</td><td>あせむあすの</td><td>16歳</td><td>16</td><td>機動戦士ガンダムAGE</td><td>矢立肇 富野由悠季</td></tr>
+<tr><td>アッシュ</td><td>あっしゅ</td><td>16歳</td><td>16</td><td>エバーグリーン・アベニュー</td><td>メディアワークス、データム・ポリスター</td></tr>
+<tr><td>アッシュ=デュラン</td><td>あっしゅでゅらん</td><td>16</td><td>16</td><td>ファイアーエムブレム 風花雪月</td><td>インテリジェントシステムズ コーエーテクモゲームス（シブサワ・コウ）</td></tr>
+<tr><td>アディ(コーデック)</td><td>あでぃ(こーでっく)</td><td>nan</td><td>nan</td><td>マーベル フューチャー・アベンジャーズ</td><td>マーベル</td></tr>
+<tr><td>アデュー・ウォルサム</td><td>あでゅーうぉるさむ</td><td>14歳</td><td>14</td><td>覇王大系リューナイト</td><td>伊東岳彦</td></tr>
+<tr><td>アトム</td><td>あとむ</td><td>nan</td><td>nan</td><td>PLUTO</td><td>浦沢直樹(原作：手塚治虫)</td></tr>
+<tr><td>アドル・クリスティン</td><td>あどるくりすてぃん</td><td>nan</td><td>nan</td><td>みんな集まれ!ファルコム学園</td><td>新久保だいすけ</td></tr>
+<tr><td>阿南スガオ</td><td>あなんすがお</td><td>小1</td><td>7</td><td>少年アシベ</td><td>森下裕美</td></tr>
+<tr><td>安倍昌浩</td><td>あべのまさひろ</td><td>13歳</td><td>13</td><td>少年陰陽師</td><td>結城光流</td></tr>
+<tr><td>甘井シロー(シロップ)</td><td>あまいしろー</td><td>nan</td><td>nan</td><td>Yes!プリキュア5GoGo!</td><td>東堂いづみ</td></tr>
+<tr><td>天尾翔</td><td>あまおかける</td><td>11歳</td><td>11</td><td>ライブオン CARDLIVER 翔</td><td>吉川兆二</td></tr>
+<tr><td>天田乾</td><td>あまだけん</td><td>小5</td><td>11</td><td>ペルソナ3</td><td>アトラス</td></tr>
+<tr><td>天野河リュウセイ</td><td>あまのがわりゅうせい</td><td>10歳</td><td>10</td><td>人造昆虫カブトボーグ V×V</td><td>タカラトミー（原案）</td></tr>
+<tr><td>雨野景太</td><td>あまのけいた</td><td>高2</td><td>17</td><td>ゲーマーズ!</td><td>葵せきな</td></tr>
+<tr><td>天野ケースケ</td><td>あまのけーすけ</td><td>11歳</td><td>11</td><td>妖怪ウォッチ シャドウサイド</td><td>レベルファイブ</td></tr>
+<tr><td>天野景太</td><td>あまのけーた</td><td>小5</td><td>11</td><td>妖怪ウォッチ</td><td>レベルファイブ</td></tr>
+<tr><td>天野雪輝</td><td>あまのてるゆき</td><td>中2</td><td>14</td><td>未来日記</td><td>えすのサカエ</td></tr>
+<tr><td>天野凪</td><td>あまのなぎ</td><td>小5</td><td>11</td><td>天気の子</td><td>新海誠</td></tr>
+<tr><td>天野ユウ</td><td>あまのゆう</td><td>中2</td><td>14</td><td>デジモンクロスウォーズ</td><td>テレビ朝日</td></tr>
+<tr><td>天海護(ラティオ)</td><td>あまみまもる(らてぃお)</td><td>9歳</td><td>9</td><td>勇者王ガオガイガー</td><td>矢立肇</td></tr>
+<tr><td>雨宮修平</td><td>あまみやしゅうへい</td><td>小5</td><td>11</td><td>ピアノの森</td><td>一色まこと</td></tr>
+<tr><td>雨宮響也(ヒビヤ)</td><td>あまみやひびや</td><td>11歳</td><td>11</td><td>メカクシティアクターズ</td><td>じん(自然の敵P)</td></tr>
+<tr><td>雨</td><td>あめ</td><td>0歳</td><td>0</td><td>おおかみこどもの雨と雪</td><td>細田守</td></tr>
+<tr><td>雨山良平</td><td>あめやまりょうへい</td><td>小5</td><td>11</td><td>プピポー!</td><td>押切 蓮介</td></tr>
+<tr><td>天羽陽翔</td><td>あもうはると</td><td>nan</td><td>nan</td><td>七星のスバル</td><td>田尾典丈</td></tr>
+<tr><td>荒岩まこと</td><td>あらかわまこと</td><td>小2</td><td>8</td><td>クッキングパパ</td><td>うえやまとち</td></tr>
+<tr><td>荒岸頼歩</td><td>あらきしらいほ</td><td>高2</td><td>17</td><td>マイスター</td><td>加持君也</td></tr>
+<tr><td>荒城幸也</td><td>あらきゆきや</td><td>14歳</td><td>14</td><td>W'z《ウィズ》</td><td>GoHands、Frontier Works</td></tr>
+<tr><td>アラシ</td><td>あらし</td><td>nan</td><td>nan</td><td>ゾイドワイルド</td><td>タカラトミー</td></tr>
+<tr><td>嵐</td><td>あらし</td><td>nan</td><td>nan</td><td>SHOW BY ROCK!!</td><td>サンリオ</td></tr>
+<tr><td>嵐テッペイ</td><td>あらしてっぺい</td><td>高2</td><td>17</td><td>キャプテン・アース</td><td>BONES</td></tr>
+<tr><td>嵐山ギンガ</td><td>あらしやまぎんが</td><td>小5(10)</td><td>10</td><td>新幹線変形ロボシンカリオンZ</td><td>池添隆博</td></tr>
+<tr><td>アラジン</td><td>あらじん</td><td>nan</td><td>nan</td><td>マギ</td><td>大高忍</td></tr>
+<tr><td>新多シン</td><td>あらたしん</td><td>小5(10)</td><td>10</td><td>新幹線変形ロボシンカリオンZ</td><td>池添隆博</td></tr>
+<tr><td>アラム</td><td>あらむ</td><td>nan</td><td>nan</td><td>チェインクロニクル 〜ヘクセイタスの閃〜</td><td>セガ</td></tr>
+<tr><td>阿良々木暦</td><td>あららぎこよみ</td><td>高3</td><td>18</td><td>化物語</td><td>西尾維新</td></tr>
+<tr><td>アリババ</td><td>ありばば</td><td>nan</td><td>nan</td><td>マギ</td><td>大高忍</td></tr>
+<tr><td>有馬公生</td><td>ありまこうせい</td><td>中3</td><td>15</td><td>四月は君の嘘</td><td>新川直司</td></tr>
+<tr><td>アルヴィス</td><td>あるう゛ぃす</td><td>16歳</td><td>16</td><td>MÄR - Märchen Awakens Romance</td><td>安西信行</td></tr>
+<tr><td>アルク</td><td>あるく</td><td>nan</td><td>nan</td><td>ワールドフリッパー</td><td>Cygames</td></tr>
+<tr><td>アルバ</td><td>あるば</td><td>9歳</td><td>9</td><td>サモンナイト1</td><td>バンプレスト</td></tr>
+<tr><td>アルバ</td><td>あるば</td><td>nan</td><td>nan</td><td>戦勇。</td><td>春原ロビンソン</td></tr>
+<tr><td>アルバス</td><td>あるはず</td><td>nan</td><td>nan</td><td>ゼロから始める魔法の書</td><td>虎走かける</td></tr>
+<tr><td>ΑΩ・ノヴァ</td><td>あるふぁおめがのう゛ぁ</td><td>nan</td><td>nan</td><td>宇宙パトロールルル子</td><td>TRIGGER</td></tr>
+<tr><td>アルフォンス・エルリック</td><td>あるふぉんすえるりっく</td><td>14歳</td><td>14</td><td>鋼の錬金術師</td><td>荒川弘</td></tr>
+<tr><td>アルフレッド・イズルハ</td><td>あるふれっどいずるは</td><td>11歳</td><td>11</td><td>機動戦士ガンダム0080 ポケットの中の戦争</td><td>高山文彦</td></tr>
+<tr><td>アルフレド・マルティーニ</td><td>あるふれどまるてぃーに</td><td>12歳</td><td>12</td><td>ロミオの青い空</td><td>リザ・テツナー</td></tr>
+<tr><td>アルミン・アルレルト</td><td>あるみんあるれると</td><td>10歳</td><td>10</td><td>進撃の巨人</td><td>諫山創</td></tr>
+<tr><td>アレク</td><td>あれく</td><td>nan</td><td>nan</td><td>グランブルーファンタジー</td><td>Cygames</td></tr>
+<tr><td>アレク(ジークフリード・アレクサンダー)</td><td>あれく(じーくふりーどあれくさんだー)</td><td>11歳</td><td>11</td><td>メルクストーリア</td><td>Happy Elements</td></tr>
+<tr><td>アレグレット</td><td>あれぐれっと</td><td>16歳</td><td>16</td><td>トラスティベル 〜ショパンの夢〜</td><td>NAMCO</td></tr>
+<tr><td>アレックス・サザーランド</td><td>あれっくすさざーらんど</td><td>nan</td><td>nan</td><td>スティールクロニクル</td><td>コナミ</td></tr>
+<tr><td>アレン</td><td>あれん</td><td>17歳</td><td>17</td><td>ゲド戦記</td><td>アーシュラ・Ｋ・ル＝グウィン</td></tr>
+<tr><td>安城ナガラ</td><td>あんじょうながら</td><td>小4</td><td>10</td><td>新幹線変形ロボシンカリオンZ</td><td>池添隆博</td></tr>
+<tr><td>アンチ</td><td>あんち</td><td>nan</td><td>nan</td><td>SSSS.GRIDMAN</td><td>TRIGGER</td></tr>
+<tr><td>イーラ</td><td>いーら</td><td>nan</td><td>nan</td><td>ドキドキ!プリキュア</td><td>東堂いづみ</td></tr>
+<tr><td>イオリ・セイ</td><td>いおりせい</td><td>中1</td><td>13</td><td>ガンダムビルドファイターズ</td><td>矢立肇 富野由悠季</td></tr>
+<tr><td>碇シンジ</td><td>いかりしんじ</td><td>14歳</td><td>14</td><td>新世紀エヴァンゲリオン</td><td>GAINAX</td></tr>
+<tr><td>イカル</td><td>いかる</td><td>nan</td><td>nan</td><td>神無ノ鳥</td><td>すたじおみりす</td></tr>
+<tr><td>戦部ワタル</td><td>いくさべわたる</td><td>9歳=小4</td><td>9</td><td>魔神英雄伝ワタル</td><td>矢立肇</td></tr>
+<tr><td>池沢佳主馬</td><td>いけざわかずま</td><td>13歳</td><td>13</td><td>サマーウォーズ</td><td>細田守</td></tr>
+<tr><td>イコ</td><td>いこ</td><td>13歳</td><td>13</td><td>ICO</td><td>ソニー・コンピュータエンタテイメント</td></tr>
+<tr><td>伊佐木要</td><td>いさきかなめ</td><td>中2</td><td>14</td><td>凪のあすから</td><td>Project-118</td></tr>
+<tr><td>十六夜</td><td>いざよい</td><td>13歳</td><td>13</td><td>幻想大陸</td><td>夜麻みゆき</td></tr>
+<tr><td>石田ヤマト</td><td>いしだやまと</td><td>11歳=小5</td><td>11</td><td>デジモンアドベンチャー</td><td>本郷あきよし</td></tr>
+<tr><td>イシドロ</td><td>いしどろ</td><td>nan</td><td>nan</td><td>ベルセルク</td><td>三浦建太郎</td></tr>
+<tr><td>石野ジン</td><td>いしのじん</td><td>小学生</td><td>nan</td><td>トミカハイパーシリーズ</td><td>タカラトミー</td></tr>
+<tr><td>伊集院玲</td><td>いじゅういんあきら</td><td>小4</td><td>10</td><td>CLAMP学園探偵団</td><td>CLAMP</td></tr>
+<tr><td>伊集院炎山</td><td>いじゅういんえんざん</td><td>小5</td><td>11</td><td>ロックマンエグゼ</td><td>カプコン</td></tr>
+<tr><td>泉光子郎</td><td>いずみこうしろう</td><td>10歳=小4</td><td>10</td><td>デジモンアドベンチャー</td><td>本郷あきよし</td></tr>
+<tr><td>泉ショウ</td><td>いずみしょう</td><td>nan</td><td>nan</td><td>奴隷聖徒会長ヒカル〜淫魔に占陵された学園〜</td><td>桜沢大・筑摩十幸</td></tr>
+<tr><td>和泉正宗</td><td>いずみまさむね</td><td>15歳</td><td>15</td><td>エロマンガ先生</td><td>伏見つかさ</td></tr>
+<tr><td>出雲銀河</td><td>いずもぎんが</td><td>小5</td><td>11</td><td>GEAR戦士電童</td><td>矢立肇</td></tr>
+<tr><td>出雲ハルキ</td><td>いずもはるき</td><td>14歳</td><td>14</td><td>ダンボール戦機WARS</td><td>レベルファイブ</td></tr>
+<tr><td>石動零</td><td>いするぎれい</td><td>高校生</td><td>nan</td><td>ゲゲゲの鬼太郎</td><td>水木しげる</td></tr>
+<tr><td>市川風太</td><td>いちかわふうた</td><td>中2</td><td>14</td><td>タイムトラベル少女〜マリ・ワカと8人の科学者たち〜</td><td>板倉聖宣</td></tr>
+<tr><td>一乗寺賢</td><td>いちじょうじおさむ</td><td>11歳</td><td>11</td><td>デジモンアドベンチャー02</td><td>本郷あきよし</td></tr>
+<tr><td>一条晴彦</td><td>いちじょうはるひこ</td><td>高1</td><td>16</td><td>無彩限のファントム・ワールド</td><td>秦野宗一郎</td></tr>
+<tr><td>一ノ瀬海</td><td>いちのせかい</td><td>小5</td><td>11</td><td>ピアノの森</td><td>一色まこと</td></tr>
+<tr><td>一番星のレイ</td><td>いちばんぼしのれい</td><td>nan</td><td>nan</td><td>最強銀河 究極ゼロ 〜バトルスピリッツ〜</td><td>矢立肇</td></tr>
+<tr><td>市村鉄之助</td><td>いちむらてつのすけ</td><td>15歳</td><td>15</td><td>新撰組異聞PEACE MAKER</td><td>黒乃奈々絵</td></tr>
+<tr><td>五ツ橋ギン</td><td>いつつばしぎん</td><td>小5</td><td>11</td><td>新幹線変形ロボ シンカリオン</td><td>プロジェクトシンカリオン</td></tr>
+<tr><td>五ツ橋ジョウ</td><td>いつつばしじょう</td><td>小5</td><td>11</td><td>新幹線変形ロボ シンカリオン</td><td>プロジェクトシンカリオン</td></tr>
+<tr><td>伊藤守</td><td>いとうまもる</td><td>14歳</td><td>14</td><td>新世界より</td><td>貴志祐介</td></tr>
+<tr><td>糸色交</td><td>いとしきまじる</td><td>5歳</td><td>5</td><td>さよなら絶望先生</td><td>久米田康治</td></tr>
+<tr><td>稲森明日人</td><td>いなもりあすと</td><td>中2</td><td>14</td><td>イナズマイレブン アレスの天秤</td><td>レベルファイブ</td></tr>
+<tr><td>犬江仁</td><td>いぬえしのぶ</td><td>12歳(中は22歳)</td><td>12</td><td>八犬伝―東方八犬異聞―</td><td>あべ美幸</td></tr>
+<tr><td>犬飼ゲン</td><td>いぬかいげん</td><td>小5</td><td>11</td><td>テンカイナイト</td><td>ボンズ</td></tr>
+<tr><td>犬上小太郎</td><td>いぬがみこたろう</td><td>9歳</td><td>9</td><td>魔法先生ネギま!</td><td>赤松健（キャラクター原案綾永らん）</td></tr>
+<tr><td>犬塚信乃</td><td>いぬつかしの</td><td>13歳(中は18歳)</td><td>13</td><td>八犬伝―東方八犬異聞―</td><td>あべ美幸</td></tr>
+<tr><td>猪俣ケン</td><td>いのまたけん</td><td>小5</td><td>11</td><td>あにゃまる探偵 キルミンずぅ</td><td>河森正治</td></tr>
+<tr><td>忌ブキ</td><td>いぶき</td><td>nan</td><td>nan</td><td>ケイオスドラゴン 赤竜戦役</td><td>混沌計画</td></tr>
+<tr><td>今井コウジ</td><td>いまいこうじ</td><td>小5</td><td>11</td><td>今日の5の2</td><td>桜場コハル</td></tr>
+<tr><td>妹之山残</td><td>いものやまのこる</td><td>小6</td><td>12</td><td>CLAMP学園探偵団</td><td>CLAMP</td></tr>
+<tr><td>伊良部一郎(小)</td><td>いらぶいちろう</td><td>nan</td><td>nan</td><td>空中ブランコ</td><td>奥田英朗</td></tr>
+<tr><td>伊里達遊太</td><td>いりだつゆうた</td><td>高校生</td><td>nan</td><td>パンチライン</td><td>上村泰</td></tr>
+<tr><td>入達遊太</td><td>いりだつゆうた</td><td>5歳</td><td>5</td><td>斉木楠雄のΨ難</td><td>麻生周一</td></tr>
+<tr><td>入出アカツキ</td><td>いりであかつき</td><td>高1</td><td>16</td><td>ナカノヒトゲノム【実況中】</td><td>おそら</td></tr>
+<tr><td>因果</td><td>いんが</td><td>nan</td><td>nan</td><td>UN-GO</td><td>pako</td></tr>
+<tr><td>インクリング(ボーイ)</td><td>いんくりんぐ(ぼーい)</td><td>おおむね14歳</td><td>14</td><td>スプラトゥーン</td><td>任天堂</td></tr>
+<tr><td>因又</td><td>いんよう</td><td>nan</td><td>nan</td><td>群青のマグメル</td><td>第年秒</td></tr>
+<tr><td>ヴィリッド</td><td>ヴぃりっど</td><td>13歳</td><td>13</td><td>その向こうの向こう側</td><td>渡辺祥智</td></tr>
+<tr><td>ウィル</td><td>うぃる</td><td>12歳</td><td>12</td><td>ナイツ 〜星降る夜の物語〜</td><td>セガ(ゲーム)</td></tr>
+<tr><td>ヴィンサント</td><td>ヴぃんさんと</td><td>nan</td><td>nan</td><td>スナックワールド</td><td>レベルファイブ</td></tr>
+<tr><td>ヴォーカル</td><td>ヴぉーかる</td><td>500歳(以上)</td><td>nan</td><td>ハーメルンのバイオリン弾き</td><td>渡辺道明</td></tr>
+<tr><td>碓氷アブト</td><td>うすいあぶと</td><td>小5(10)</td><td>10</td><td>新幹線変形ロボシンカリオンZ</td><td>池添隆博</td></tr>
+<tr><td>うずまきナルト</td><td>うずまきなると</td><td>nan</td><td>nan</td><td>NARUTO -ナルト-</td><td>岸本斉史</td></tr>
+<tr><td>うずまきボルト</td><td>うずまきぼると</td><td>nan</td><td>nan</td><td>BORUTO-ボルト- -NARUTO NEXT GENERATIONS-</td><td>岸本斉史</td></tr>
+<tr><td>内木デー太</td><td>うちきでーた</td><td>小学生</td><td>nan</td><td>モンスター烈伝 オレカバトル</td><td>山浦聡</td></tr>
+<tr><td>うちはサスケ</td><td>うちはさすけ</td><td>nan</td><td>nan</td><td>NARUTO -ナルト-</td><td>岸本斉史</td></tr>
+<tr><td>ウッソ・エヴィン</td><td>うっそえヴぃん</td><td>13歳</td><td>13</td><td>機動戦士Vガンダム</td><td>矢立肇 富野由悠季</td></tr>
+<tr><td>宇都宮虎丸</td><td>うつのみやとらまる</td><td>小6</td><td>12</td><td>イナズマイレブン</td><td>レベルファイブ</td></tr>
+<tr><td>内海将</td><td>うつみしょう</td><td>高1</td><td>16</td><td>SSSS.GRIDMAN</td><td>TRIGGER</td></tr>
+<tr><td>海火子</td><td>うみひこ</td><td>10歳</td><td>10</td><td>魔神英雄伝ワタル2</td><td>矢立肇 広井王子</td></tr>
+<tr><td>ウメ</td><td>うめ</td><td>12歳</td><td>12</td><td>EVIL HEART(イビル ハート)</td><td>武富 智</td></tr>
+<tr><td>埋れ木真吾</td><td>うもれぎしんご</td><td>小5</td><td>11</td><td>最新版悪魔くん</td><td>水木しげる</td></tr>
+<tr><td>ウルティモ</td><td>うるてぃも</td><td>nan</td><td>nan</td><td>機巧童子ULTIMO</td><td>武井宏之</td></tr>
+<tr><td>吽</td><td>うん</td><td>nan</td><td>nan</td><td>京騒戯画</td><td>東堂いづみ</td></tr>
+<tr><td>雲仙冥利</td><td>うんぜんみょうり</td><td>10歳=高2</td><td>10</td><td>めだかボックス</td><td>西尾維新</td></tr>
+<tr><td>エース</td><td>えーす</td><td>12歳</td><td>12</td><td>パズドラクロス</td><td>ガンホー</td></tr>
+<tr><td>エクス</td><td>えくす</td><td>nan</td><td>nan</td><td>グリムノーツ</td><td>元気</td></tr>
+<tr><td>エコ</td><td>えこ</td><td>nan</td><td>nan</td><td>コレクター・ユイ</td><td>麻宮騎亜</td></tr>
+<tr><td>エコヲ・レック</td><td>えこをれっく</td><td>nan</td><td>nan</td><td>LISTENERS</td><td>安藤裕章</td></tr>
+<tr><td>エスト・リナウド</td><td>えすとりなうど</td><td>14歳</td><td>14</td><td>ワンド オブ フォーチュン R</td><td>アイディアファクトリー</td></tr>
+<tr><td>越前リョーマ</td><td>えちぜんりょーま</td><td>中1</td><td>13</td><td>テニスの王子様</td><td>許斐剛</td></tr>
+<tr><td>江戸川コナン</td><td>えどがわこなん</td><td>小1(中は17歳)</td><td>7</td><td>名探偵コナン</td><td>青山剛昌</td></tr>
+<tr><td>江戸城本丸</td><td>えどじょうほんまる</td><td>小学生</td><td>nan</td><td>まじかる タルるートくん</td><td>江川達也</td></tr>
+<tr><td>エドワード・エルリック</td><td>えどわーどえるりっく</td><td>15歳</td><td>15</td><td>鋼の錬金術師</td><td>荒川弘</td></tr>
+<tr><td>エドワード・グラント</td><td>えどわーどぐらんと</td><td>nan</td><td>nan</td><td>ディスク・ウォーズ:アベンジャーズ</td><td>マーベル・コミックス</td></tr>
+<tr><td>可愛川晴斗</td><td>えのかわはると</td><td>5歳</td><td>5</td><td>枕男子</td><td>P★P</td></tr>
+<tr><td>榎木拓也</td><td>えのきたくや</td><td>11歳</td><td>11</td><td>赤ちゃんと僕</td><td>羅川真里茂</td></tr>
+<tr><td>エミーゼル</td><td>えみーぜる</td><td>nan</td><td>nan</td><td>魔界戦記ディスガイア4</td><td>日本一ソフトウェア・原田たけひと</td></tr>
+<tr><td>衛宮士郎</td><td>えみやしろう</td><td>中2</td><td>14</td><td>Fateシリーズ</td><td>TYPE-MOON</td></tr>
+<tr><td>エミリオ・ミハイロフ</td><td>えみりおみはいろふ</td><td>14歳</td><td>14</td><td>サイキックフォース</td><td>タイトー</td></tr>
+<tr><td>エミル・キャスタニエ</td><td>えみるきゃすたにえ</td><td>nan</td><td>nan</td><td>テイルズ オブ シンフォニア -ラタトスクの騎士-</td><td>バンダイナムコゲームス</td></tr>
+<tr><td>エメラルド</td><td>えめらるど</td><td>11歳</td><td>11</td><td>ポケットモンスターSPECIAL</td><td>日下秀憲</td></tr>
+<tr><td>エリオ＝モンディアル</td><td>えりおもんでぃある</td><td>10歳</td><td>10</td><td>魔法少女リリカルなのはStrikerS</td><td>都筑真紀</td></tr>
+<tr><td>エルジン</td><td>えるじん</td><td>14歳</td><td>14</td><td>サモンナイト1</td><td>バンプレスト</td></tr>
+<tr><td>エルス</td><td>えるす</td><td>13歳</td><td>13</td><td>エルソード(ELSWORD)</td><td>RESS</td></tr>
+<tr><td>エルト＝フォーエンハイム</td><td>えるとふぉーえんはいむ</td><td>16歳</td><td>16</td><td>女王騎士物語</td><td>下村トモヒロ</td></tr>
+<tr><td>エルネスティ・エチェバルリア</td><td>えるねすてぃえちぇばるりあ</td><td>9歳</td><td>9</td><td>ナイツ&マジック</td><td>天酒之瓢</td></tr>
+<tr><td>エレン・イェーガー</td><td>えれんいぇーがー</td><td>10歳</td><td>10</td><td>進撃の巨人</td><td>諫山創</td></tr>
+<tr><td>円修律</td><td>えんしゅうりつ</td><td>高1</td><td>16</td><td>R-15</td><td>伏見ひろゆき</td></tr>
+<tr><td>遠藤アラト</td><td>えんどうあらと</td><td>高2</td><td>17</td><td>BEATLESS</td><td>長谷敏司</td></tr>
+<tr><td>円堂カノン</td><td>えんどうかのん</td><td>nan</td><td>nan</td><td>イナズマイレブン</td><td>レベルファイブ</td></tr>
+<tr><td>遠藤乎一郎</td><td>えんどうこいちろう</td><td>14歳</td><td>14</td><td>まもって守護月天!</td><td>桜野みねね</td></tr>
+<tr><td>円堂守</td><td>えんどうまもる</td><td>中学生</td><td>nan</td><td>イナズマイレブン</td><td>レベルファイブ</td></tr>
+<tr><td>焔魔堂ろくろ</td><td>えんまどうろくろ</td><td>14歳</td><td>14</td><td>双星の陰陽師</td><td>助野嘉昭</td></tr>
+<tr><td>炎龍ヒロ</td><td>えんりゅうひろ</td><td>小5</td><td>11</td><td>ドラゴンコレクション</td><td>コナミ</td></tr>
+<tr><td>王道遊我</td><td>おうどうゆうが</td><td>小5</td><td>nan</td><td>遊☆戯☆王SEVENS</td><td>近藤信宏</td></tr>
+<tr><td>大神グレン</td><td>おおがみぐれん</td><td>小5</td><td>11</td><td>テンカイナイト</td><td>ボンズ</td></tr>
+<tr><td>大河内大河</td><td>おおこうちたいが</td><td>10歳</td><td>10</td><td>ハヤテのごとく!</td><td>畑健二郎</td></tr>
+<tr><td>大宇宙カナタ</td><td>おおぞらかなた</td><td>小6</td><td>12</td><td>フューチャーカード バディファイト</td><td>ブシロード</td></tr>
+<tr><td>大空太陽</td><td>おおぞらたいよう</td><td>10歳</td><td>10</td><td>出撃!マシンロボレスキュー</td><td>矢立肇</td></tr>
+<tr><td>大空翼</td><td>おおぞらつばさ</td><td>小6</td><td>12</td><td>キャプテン翼</td><td>高橋陽一</td></tr>
+<tr><td>大空ヒロ</td><td>おおぞらひろ</td><td>13歳</td><td>13</td><td>ダンボール戦機</td><td>日野晃博</td></tr>
+<tr><td>大空文太</td><td>おおぞらぶんた</td><td>9歳</td><td>9</td><td>怪談レストラン</td><td>松谷みよ子</td></tr>
+<tr><td>大空勇仁</td><td>おおぞらゆうじん</td><td>中1(設定)</td><td>13</td><td>デジモンユニバース アプリモンスターズ</td><td>本郷あきよし</td></tr>
+<tr><td>大空レイ</td><td>おおぞられい</td><td>小4</td><td>10</td><td>新幹線変形ロボ シンカリオン</td><td>プロジェクトシンカリオン</td></tr>
+<tr><td>太田翔</td><td>おおたしょう</td><td>小6</td><td>12</td><td>銀河へキックオフ!!</td><td>川端裕人</td></tr>
+<tr><td>大野けんいち</td><td>おおのけんいち</td><td>小3</td><td>9</td><td>ちびまる子ちゃん</td><td>さくらももこ</td></tr>
+<tr><td>大広陵</td><td>おおひろりょう</td><td>中2</td><td>14</td><td>DIVE!!</td><td>森絵都</td></tr>
+<tr><td>大曲ハナビ</td><td>おおまがりはなび</td><td>10</td><td>10</td><td>新幹線変形ロボシンカリオンZ</td><td>池添隆博</td></tr>
+<tr><td>大桃タロウ</td><td>おおももたろう</td><td>小5</td><td>11</td><td>完全勝利ダイテイオー</td><td>不明</td></tr>
+<tr><td>大山</td><td>おおやま</td><td>nan</td><td>nan</td><td>AngelBeats! エンジェルビーツ</td><td>麻枝准</td></tr>
+<tr><td>男鹿アキタ</td><td>おがあきた</td><td>小5</td><td>11</td><td>新幹線変形ロボ シンカリオン</td><td>プロジェクトシンカリオン</td></tr>
+<tr><td>岡村直央</td><td>おかむらなお</td><td>nan</td><td>nan</td><td>アイドルマスター SideM</td><td>オルトプラス</td></tr>
+<tr><td>岡本タマ</td><td>おかもとたま</td><td>nan</td><td>nan</td><td>うちタマ?! 〜うちのタマ知りませんか?〜</td><td>大塚舞</td></tr>
+<tr><td>沖倉駆</td><td>おきくらかける</td><td>高3</td><td>18</td><td>グラスリップ</td><td>カゼミチ</td></tr>
+<tr><td>オズ=ベザリウス</td><td>おずべざりうす</td><td>15歳</td><td>15</td><td>PandoraHearts（パンドラハーツ）</td><td>望月淳</td></tr>
+<tr><td>尾瀬イクミ</td><td>おぜいくみ</td><td>16歳</td><td>16</td><td>無限のリヴァイアス</td><td>サンライズ</td></tr>
+<tr><td>オニオン</td><td>おにおん</td><td>nan</td><td>nan</td><td>ポケットモンスター ソード・シールド</td><td>ゲームフリーク</td></tr>
+<tr><td>オニオンナイト</td><td>おにおんないと</td><td>nan</td><td>nan</td><td>ディシディア ファイナルファンタジー(DISSIDIA FINAL FANTASY)</td><td>スクウェア・エニックス</td></tr>
+<tr><td>オニギリ</td><td>おにぎり</td><td>nan</td><td>nan</td><td>ゾイドワイルド</td><td>タカラトミー</td></tr>
+<tr><td>小野沢悠貴</td><td>おのざわゆうき</td><td>8歳=小3</td><td>8</td><td>東京マグニチュード8.0</td><td>ボンズ</td></tr>
+<tr><td>小野田坂道</td><td>おのださかみち</td><td>高1</td><td>16</td><td>弱虫ペダル</td><td>渡辺航</td></tr>
+<tr><td>小畑洋助</td><td>おばたようすけ</td><td>12歳</td><td>12</td><td>遠い海から来たCOO</td><td>景山民夫</td></tr>
+<tr><td>小山田耕太</td><td>おやまだこうた</td><td>高1</td><td>16</td><td>かのこん</td><td>西野かつみ</td></tr>
+<tr><td>オリバー</td><td>おりばー</td><td>13歳</td><td>13</td><td>二ノ国</td><td>レベルファイブ</td></tr>
+<tr><td>Oliver</td><td>おりばー</td><td>13歳</td><td>13</td><td>VOCALOID</td><td>US-team</td></tr>
+<tr><td>俺牙ファイヤ</td><td>おれがふぁいや</td><td>小学生</td><td>nan</td><td>モンスター烈伝 オレカバトル</td><td>山浦聡</td></tr>
+<tr><td>カール・リヒター・フォン・ランドル</td><td>かーるりひたーふぉんらんどる</td><td>14歳</td><td>14</td><td>新世紀GPXサイバーフォーミュラ</td><td>サンライズ</td></tr>
+<tr><td>カイ</td><td>かい</td><td>小4</td><td>10</td><td>エレビッツ</td><td>コナミ</td></tr>
+<tr><td>カイ</td><td>かい</td><td>nan</td><td>nan</td><td>牧場物語 ミネラルタウンのなかまたち</td><td>トーセ</td></tr>
+<tr><td>甲斐谷陸</td><td>かいたにりく</td><td>nan</td><td>nan</td><td>アイシールド21</td><td>稲垣理一郎</td></tr>
+<tr><td>界塚伊奈帆</td><td>かいづかいなほ</td><td>高1</td><td>15</td><td>アルドノア・ゼロ</td><td>Olympus Knights</td></tr>
+<tr><td>海道ジン</td><td>かいどうじん</td><td>13歳</td><td>13</td><td>ダンボール戦機</td><td>日野晃博</td></tr>
+<tr><td>海棠零</td><td>かいどうれん</td><td>nan</td><td>nan</td><td>SUPERLOVERS</td><td>あべ美幸</td></tr>
+<tr><td>甲斐刹那</td><td>かいなせつな</td><td>10歳</td><td>10</td><td>真・女神転生 デビルチルドレン 黒の書・赤の書</td><td>アトラス</td></tr>
+<tr><td>海馬モクバ</td><td>かいばもくば</td><td>nan</td><td>nan</td><td>遊☆戯☆王</td><td>高橋和希</td></tr>
+<tr><td>カイル・デュナミス</td><td>かいるでゅなみす</td><td>15歳</td><td>15</td><td>テイルズ オブ デスティニー2</td><td>ナムコ</td></tr>
+<tr><td>カイン</td><td>かいん</td><td>nan</td><td>nan</td><td>トランスフォーマーZ</td><td>タカラ</td></tr>
+<tr><td>カイン</td><td>かいん</td><td>nan</td><td>nan</td><td>ブラックマトリクス</td><td>フライト・プラン</td></tr>
+<tr><td>ガウル・ガレット・デ・ロワ</td><td>がうるがれっとでろわ</td><td>13</td><td>13</td><td>DOG DAYS</td><td>都築真紀</td></tr>
+<tr><td>加賀見一也</td><td>かがみかずや</td><td>中2</td><td>14</td><td>つぐもも</td><td>浜田よしかづ</td></tr>
+<tr><td>鏡音レン</td><td>かがみねれん</td><td>14歳</td><td>14</td><td>鏡音リン・レン</td><td>クリプトン</td></tr>
+<tr><td>神楽奏助</td><td>かぐらそうすけ</td><td>高1</td><td>16</td><td>クラシカロイド</td><td>土林誠</td></tr>
+<tr><td>影の少年</td><td>かげのしょうねん</td><td>nan</td><td>nan</td><td>影の塔</td><td>ハドソン</td></tr>
+<tr><td>影丸</td><td>かげまる</td><td>nan</td><td>nan</td><td>退魔忍法帖～妖怪地獄変～</td><td>F K Digital</td></tr>
+<tr><td>影山茂夫</td><td>かげやましげお</td><td>14歳</td><td>14</td><td>モブサイコ100</td><td>ONE</td></tr>
+<tr><td>影山輝</td><td>かげやまひかる</td><td>13歳</td><td>13</td><td>イナズマイレブンGO</td><td>レベルファイブ</td></tr>
+<tr><td>影山律</td><td>かげやまりつ</td><td>中1</td><td>13</td><td>モブサイコ100</td><td>ONE</td></tr>
+<tr><td>カケル</td><td>かける</td><td>小4</td><td>10</td><td>サルゲッチュ</td><td>ソニー・コンピュータエンタテインメント</td></tr>
+<tr><td>カケル</td><td>かける</td><td>nan</td><td>nan</td><td>ポケットモンスター Let's Go! ピカチュウ・Let's Go! イーブイ</td><td>ゲームフリーク</td></tr>
+<tr><td>風斬ダッシュ</td><td>かざきりだっしゅ</td><td>小5</td><td>11</td><td>フューチャーカード バディファイト</td><td>ブシロード</td></tr>
+<tr><td>風車響</td><td>かざぐるまひびき</td><td>小6</td><td>12</td><td>ブレイブビーツ</td><td>BN Pictures</td></tr>
+<tr><td>風宮クーロ</td><td>かざみやくーろ</td><td>小5</td><td>11</td><td>少年メイドクーロ君</td><td>柊柾葵</td></tr>
+<tr><td>柏木空</td><td>かしわぎそら</td><td>高3</td><td>18</td><td>ミイラの飼い方</td><td>空木かける</td></tr>
+<tr><td>春日井梅千花</td><td>かすがいうめちか</td><td>小3</td><td>9</td><td>ももくり</td><td>くろせ</td></tr>
+<tr><td>カスパル=フォン=ベルグリーズ</td><td>かすぱるふぉんべるぐりーず</td><td>16</td><td>16</td><td>ファイアーエムブレム 風花雪月</td><td>インテリジェントシステムズ コーエーテクモゲームス（シブサワ・コウ）</td></tr>
+<tr><td>堅書直実</td><td>かたがきなおみ</td><td>高1</td><td>16</td><td>HELLO WORLD</td><td>オリジナル</td></tr>
+<tr><td>蠍宮シュモン</td><td>かつみやしゅもん</td><td>11歳</td><td>11</td><td>クロスファイト ビーダマン</td><td>タカラトミー、d-rights</td></tr>
+<tr><td>葛木カムイ</td><td>かつらぎかむい</td><td>小6</td><td>12</td><td>カードファイト!! ヴァンガード</td><td>ブシロード</td></tr>
+<tr><td>桂はじめ</td><td>かつらはじめ</td><td>小3</td><td>9</td><td>デジモンユニバース アプリモンスターズ</td><td>本郷あきよし</td></tr>
+<tr><td>桂レイ</td><td>かつられい</td><td>中2</td><td>14</td><td>デジモンユニバース アプリモンスターズ</td><td>本郷あきよし</td></tr>
+<tr><td>要トウマ</td><td>かなめとうま</td><td>11歳</td><td>11</td><td>冒険遊記プラスターワールド</td><td>木村昭彦、石本隆史</td></tr>
+<tr><td>金森てつし</td><td>かなもりてつし</td><td>11歳</td><td>11</td><td>地獄堂霊界通信</td><td>香月日輪</td></tr>
+<tr><td>カニパン</td><td>かにぱん</td><td>10歳</td><td>10</td><td>発明BOYカニパン</td><td>ビー・ネット，えん</td></tr>
+<tr><td>金田正太郎</td><td>かねだしょうたろう</td><td>nan</td><td>nan</td><td>鉄人28号</td><td>横山光輝</td></tr>
+<tr><td>鐘山・チャーリー・翼</td><td>かねやまちゃーりーつばさ</td><td>小4</td><td>10</td><td>ブレイブビーツ</td><td>BN Pictures</td></tr>
+<tr><td>鏑木彗</td><td>かぶらぎすい</td><td>中3</td><td>15</td><td>蒼穹のファフナー</td><td>XEBEC</td></tr>
+<tr><td>竈門炭治郎</td><td>かまどたんじろう</td><td>13歳</td><td>13</td><td>鬼滅の刃</td><td>吾峠呼世晴</td></tr>
+<tr><td>上泉森</td><td>かみいずみしん</td><td>中1</td><td>nan</td><td>フルセット!</td><td>梅田阿比</td></tr>
+<tr><td>カミキ・セカイ</td><td>かみきせかい</td><td>中2</td><td>14</td><td>ガンダムビルドファイターズトライ</td><td>矢立肇 富野由悠季</td></tr>
+<tr><td>上城龍久(ルーク)</td><td>かみじょうたつひさ(るーく)</td><td>小5</td><td>nan</td><td>遊☆戯☆王SEVENS</td><td>近藤信宏</td></tr>
+<tr><td>上条春太</td><td>かみじょうはるた</td><td>高1</td><td>16</td><td>ハルチカ〜ハルタとチカは青春する〜</td><td>	初野晴</td></tr>
+<tr><td>神谷舞人</td><td>かみやまいと</td><td>小6</td><td>12</td><td>ブレイブビーツ</td><td>BN Pictures</td></tr>
+<tr><td>神谷勇人</td><td>かみやゆうと</td><td>小5</td><td>11</td><td>カミワザ・ワンダ</td><td>タカラトミー</td></tr>
+<tr><td>亀山トクサ</td><td>かめやまとくさ</td><td>小4</td><td>10</td><td>テンカイナイト</td><td>ボンズ</td></tr>
+<tr><td>我聞悠太</td><td>がもんゆうた</td><td>高2</td><td>17</td><td>Occultic;Nine -オカルティック・ナイン-</td><td>志倉千代丸</td></tr>
+<tr><td>ガルシア・フェルナンド・ラブレス</td><td>がるしあふぁるなんどらぶれす</td><td>nan</td><td>nan</td><td>BLACK LAGOON(ブラック・ラグーン)</td><td>広江礼威</td></tr>
+<tr><td>カルム</td><td>かるむ</td><td>nan</td><td>nan</td><td>ポケットモンスターX・Y</td><td>ポケモン</td></tr>
+<tr><td>カルル＝クローバー</td><td>かるるくろーばー</td><td>nan</td><td>nan</td><td>BLAZBLUE</td><td>エイエムアイ</td></tr>
+<tr><td>ガロード・ラン</td><td>がろーどらん</td><td>15歳</td><td>15</td><td>機動新世紀ガンダムX</td><td>矢立肇 富野由悠季</td></tr>
+<tr><td>カロル・カペル</td><td>かろるかぺる</td><td>12歳</td><td>12</td><td>テイルズ オブ ヴェスペリア</td><td>ナムコ</td></tr>
+<tr><td>河合ツバサ</td><td>かわいつばさ</td><td>小5</td><td>11</td><td>今日の5の2</td><td>桜庭コハル</td></tr>
+<tr><td>川西仙太郎</td><td>かわにしせんたろう</td><td>nan</td><td>nan</td><td>ああっ女神さまっ</td><td>藤島康介</td></tr>
+<tr><td>ガンヴォルト</td><td>がんゔぉると</td><td>14歳</td><td>14</td><td>蒼き雷霆 ガンヴォルト</td><td>インティ・クリエイツ</td></tr>
+<tr><td>神崎雄哉</td><td>かんざきゆうや</td><td>中学生</td><td>nan</td><td>A.I.C.O. Incarnation</td><td>BONES</td></tr>
+<tr><td>神郷洵</td><td>かんざとじゅん</td><td>中2</td><td>14</td><td>ペルソナ ～トリニティ・ソウル～</td><td>アトラス</td></tr>
+<tr><td>神田空太</td><td>かんだそらた</td><td>高2</td><td>17</td><td>さくら荘のペットな彼女</td><td>鴨志田一</td></tr>
+<tr><td>カント・ケストナー</td><td>かんとけすとなー</td><td>nan</td><td>nan</td><td>ブレンパワード</td><td>矢立肇 富野由悠季</td></tr>
+<tr><td>神原拓也</td><td>かんばらたくや</td><td>小5</td><td>11</td><td>デジモンフロンティア</td><td>本郷あきよし</td></tr>
+<tr><td>奇異太郎</td><td>きいたろう</td><td>nan</td><td>nan</td><td>奇異太郎少年の妖怪絵日記</td><td>影山理一</td></tr>
+<tr><td>キオ・アスノ</td><td>きおあすの</td><td>13歳</td><td>13</td><td>機動戦士ガンダムAGE</td><td>矢立肇 富野由悠季</td></tr>
+<tr><td>如月ヨルゲン</td><td>きさらぎよるげん</td><td>12歳</td><td>12</td><td>少年ラケット</td><td>掛丸翔</td></tr>
+<tr><td>岸辺颯太/ラ・ピュセル</td><td>きしべそうた/らぴゅせる</td><td>中2</td><td>14</td><td>魔法少女育成計画</td><td>遠藤浅蜊</td></tr>
+<tr><td>木曽トラ</td><td>きそとら</td><td>nan</td><td>nan</td><td>うちタマ?! 〜うちのタマ知りませんか?〜</td><td>大塚舞</td></tr>
+<tr><td>北原マロ</td><td>きたはらまろ</td><td>小6</td><td>12</td><td>ピアシェ～私のイタリアン～</td><td>Nab_At/渡辺敦子</td></tr>
+<tr><td>鬼太郎</td><td>きたろう</td><td>nan</td><td>nan</td><td>ゲゲゲの鬼太郎</td><td>水木しげる</td></tr>
+<tr><td>城戸丈</td><td>きどじょう</td><td>小6</td><td>12</td><td>デジモンアドベンチャー</td><td>本郷あきよし</td></tr>
+<tr><td>木ノ宮タカオ</td><td>きのみやたかお</td><td>小学生</td><td>nan</td><td>爆転シュート ベイブレード</td><td>青木たかお</td></tr>
+<tr><td>綺場シオン</td><td>きばしおん</td><td>中2</td><td>14</td><td>カードファイト!! ヴァンガードG</td><td>ブシロード</td></tr>
+<tr><td>牙皇子</td><td>きばみこ</td><td>10歳</td><td>10</td><td>魔神英雄伝ワタル3</td><td>矢立肇</td></tr>
+<tr><td>木村輝一</td><td>きむらこういち</td><td>小5</td><td>11</td><td>デジモンフロンティア</td><td>本郷あきよし</td></tr>
+<tr><td>キャブ</td><td>きゃぶ</td><td>13歳</td><td>13</td><td>トランスフォーマー 超神マスターフォース</td><td>タカラ</td></tr>
+<tr><td>黄山乱太郎</td><td>きやまらんたろう</td><td>小5</td><td>11</td><td>ベイブレードバースト</td><td>森多ヒロ</td></tr>
+<tr><td>キュウ(連城究)</td><td>きゅう(れんじょうきゅう)</td><td>中3</td><td>15</td><td>探偵学園Q</td><td>天樹征丸</td></tr>
+<tr><td>九太 (蓮)</td><td>きゅうた(れん)</td><td>9歳</td><td>9</td><td>バケモノの子</td><td>細田守</td></tr>
+<tr><td>キュービック・G</td><td>きゅーびっくじー</td><td>nan</td><td>nan</td><td>ファイ・ブレイン 神のパズル</td><td>矢立肇</td></tr>
+<tr><td>キュルル</td><td>きゅるる</td><td>nan</td><td>nan</td><td>けものフレンズ2</td><td>けものフレンズプロジェクト</td></tr>
+<tr><td>キョウヘイ</td><td>きょうへい</td><td>nan</td><td>nan</td><td>ポケットモンスターブラック2・ホワイト2</td><td>ゲームフリーク</td></tr>
+<tr><td>清洲タツミ</td><td>きよすたつみ</td><td>小6</td><td>12</td><td>新幹線変形ロボ シンカリオン</td><td>プロジェクトシンカリオン</td></tr>
+<tr><td>清洲リュウジ</td><td>きよすりゅうじ</td><td>中2</td><td>14</td><td>新幹線変形ロボ シンカリオン</td><td>プロジェクトシンカリオン</td></tr>
+<tr><td>吉良康介</td><td>きらこうすけ</td><td>14歳</td><td>14</td><td>BTOOOM!</td><td>井上淳哉</td></tr>
+<tr><td>キラ(輝ヒカル)</td><td>きらひかる</td><td>nan</td><td>nan</td><td>デュエル・マスターズ</td><td>松本しげのぶ</td></tr>
+<tr><td>霧隠虎太郎</td><td>きりがくれこたろう</td><td>小4(9歳)</td><td>9</td><td>元気爆発ガンバルガー</td><td>矢立肇</td></tr>
+<tr><td>桐嶋郁弥</td><td>きりしまいくや</td><td>中1(映画)</td><td>13</td><td>ハイ☆スピード！</td><td>おおじこうじ</td></tr>
+<tr><td>霧島タカトラ</td><td>きりしまたかとら</td><td>小6</td><td>12</td><td>新幹線変形ロボ シンカリオン</td><td>プロジェクトシンカリオン</td></tr>
+<tr><td>キリト(桐ヶ谷和人)</td><td>きりと(きりがやかずと)</td><td>14歳</td><td>14</td><td>ソードアート・オンライン</td><td>川原礫</td></tr>
+<tr><td>切札勝太</td><td>きりふだかった</td><td>小5</td><td>11</td><td>デュエル・マスターズ</td><td>松本しげのぶ</td></tr>
+<tr><td>切札勝舞</td><td>きりふだしょうぶ</td><td>小5</td><td>11</td><td>デュエル・マスターズ</td><td>松本しげのぶ</td></tr>
+<tr><td>切札勝(ジョー)</td><td>きりふだじょー</td><td>10歳</td><td>10</td><td>デュエル・マスターズ</td><td>松本しげのぶ</td></tr>
+<tr><td>桐山零</td><td>きりやまれい</td><td>高1</td><td>16</td><td>3月のライオン</td><td>羽海野チカ</td></tr>
+<tr><td>桐生息吹</td><td>きりゅういぶき</td><td>nan</td><td>nan</td><td>超速変形ジャイロゼッター</td><td>スクウェア・エニックス</td></tr>
+<tr><td>ギル</td><td>ぎる</td><td>nan</td><td>nan</td><td>本好きの下剋上</td><td>香月美夜</td></tr>
+<tr><td>キルア=ゾルディック</td><td>きるあぞるでぃっく</td><td>12歳</td><td>12</td><td>HUNTER×HUNTER</td><td>冨樫義博</td></tr>
+<tr><td>ギルガメッシュ(幼年体)</td><td>ぎるがめっしゅ</td><td>nan</td><td>nan</td><td>Fateシリーズ</td><td>TYPE-MOON</td></tr>
+<tr><td>ギルバート</td><td>ぎるばーと</td><td>13歳</td><td>13</td><td>マジンボーン</td><td>バンダイ</td></tr>
+<tr><td>キング</td><td>きんぐ</td><td>12歳</td><td>12</td><td>R2BEAT</td><td>neowiz</td></tr>
+<tr><td>キング</td><td>きんぐ</td><td>nan</td><td>nan</td><td>七つの大罪</td><td>鈴木央</td></tr>
+<tr><td>銀狼</td><td>ぎんろー</td><td>nan</td><td>nan</td><td>Dr.STONE</td><td>稲垣理一郎</td></tr>
+<tr><td>クー(クード・ヴァン・ジルエット)</td><td>くー</td><td>15歳</td><td>15</td><td>エレメンタル ジェレイド(EREMENTAR GERAD)</td><td>東まゆみ</td></tr>
+<tr><td>グーグー</td><td>ぐーぐー</td><td>nan</td><td>nan</td><td>不滅のあなたへ</td><td>大今良時</td></tr>
+<tr><td>クーゴ</td><td>くーご</td><td>nan</td><td>nan</td><td>ZOIDS惑星Zi</td><td>塩崎雄二</td></tr>
+<tr><td>クーザ・アッカーマン</td><td>くーざあっかーまん</td><td>nan</td><td>nan</td><td>ベイブレードバースト</td><td>森多ヒロ</td></tr>
+<tr><td>空閑遊真</td><td>くがゆうま</td><td>11歳(身体)</td><td>11</td><td>ワールドトリガー</td><td>葦原 大介</td></tr>
+<tr><td>ククル</td><td>くくる</td><td>nan</td><td>nan</td><td>ドラえもん 新・のび太の日本誕生</td><td>藤子・F・不二雄</td></tr>
+<tr><td>日下夏羽</td><td>くさかかばね</td><td>13</td><td>13</td><td>怪物事変</td><td>藍本松</td></tr>
+<tr><td>草薙北斗</td><td>くさなぎほくと</td><td>小5</td><td>11</td><td>GEAR戦士電童</td><td>矢立肇</td></tr>
+<tr><td>久磁耕平</td><td>くじこうへい</td><td>小4</td><td>10</td><td>小さな巨人 ミクロマン</td><td>TAKARA</td></tr>
+<tr><td>久慈悠</td><td>くじとおい</td><td>中2</td><td>14</td><td>さらざんまい</td><td>イクニラッパー</td></tr>
+<tr><td>久磁裕太</td><td>くじゆうた</td><td>小2ぐらい?</td><td>nan</td><td>小さな巨人 ミクロマン</td><td>TAKARA</td></tr>
+<tr><td>九条和音</td><td>くじょうかずね</td><td>中1</td><td>13</td><td>かみちゃまかりん</td><td>コゲどんぼ</td></tr>
+<tr><td>九条雪斗</td><td>くじょうゆきと</td><td>10歳</td><td>10</td><td>マインド/ゼロ</td><td>アクワイア</td></tr>
+<tr><td>九澄博士</td><td>くずみひろし</td><td>高1</td><td>16</td><td>おおかみかくし</td><td>竜騎士07</td></tr>
+<tr><td>九頭竜八一</td><td>くずりゅうやいち</td><td>16歳</td><td>16</td><td>りゅうおうのおしごと!</td><td>白鳥士郎</td></tr>
+<tr><td>クセ太</td><td>くせた</td><td>小学生</td><td>nan</td><td>おしえて！ ギャル子ちゃん</td><td>鈴木健也</td></tr>
+<tr><td>駆動クウガ</td><td>くどうくうが</td><td>小6</td><td>12</td><td>トミカ絆合体 アースグランナー</td><td>タカラトミー</td></tr>
+<tr><td>工藤タイキ</td><td>くどうたいき</td><td>中1</td><td>13</td><td>デジモンクロスウォーズ</td><td>テレビ朝日</td></tr>
+<tr><td>久堂勇輝</td><td>くどうゆうき</td><td>nan</td><td>nan</td><td>超速変形ジャイロゼッター</td><td>スクウェア・エニックス</td></tr>
+<tr><td>駆動ライガ</td><td>くどうらいが</td><td>小6</td><td>12</td><td>トミカ絆合体 アースグランナー</td><td>タカラトミー</td></tr>
+<tr><td>国木田</td><td>くにきだ</td><td>高1</td><td>16</td><td>涼宮ハルヒの憂鬱</td><td>谷川流</td></tr>
+<tr><td>クラウス</td><td>くらうす</td><td>nan</td><td>nan</td><td>MOTHER3</td><td>任天堂・糸井重里</td></tr>
+<tr><td>クラッキー・レイ</td><td>くらっきーれい</td><td>15歳</td><td>15</td><td>バトルスピリッツ 少年激覇ダン</td><td>矢立肇</td></tr>
+<tr><td>クラっち</td><td>くらっち</td><td>中1</td><td>13</td><td>マジカパーティ</td><td>タカラトミー</td></tr>
+<tr><td>倉橋蓮太郎</td><td>くらはしれんたろう</td><td>小6</td><td>12</td><td>恋愛ラボ</td><td>宮原るり</td></tr>
+<tr><td>グラン</td><td>ぐらん</td><td>14-15歳</td><td>14</td><td>グランブルーファンタジー ジ・アニメーション</td><td>Cygames</td></tr>
+<tr><td>クランクヒューズ</td><td>くらんくふゅーず</td><td>11歳</td><td>11</td><td>F-ZERO ファルコン伝説</td><td>任天堂/テレビ東京/プロダクション リード</td></tr>
+<tr><td>クリ</td><td>くり</td><td>nan</td><td>nan</td><td>妖怪アパートの幽雅な日常</td><td>香月日輪</td></tr>
+<tr><td>グリーン</td><td>ぐりーん</td><td>11歳</td><td>11</td><td>ポケットモンスター緑</td><td>ゲームフリーク</td></tr>
+<tr><td>クリス(クリストファー・ソーンダイク)</td><td>くりす(くりすとふぁーそーんだいく)</td><td>12歳</td><td>12</td><td>ソニックX</td><td>ソニックチーム</td></tr>
+<tr><td>クリストファー・クロス</td><td>くりすとふぁーくろす</td><td>15歳</td><td>15</td><td>悠久幻想曲</td><td>スターライトマリー、メディアワークス</td></tr>
+<tr><td>クリムヴェール</td><td>くりむゔぇーる</td><td>nan</td><td>nan</td><td>異種族レビュアーズ</td><td>天原</td></tr>
+<tr><td>来栖黒悟</td><td>くるすくろご</td><td>高1</td><td>16</td><td>カブキブ!</td><td>榎田ユウリ</td></tr>
+<tr><td>クルス・シルト(山田)</td><td>くるすしると</td><td>14歳</td><td>14</td><td>NEEDLESS</td><td>今井神</td></tr>
+<tr><td>クルト・ハルトマン</td><td>くるとはるとまん</td><td>nan</td><td>nan</td><td>ドラえもん のび太のひみつ道具博物館</td><td>藤子・F・不二雄</td></tr>
+<tr><td>車田ゴウ</td><td>くるまだごう</td><td>小学生</td><td>nan</td><td>トミカハイパーシリーズ</td><td>タカラトミー</td></tr>
+<tr><td>クレイン・ネクラン</td><td>くれいんねくらん</td><td>14歳</td><td>14</td><td>フラクタル</td><td>マンデルブロ・エンジン</td></tr>
+<tr><td>紅シュウ</td><td>くれないしゅう</td><td>小5</td><td>11</td><td>ベイブレードバースト</td><td>森多ヒロ</td></tr>
+<tr><td>紅林拓真</td><td>くればやしたくま</td><td>小5</td><td>11</td><td>地獄少女</td><td>地獄少女プロジェクト</td></tr>
+<tr><td>クロ</td><td>くろ</td><td>中2</td><td>14</td><td>怪病医ラムネ</td><td>阿呆トロ</td></tr>
+<tr><td>黒井宗矢</td><td>くろいそうや</td><td>高校生</td><td>nan</td><td>プラネット・ウィズ</td><td>水上悟志</td></tr>
+<tr><td>クロウ</td><td>くろう</td><td>nan</td><td>nan</td><td>SHOW BY ROCK!!</td><td>サンリオ</td></tr>
+<tr><td>黒渦ガイト</td><td>くろうずがいと</td><td>小6</td><td>12</td><td>フューチャーカード バディファイト</td><td>ブシロード</td></tr>
+<tr><td>黒銀ゼロ</td><td>くろがねぜろ</td><td>nan</td><td>nan</td><td>メタルファイト ベイブレード ZEROG</td><td>足立たかふみ</td></tr>
+<tr><td>黒神ダイナ</td><td>くろがみだいな</td><td>小5</td><td>11</td><td>ベイブレードバースト</td><td>森多ヒロ</td></tr>
+<tr><td>黒崎正人</td><td>くろさきまさと</td><td>小5</td><td>11</td><td>カミワザ・ワンダ</td><td>タカラトミー</td></tr>
+<tr><td>黒岳テツヤ</td><td>くろだけてつや</td><td>小6</td><td>12</td><td>フューチャーカード バディファイト</td><td>ブシロード</td></tr>
+<tr><td>黒無来智</td><td>くろなしらいち</td><td>nan</td><td>nan</td><td>爆TECH!爆丸</td><td>槙吾</td></tr>
+<tr><td>クロノ</td><td>くろの</td><td>nan</td><td>nan</td><td>クロノクルセイド</td><td>森山大輔</td></tr>
+<tr><td>クロノア</td><td>くろのあ</td><td>nan</td><td>nan</td><td>風のクロノア</td><td>ナムコ</td></tr>
+<tr><td>クロノ・ハラオウン</td><td>くろのはらおうん</td><td>14歳</td><td>14</td><td>魔法少女リリカルなのは</td><td>都築真紀／ivory</td></tr>
+<tr><td>軍司壮太(イレイザー01)</td><td>ぐんじそうた(いれいざーぜろわん)</td><td>nan</td><td>nan</td><td>超速変形ジャイロゼッター</td><td>スクウェア・エニックス</td></tr>
+<tr><td>ケイセツ</td><td>けいせつ</td><td>nan</td><td>nan</td><td>フューチャーカード バディファイト</td><td>ブシロード</td></tr>
+<tr><td>激炎剣キバマル</td><td>げきえんけんきばまる</td><td>nan</td><td>nan</td><td>探検ドリランド -1000年の真宝-</td><td>グリー</td></tr>
+<tr><td>ケズル</td><td>けずる</td><td>中1</td><td>13</td><td>マジカパーティ</td><td>タカラトミー</td></tr>
+<tr><td>ケビン</td><td>けびん</td><td>nan</td><td>nan</td><td>ポップンミュージック5</td><td>コナミ</td></tr>
+<tr><td>ケヤル</td><td>けやる</td><td>nan</td><td>nan</td><td>回復術士のやり直し</td><td>月夜涙</td></tr>
+<tr><td>玄武</td><td>げんぶ</td><td>10歳(見た目)</td><td>10</td><td>少年陰陽師</td><td>結城光流</td></tr>
+<tr><td>ケンヤ・ミサキ(三崎剣也)</td><td>けんやみさき</td><td>10</td><td>10</td><td>転生したらスライムだった件</td><td>伏瀬</td></tr>
+<tr><td>小池仁志</td><td>こいけひとし</td><td>nan</td><td>nan</td><td>ヒカルの碁</td><td>ほったゆみ</td></tr>
+<tr><td>甲賀コータ</td><td>こうがこーた</td><td>nan</td><td>nan</td><td>キャップ革命 ボトルマン</td><td>タカラトミー</td></tr>
+<tr><td>コウキ</td><td>こうき</td><td>11歳</td><td>11</td><td>ポケットモンスターダイヤモンド・パール</td><td>ゲームフリーク</td></tr>
+<tr><td>コウサカ・ユウマ</td><td>こうさかゆうま</td><td>中2</td><td>14</td><td>ガンダムビルドファイターズトライ</td><td>矢立肇 富野由悠季</td></tr>
+<tr><td>豪勝カイト</td><td>ごうしょうかいと</td><td>11歳</td><td>11</td><td>ヒーローバンク</td><td>セガ</td></tr>
+<tr><td>コウタ</td><td>こうた</td><td>nan</td><td>nan</td><td>ポケットモンスター ウルトラサン・ウルトラムーン</td><td>ゲームフリーク</td></tr>
+<tr><td>甲本シュウ</td><td>こうもとしゅう</td><td>小4</td><td>10</td><td>新甲虫王者ムシキング</td><td>セガ</td></tr>
+<tr><td>甲本ショウ</td><td>こうもとしょう</td><td>12歳</td><td>12</td><td>怪談レストラン</td><td>松谷みよ子</td></tr>
+<tr><td>コウ・ヤガミ</td><td>こうやがみ</td><td>13歳</td><td>13</td><td>神八剣伝</td><td>平野靖士</td></tr>
+<tr><td>虹龍ドラム</td><td>こうりゅうどらむ</td><td>小5(10歳)</td><td>10</td><td>ベイブレードバースト超ゼツ</td><td>森多ヒロ</td></tr>
+<tr><td>コーク</td><td>こーく</td><td>12歳</td><td>12</td><td>パカパカパッション</td><td>プロデュース</td></tr>
+<tr><td>ゴールド</td><td>ごーるど</td><td>11歳</td><td>11</td><td>ポケットモンスター金・銀</td><td>ゲームフリーク</td></tr>
+<tr><td>虎金井天智</td><td>こがねいてんち</td><td>12歳</td><td>12</td><td>すもももももも 〜地上最強のヨメ〜</td><td>大高忍</td></tr>
+<tr><td>古賀のり夫</td><td>こがのりお</td><td>nan</td><td>nan</td><td>なるたる</td><td>鬼頭莫宏</td></tr>
+<tr><td>子狐</td><td>こぎつね</td><td>nan</td><td>nan</td><td>夏目友人帳</td><td>緑川ゆき</td></tr>
+<tr><td>五九</td><td>ごくう</td><td>nan</td><td>nan</td><td>アソボット戦記五九</td><td>エイベックス</td></tr>
+<tr><td>国分寺稔</td><td>こくぶんじみのる</td><td>12歳</td><td>12</td><td>ちょびっツ</td><td>CLAMP</td></tr>
+<tr><td>小暮駆</td><td>こぐれかける</td><td>中2</td><td>14</td><td>おねがいマイメロディ</td><td>福嶋一芳、サンリオ</td></tr>
+<tr><td>木暮夕弥</td><td>こぐれゆうや</td><td>中学生</td><td>nan</td><td>イナズマイレブン</td><td>レベルファイブ</td></tr>
+<tr><td>ココ</td><td>ここ</td><td>nan</td><td>nan</td><td>劇場版ポケットモンスター ココ</td><td>矢嶋哲生</td></tr>
+<tr><td>五虎退</td><td>ごこたい</td><td>nan</td><td>nan</td><td>刀剣乱舞</td><td>CLARITY STUDIO</td></tr>
+<tr><td>九ノ瀬宙太</td><td>ここのせちゅうた</td><td>中2</td><td>14</td><td>エルドライブ【ēlDLIVE】</td><td>天野明</td></tr>
+<tr><td>越山識</td><td>こしやましき</td><td>高1</td><td>16</td><td>ナナマル サンバツ</td><td>杉基イクラ</td></tr>
+<tr><td>御代カモン</td><td>こだいかもん</td><td>11歳</td><td>11</td><td>クロスファイト ビーダマンeS</td><td>タカラトミー、d-rights</td></tr>
+<tr><td>古代リュウタ</td><td>こだいりゅうた</td><td>12歳</td><td>12</td><td>古代王者恐竜キング</td><td>セガ</td></tr>
+<tr><td>小竹哲也</td><td>こたけてつや</td><td>nan</td><td>nan</td><td>おジャ魔女どれみ</td><td>東堂いづみ</td></tr>
+<tr><td>コデラ・マサミ</td><td>こでらまさみ</td><td>nan</td><td>nan</td><td>ガンダムビルドファイターズトライ</td><td>矢立肇 富野由悠季</td></tr>
+<tr><td>虎堂ノボル</td><td>こどうのぼる</td><td>小6</td><td>12</td><td>フューチャーカード バディファイト</td><td>ブシロード</td></tr>
+<tr><td>近衛刀太</td><td>このえとうた</td><td>14歳</td><td>14</td><td>UQ HOLDER!</td><td>赤松健</td></tr>
+<tr><td>小早川瀬那</td><td>こばやかわせな</td><td>高1</td><td>16</td><td>アイシールド21</td><td>稲垣理一郎</td></tr>
+<tr><td>コバヤシ</td><td>こばやし</td><td>13歳</td><td>13</td><td>乱歩奇譚 Game of Laplace</td><td>江戸川乱歩(原案)</td></tr>
+<tr><td>小林賢也</td><td>こばやしけんや</td><td>小5</td><td>11</td><td>僕だけがいない街</td><td>三部けい</td></tr>
+<tr><td>小林マコト</td><td>こばやしまこと</td><td>高1</td><td>16</td><td>リコーダーとランドセル</td><td>東屋めめ</td></tr>
+<tr><td>小林芳雄</td><td>こばやしよしお</td><td>14歳</td><td>14</td><td>TRICKSTER -江戸川乱歩「少年探偵団」より-</td><td>Jordan森杉</td></tr>
+<tr><td>コパン</td><td>こぱん</td><td>nan</td><td>nan</td><td>スカイガンナー</td><td>ピクセルアーツ</td></tr>
+<tr><td>小日向太陽</td><td>こひなたたいよう</td><td>小6</td><td>12</td><td>12歳。</td><td>まいた菜穂</td></tr>
+<tr><td>小宮千尋</td><td>こみやちひろ</td><td>小5</td><td>11</td><td>少年メイド</td><td>乙橘</td></tr>
+<tr><td>小紫ワキヤ</td><td>こむらさきわきや</td><td>小5</td><td>11</td><td>ベイブレードバースト</td><td>森多ヒロ</td></tr>
+<tr><td>古森太郎</td><td>こもりたろう</td><td>14歳</td><td>14</td><td>神霊狩/GHOST HOUND</td><td>士郎正宗</td></tr>
+<tr><td>小雪芹</td><td>こゆきせり</td><td>高2</td><td>17</td><td>ぼくのとなりに暗黒破壊神がいます。</td><td>亜樹新</td></tr>
+<tr><td>近導ユウユ</td><td>こんどうゆうゆ</td><td>中3</td><td>15</td><td>カードファイト!! ヴァンガード overDress</td><td>ブシロード</td></tr>
+<tr><td>ゴン=フリークス</td><td>ごんふりーくす</td><td>12歳</td><td>12</td><td>HUNTER×HUNTER</td><td>冨樫義博</td></tr>
+<tr><td>金李</td><td>こんれい</td><td>小学生</td><td>nan</td><td>爆転シュート ベイブレード</td><td>青木たかお</td></tr>
+<tr><td>斉木楠雄</td><td>さいきくすお</td><td>高2</td><td>17</td><td>斉木楠雄のΨ難</td><td>麻生周一</td></tr>
+<tr><td>早乙女与一</td><td>さおとめよいち</td><td>nan</td><td>nan</td><td>終わりのセラフ</td><td>鏡貴也</td></tr>
+<tr><td>堺一馬</td><td>さかいかずま</td><td>nan</td><td>nan</td><td>ミスター味っ子</td><td>寺沢大介</td></tr>
+<tr><td>坂井知季</td><td>さかいともき</td><td>中2</td><td>14</td><td>DIVE!!</td><td>森絵都</td></tr>
+<tr><td>榊遊矢</td><td>さかきゆうや</td><td>14歳</td><td>14</td><td>遊☆戯☆王ARC-V</td><td>三好直人</td></tr>
+<tr><td>サカタ</td><td>さかた</td><td>小1</td><td>7</td><td>少年アシベ</td><td>森下裕美</td></tr>
+<tr><td>サカタの兄ちゃん</td><td>さかたのにいちゃん</td><td>小3</td><td>9</td><td>少年アシベ</td><td>森下裕美</td></tr>
+<tr><td>坂本颯馬</td><td>さかもとそうま</td><td>小5</td><td>11</td><td>カミワザ・ワンダ</td><td>タカラトミー</td></tr>
+<tr><td>先島光</td><td>さきしまひかる</td><td>中2</td><td>14</td><td>凪のあすから</td><td>Project-118</td></tr>
+<tr><td>佐倉ゲンキ</td><td>さくらげんき</td><td>小5</td><td>11</td><td>モンスターファーム</td><td>テクモ</td></tr>
+<tr><td>桜田ジュン</td><td>さくらだじゅん</td><td>中学生</td><td>nan</td><td>ローゼンメイデン(Rozen Maiden)</td><td>PEACH-PIT</td></tr>
+<tr><td>櫻田輝</td><td>さくらだてる</td><td>6歳</td><td>6</td><td>城下町のダンデライオン</td><td>春日歩</td></tr>
+<tr><td>サザキ・ススム</td><td>さざきすすむ</td><td>中1</td><td>13</td><td>ガンダムビルドファイターズ</td><td>矢立肇 富野由悠季</td></tr>
+<tr><td>佐宗慶</td><td>さそうけい</td><td>中1</td><td>13</td><td>最後は?ストレート!!</td><td>寒川一之</td></tr>
+<tr><td>ザック</td><td>ざっく</td><td>nan</td><td>nan</td><td>プラスティックメモリーズ</td><td>林直孝</td></tr>
+<tr><td>佐藤和真</td><td>さとうかずま</td><td>16歳</td><td>16</td><td>この素晴らしい世界に祝福を!</td><td>	暁なつめ</td></tr>
+<tr><td>佐藤信也</td><td>さとうしんや</td><td>小6</td><td>12</td><td>みつどもえ</td><td>桜井のりお</td></tr>
+<tr><td>佐藤寿也</td><td>さとうとしや</td><td>小4</td><td>10</td><td>MAJOR</td><td>満田拓也</td></tr>
+<tr><td>佐藤光</td><td>さとうひかる</td><td>小6</td><td>12</td><td>MAJOR 2nd</td><td>満田拓也</td></tr>
+<tr><td>佐藤リョータ</td><td>さとうりょうた</td><td>小5</td><td>11</td><td>今日の5の2</td><td>桜場コハル</td></tr>
+<tr><td>サトシ</td><td>さとし</td><td>10歳</td><td>10</td><td>ポケットモンスター</td><td>田尻智</td></tr>
+<tr><td>真田ハジキ</td><td>さなだはじき</td><td>16歳</td><td>16</td><td>GADGUARD</td><td>GONZO</td></tr>
+<tr><td>鮫島葵</td><td>さめじまあおい</td><td>38歳</td><td>38</td><td>葵DESTRUCTION!</td><td>井上和郎</td></tr>
+<tr><td>鮫島カイト</td><td>さめじまかいと</td><td>11歳</td><td>11</td><td>クロスファイト ビーダマン</td><td>タカラトミー、d-rights</td></tr>
+<tr><td>猿飛木ノ葉丸</td><td>さるとびこのはまる</td><td>9歳</td><td>9</td><td>NARUTO -ナルト-</td><td>岸本斉史</td></tr>
+<tr><td>サルファー先生</td><td>さるふぁーせんせい</td><td>nan</td><td>nan</td><td>ジュエルペットてぃんくる</td><td>サンリオ、セガトイズ</td></tr>
+<tr><td>沢口ダイチ</td><td>さわぐちだいち</td><td>小学生</td><td>nan</td><td>電脳コイル</td><td>磯光雄</td></tr>
+<tr><td>沢口文人</td><td>さわぐちふみと</td><td>中1</td><td>13</td><td>バッテリー</td><td>あさのあつこ</td></tr>
+<tr><td>沢田綱吉</td><td>さわだつなよし</td><td>14歳</td><td>14</td><td>家庭教師ヒットマンREBORN!</td><td>天野明</td></tr>
+<tr><td>猿渡暁音</td><td>さわたりあかね</td><td>小3</td><td>9</td><td>アニマエール!</td><td>卯花つかさ</td></tr>
+<tr><td>三家満</td><td>さんけみつる</td><td>高1</td><td>16</td><td>れでぃ×ばと!</td><td>上月司</td></tr>
+<tr><td>椎名亜樹</td><td>しいなあき</td><td>中1</td><td>13</td><td>すのはら荘の管理人さん</td><td>ねこうめ</td></tr>
+<tr><td>椎名旭</td><td>しいなあさひ</td><td>中1(映画)</td><td>13</td><td>ハイ☆スピード！</td><td>おおじこうじ</td></tr>
+<tr><td>椎名裕介</td><td>しいなゆうすけ</td><td>11歳</td><td>11</td><td>地獄堂霊界通信</td><td>香月日輪</td></tr>
+<tr><td>ジーニアス・セイジ</td><td>じーにあすせいじ</td><td>12歳</td><td>12</td><td>テイルズ オブ シンフォニア</td><td>ナムコ</td></tr>
+<tr><td>しいねちゃん</td><td>しいねちゃん</td><td>nan</td><td>nan</td><td>赤ずきんチャチャ</td><td>彩花みん</td></tr>
+<tr><td>シーランド</td><td>しーらんど</td><td>nan</td><td>nan</td><td>Axis powers ヘタリア</td><td>日丸屋秀和</td></tr>
+<tr><td>紫雲院素良</td><td>しうんいんそら</td><td>nan</td><td>nan</td><td>遊☆戯☆王ARC-V</td><td>三好直人</td></tr>
+<tr><td>J</td><td>じぇい</td><td>小6</td><td>12</td><td>爆走兄弟レッツ&ゴー!!</td><td>こしたてつひろ</td></tr>
+<tr><td>ジェイ</td><td>じぇい</td><td>16歳</td><td>16</td><td>テイルズ オブ レジェンディア</td><td>ナムコ</td></tr>
+<tr><td>ジェフティ・トート</td><td>じぇふてぃとーと</td><td>13歳</td><td>13</td><td>ドラゴンシャドウスペル(DragonShadowSpell)</td><td>フライト・プラン</td></tr>
+<tr><td>シエル</td><td>しえる</td><td>nan</td><td>nan</td><td>スカイガンナー</td><td>ピクセルアーツ</td></tr>
+<tr><td>シエル・ファントムハイヴ</td><td>しえるふぁんとむはいヴ</td><td>13歳</td><td>13</td><td>黒執事</td><td>スクウェア・エニックス</td></tr>
+<tr><td>シオ</td><td>しお</td><td>12歳</td><td>12</td><td>ワークワーク</td><td>藤崎竜</td></tr>
+<tr><td>潮田渚</td><td>しおたなぎさ</td><td>中3</td><td>15</td><td>暗殺教室</td><td>松井優征</td></tr>
+<tr><td>紫苑</td><td>しおん</td><td>13歳</td><td>13</td><td>邪馬台幻想記</td><td>矢吹健太</td></tr>
+<tr><td>鹿田ココノツ</td><td>しかだここのつ</td><td>高1</td><td>16</td><td>だがしかし</td><td>コトヤマ</td></tr>
+<tr><td>シキ・グランベル</td><td>しきぐらんべる</td><td>nan</td><td>nan</td><td>EDENS ZERO</td><td>真島ヒロ</td></tr>
+<tr><td>敷嶋あきら</td><td>しきしまあきら</td><td>中学生</td><td>nan</td><td>あきら翔ぶ</td><td>とだ勝之</td></tr>
+<tr><td>鴫野颯斗</td><td>しぎのはやと</td><td>nan</td><td>nan</td><td>Free!</td><td>京都アニメーション</td></tr>
+<tr><td>シグ</td><td>しぐ</td><td>nan</td><td>nan</td><td>ぷよぷよフィーバー2</td><td>セガ</td></tr>
+<tr><td>茂野大吾</td><td>しげのだいご</td><td>小6</td><td>12</td><td>MAJOR 2nd</td><td>満田拓也</td></tr>
+<tr><td>ジズ・グラヴァー</td><td>じずぐらゔぁー</td><td>nan</td><td>nan</td><td>ポップアップストーリー 魔法の本と聖樹の学園</td><td>スクウェア・エニックス</td></tr>
+<tr><td>シズム</td><td>しずむ</td><td>高1?</td><td>16</td><td>SSSS.DYNAZENON</td><td>グリッドマン</td></tr>
+<tr><td>ジタン･トライバル</td><td>じだんとらいばる</td><td>16歳</td><td>16</td><td>ファイナルファンタジーIX</td><td>スクウェア</td></tr>
+<tr><td>七梨太助</td><td>しちりたすけ</td><td>14歳</td><td>14</td><td>まもって守護月天!</td><td>桜野みねね</td></tr>
+<tr><td>七宝</td><td>しっぽう</td><td>7歳(人間換算)</td><td>7</td><td>犬夜叉</td><td>高橋留美子</td></tr>
+<tr><td>士夏彦雄飛</td><td>しなつひこゆうひ</td><td>200歳(以上)</td><td>nan</td><td>夜桜四重奏</td><td>ヤスダスズヒト</td></tr>
+<tr><td>シナモン</td><td>しなもん</td><td>9歳</td><td>9</td><td>ちっちゃな雪使いシュガー</td><td>蒼はるか</td></tr>
+<tr><td>シノブ・カジカ</td><td>しのぶかじか</td><td>nan</td><td>nan</td><td>回転むてん丸</td><td>無添くら寿司</td></tr>
+<tr><td>寺刃ジンペイ</td><td>じばじんぺい</td><td>nan</td><td>nan</td><td>妖怪学園Y</td><td>日野晃博</td></tr>
+<tr><td>柴山純平</td><td>しばやまじゅんぺい</td><td>小6</td><td>12</td><td>デジモンフロンティア</td><td>本郷あきよし</td></tr>
+<tr><td>島裕介</td><td>しまゆうすけ</td><td>中学生</td><td>nan</td><td>ふぁいとの暁</td><td>あおやぎ孝夫</td></tr>
+<tr><td>ジム・ホーキング</td><td>じむほーきんぐ</td><td>11歳</td><td>11</td><td>星方武侠アウトロースター</td><td>矢立肇 伊東岳彦</td></tr>
+<tr><td>下鴨矢三郎</td><td>しもがもやさぶろう</td><td>nan</td><td>nan</td><td>有頂天家族</td><td>森見登美彦</td></tr>
+<tr><td>下鴨矢四郎</td><td>しもがもやしろう</td><td>nan</td><td>nan</td><td>有頂天家族</td><td>森見登美彦</td></tr>
+<tr><td>シャイアン・レインストーム</td><td>しゃいあんれいんすとーむ</td><td>25歳</td><td>25</td><td>ワイルドアームズ トワイライトヴェノム </td><td>メディア・ビジョン</td></tr>
+<tr><td>小黒</td><td>しゃおへい</td><td>6歳</td><td>6</td><td>羅小黒戦記</td><td>MTJJ木頭</td></tr>
+<tr><td>ジャンゴ</td><td>じゃんご</td><td>nan</td><td>nan</td><td>ボクらの太陽</td><td>コナミ</td></tr>
+<tr><td>ジャン＝レクレール</td><td>じゃんれくれーる</td><td>11歳</td><td>11</td><td>アマリリス</td><td>福島鉄平</td></tr>
+<tr><td>シュウ(松谷修造)</td><td>しゅう(まつたにしゅうぞう)</td><td>nan</td><td>nan</td><td>今、そこにいる僕</td><td>大地丙太郎</td></tr>
+<tr><td>獣機カイ</td><td>じゅうきかい</td><td>nan</td><td>nan</td><td>ゾイドワイルド２</td><td>森茶</td></tr>
+<tr><td>ジュリアン</td><td>じゅりあん</td><td>nan</td><td>nan</td><td>ルーンファクトリー5</td><td>HAKAMA</td></tr>
+<tr><td>J（ジュリー澤ラギ）</td><td>じゅりーさわらぎ</td><td>小6</td><td>12</td><td>バトルスピリッツ 少年突破バシン</td><td>矢立肇</td></tr>
+<tr><td>ジュリオ</td><td>じゅりお</td><td>14歳</td><td>14</td><td>英雄伝説III 白き魔女</td><td>日本ファルコム</td></tr>
+<tr><td>シュレイン・ザガン・アナレイト</td><td>しゅれいんさがんあなれいと</td><td>nan</td><td>nan</td><td>蜘蛛ですが、なにか?</td><td>馬場翁</td></tr>
+<tr><td>シュレディンガー准尉</td><td>しゅれでぃんがーじゅんい</td><td>nan</td><td>nan</td><td>HELLSING(ヘルシング)</td><td>平野耕太</td></tr>
+<tr><td>ジュン</td><td>じゅん</td><td>nan</td><td>nan</td><td>ポケットモンスター ダイヤモンド・パール</td><td>ゲームフリーク</td></tr>
+<tr><td>象日下部</td><td>しょうくさかべ</td><td>13歳</td><td>13</td><td>炎炎ノ消防隊</td><td>大久保篤</td></tr>
+<tr><td>正太</td><td>しょうた</td><td>nan</td><td>nan</td><td>おしいれのわらしさん</td><td>吉元ますめ</td></tr>
+<tr><td>龍昇ケン</td><td>しょうりゅうけん</td><td>10歳</td><td>10</td><td>人造昆虫カブトボーグ V×V</td><td>タカラトミー（原案）</td></tr>
+<tr><td>翔龍子</td><td>しょうりゅうし</td><td>10歳</td><td>10</td><td>魔神英雄伝ワタル</td><td>矢立肇</td></tr>
+<tr><td>ジョーカー</td><td>じょーかー</td><td>nan</td><td>nan</td><td>怪盗ジョーカー</td><td>たかはしひでやす</td></tr>
+<tr><td>ショーン</td><td>しょーん</td><td>nan</td><td>nan</td><td>シャドーハウス</td><td>ソウマトウ</td></tr>
+<tr><td>ジョシュア・カニンガム</td><td>じょしゅあかにんがむ</td><td>10歳</td><td>10</td><td>HOSPITAL. 6人の医師</td><td>ATLUS</td></tr>
+<tr><td>助手さん</td><td>じょしゅさん</td><td>nan</td><td>nan</td><td>人類は衰退しました</td><td>田中ロミオ</td></tr>
+<tr><td>ジョセフ・カーター・ジョーンズ(ジョーイ)</td><td>じょせるかーたーじょーんず</td><td>13歳</td><td>13</td><td>HEROMAN</td><td>スタン・リー</td></tr>
+<tr><td>白河郁馬</td><td>しらかわいくま</td><td>小4</td><td>10</td><td>Dr.キリコ～白い死神～</td><td>sanorin</td></tr>
+<tr><td>白戸秀一</td><td>しらとしゅういち</td><td>11歳</td><td>11</td><td>地獄先生ぬ～べ～</td><td>岡野 剛, 真倉 翔</td></tr>
+<tr><td>不知火真</td><td>しらぬいまこと</td><td>中1</td><td>13</td><td>はてな☆イリュージョン</td><td>松智洋</td></tr>
+<tr><td>シロウ(四郎)</td><td>しろう</td><td>11</td><td>11</td><td>中華一番！</td><td>小川悦司</td></tr>
+<tr><td>白銀レッカ</td><td>しろがねれっか</td><td>中1</td><td>13</td><td>ガイストクラッシャー</td><td>CAPCOM</td></tr>
+<tr><td>城田真昼</td><td>しろたまひる</td><td>15歳</td><td>15</td><td>SERVAMP -サーヴァンプ-</td><td>田中ストライク</td></tr>
+<tr><td>シン</td><td>しん</td><td>nan</td><td>nan</td><td>ドラゴンコレクション</td><td>コナミ</td></tr>
+<tr><td>新</td><td>しん</td><td>7歳</td><td>7</td><td>新白雪姫伝説プリーティア</td><td>佐藤順一・成瀬かおり</td></tr>
+<tr><td>ジン</td><td>じん</td><td>小6</td><td>12</td><td>真・女神転生Dチルドレン ライト&ダーク</td><td>アトラス</td></tr>
+<tr><td>ジン</td><td>じん</td><td>nan</td><td>nan</td><td>王ドロボウJING</td><td>熊倉裕一</td></tr>
+<tr><td>シン=ウォルフォード</td><td>しんうぉるふぉーど</td><td>15(元20代)</td><td>15</td><td>賢者の孫</td><td>吉岡剛</td></tr>
+<tr><td>ジンガ</td><td>じんが</td><td>15歳</td><td>15</td><td>サモンナイト1</td><td>バンプレスト</td></tr>
+<tr><td>新海ハル</td><td>しんかいはる</td><td>中1</td><td>13</td><td>デジモンユニバース アプリモンスターズ</td><td>本郷あきよし</td></tr>
+<tr><td>真行寺耕太</td><td>しんぎょうじこうた</td><td>高1</td><td>16</td><td>美鳥の日々</td><td>井上和郎</td></tr>
+<tr><td>ユン・ジョウ(心山拳師範)</td><td>しんざんけんしはん</td><td>nan</td><td>nan</td><td>ライブ・ア・ライブ(LIVE A LIVE)</td><td>スクウェア</td></tr>
+<tr><td>新導クロノ</td><td>しんどうくろの</td><td>中2</td><td>14</td><td>カードファイト!! ヴァンガードG</td><td>ブシロード</td></tr>
+<tr><td>進藤ヒカル</td><td>しんどうひかる</td><td>13歳</td><td>13</td><td>ヒカルの碁</td><td>ほったゆみ</td></tr>
+<tr><td>進藤守</td><td>しんどうまもる</td><td>小5</td><td>11</td><td>ネットゴーストPIPOPA</td><td>テレビ東京／ミルキーカートゥン</td></tr>
+<tr><td>陣内燕太</td><td>じんないえんた</td><td>中2</td><td>14</td><td>さらざんまい</td><td>イクニラッパー</td></tr>
+<tr><td>信乃助</td><td>しんのすけ</td><td>幼稚園児</td><td>nan</td><td>昭和元禄落語心中</td><td>雲田はるこ</td></tr>
+<tr><td>森羅日下部</td><td>しんらくさかべ</td><td>17歳</td><td>17</td><td>炎炎ノ消防隊</td><td>大久保篤</td></tr>
+<tr><td>ジン・ラッセル</td><td>じんらっせる</td><td>11歳</td><td>11</td><td>問題児たちが異世界から来るそうですよ?</td><td>竜ノ湖太郎</td></tr>
+<tr><td>スヴィン・グラシュエート</td><td>すゔぃんぐらしゅえーと</td><td>nan</td><td>nan</td><td>Fateシリーズ</td><td>TYPE-MOON</td></tr>
+<tr><td>スウォン</td><td>すうぉん</td><td>15歳</td><td>15</td><td>サモンナイト1</td><td>バンプレスト</td></tr>
+<tr><td>周防勇斗</td><td>すおうゆうと</td><td>nan</td><td>nan</td><td>百錬の覇王と聖約の戦乙女</td><td>鷹山誠一</td></tr>
+<tr><td>スオウ・ラケルス</td><td>すおうらけるす</td><td>14歳</td><td>14</td><td>バトルスピリッツ ソードアイズ</td><td>矢立肇</td></tr>
+<tr><td>スカーレット</td><td>すかーれっと</td><td>高校生</td><td>nan</td><td>OZMAFIA!!</td><td>さとい</td></tr>
+<tr><td>菅野走一</td><td>すがのそういち</td><td>12歳</td><td>12</td><td>エクスドライバー</td><td>藤島康介</td></tr>
+<tr><td>杉崎真</td><td>すぎさきしん</td><td>高2</td><td>17</td><td>ちび☆デビ!</td><td>篠塚ひろむ</td></tr>
+<tr><td>杉田広美</td><td>すぎたひろみ</td><td>小5</td><td>11</td><td>僕だけがいない街</td><td>三部けい</td></tr>
+<tr><td>スキップ</td><td>すきっぷ</td><td>nan</td><td>nan</td><td>BANAN FISH</td><td>吉田秋生</td></tr>
+<tr><td>ズシ</td><td>ずし</td><td>nan</td><td>nan</td><td>HUNTER×HUNTER</td><td>冨樫義博</td></tr>
+<tr><td>鈴木入間</td><td>すずきいるま</td><td>14</td><td>14</td><td>魔入りました！入間くん</td><td>西修</td></tr>
+<tr><td>鈴木カイト</td><td>すずきかいと</td><td>中3</td><td>15</td><td>ゲーマーズヘブン!</td><td>村上真記</td></tr>
+<tr><td>涼野結</td><td>すずのゆう</td><td>nan</td><td>nan</td><td>プリティーリズム・レインボーライブ</td><td>タカラトミーアーツとシンソフィア</td></tr>
+<tr><td>鈴屋什造</td><td>すずやじゅうぞう</td><td>19歳</td><td>19</td><td>東京喰種トーキョーグール</td><td>石田スイ</td></tr>
+<tr><td>硯秀斗</td><td>すずりひでと</td><td>13歳</td><td>13</td><td>バトルスピリッツ 少年激覇ダン</td><td>矢立肇</td></tr>
+<tr><td>春原陽平</td><td>すのはらようへい</td><td>17歳</td><td>17</td><td>CLANNAD</td><td>Key</td></tr>
+<tr><td>スバル</td><td>すばる</td><td>nan</td><td>nan</td><td>サモンナイト3</td><td>バンプレスト</td></tr>
+<tr><td>統原無量</td><td>すばるむりょう</td><td>中2</td><td>14</td><td>学園戦記ムリョウ</td><td>佐藤竜雄</td></tr>
+<tr><td>スペード</td><td>すぺーど</td><td>nan</td><td>nan</td><td>怪盗ジョーカー</td><td>たかはしひでやす</td></tr>
+<tr><td>皇大地</td><td>すめらぎだいち</td><td>小学生</td><td>nan</td><td>爆転シュート ベイブレード</td><td>青木たかお</td></tr>
+<tr><td>III(ミハエル・アークライト)</td><td>すりー(みはえるあーくらいと)</td><td>nan</td><td>nan</td><td>遊☆戯☆王ZEXAL</td><td>高橋和希</td></tr>
+<tr><td>怠惰なる亜空孔メラク</td><td>すろーすほーらーめらく</td><td>13歳</td><td>13</td><td>蒼き雷霆 ガンヴォルト</td><td>インティ・クリエイツ</td></tr>
+<tr><td>星馬豪</td><td>せいばごう</td><td>小5</td><td>11</td><td>爆走兄弟レッツ&ゴー!!</td><td>こしたてつひろ</td></tr>
+<tr><td>星馬烈</td><td>せいばれつ</td><td>小6</td><td>12</td><td>爆走兄弟レッツ&ゴー!!</td><td>こしたてつひろ</td></tr>
+<tr><td>セイヤ</td><td>せいや</td><td>6歳</td><td>6</td><td>ソ・ラ・ノ・ヲ・ト</td><td>Paradores</td></tr>
+<tr><td>セイリュウ</td><td>せいりゅう</td><td>nan</td><td>nan</td><td>新幹線変形ロボ シンカリオン</td><td>プロジェクトシンカリオン</td></tr>
+<tr><td>セエレ</td><td>せえれ</td><td>6歳</td><td>6</td><td>ドラッグオンドラグーン</td><td>スクウェア・エニックス</td></tr>
+<tr><td>瀬賀太郎</td><td>せがたろう</td><td>15歳</td><td>15</td><td>セガガガ</td><td>セガ</td></tr>
+<tr><td>関ケンジ</td><td>せきけんじ</td><td>中2</td><td>14</td><td>ねらわれた学園</td><td>眉村卓</td></tr>
+<tr><td>セシル</td><td>せしる</td><td>nan</td><td>nan</td><td>ポップンミュージック10</td><td>コナミ</td></tr>
+<tr><td>セシル</td><td>せしる</td><td>nan</td><td>nan</td><td>ルーンファクトリー5</td><td>HAKAMA</td></tr>
+<tr><td>セト</td><td>せと</td><td>15歳</td><td>15</td><td>FRAGILE 〜さよなら月の廃墟〜</td><td>ナムコ</td></tr>
+<tr><td>セト</td><td>せと</td><td>nan</td><td>nan</td><td>ラディアン(Radiant)</td><td>トニー・ヴァレント</td></tr>
+<tr><td>瀬名アラタ</td><td>せなあらた</td><td>14歳</td><td>14</td><td>ダンボール戦機WARS</td><td>レベルファイブ</td></tr>
+<tr><td>セネリオ</td><td>せねりお</td><td>nan</td><td>nan</td><td>ファイアーエムブレム 蒼炎の軌跡</td><td>任天堂</td></tr>
+<tr><td>ゼノ</td><td>ぜの</td><td>nan</td><td>nan</td><td>ワールドトリガー</td><td>葦原大介</td></tr>
+<tr><td>セリム・スパーク</td><td>せりむすぱーく</td><td>nan</td><td>nan</td><td>ポップアップストーリー 魔法の本と聖樹の学園</td><td>スクウェア・エニックス</td></tr>
+<tr><td>セリム・ブラッドレイ</td><td>せりむぶらっどれい</td><td>nan</td><td>nan</td><td>鋼の錬金術師</td><td>荒川弘</td></tr>
+<tr><td>ゼル</td><td>ぜる</td><td>nan</td><td>200歳以上</td><td>異種族レビュアーズ</td><td>天原</td></tr>
+<tr><td>ゼロ・エンナ</td><td>ぜろえんな</td><td>15歳</td><td>15</td><td>女神候補生</td><td>杉崎ゆきる</td></tr>
+<tr><td>先導アイチ</td><td>せんどうあいち</td><td>中3</td><td>15</td><td>カードファイト!! ヴァンガード</td><td>ブシロード</td></tr>
+<tr><td>蒼月学人</td><td>そうげつがくと</td><td>小6</td><td>12</td><td>遊☆戯☆王SEVENS</td><td>近藤信宏</td></tr>
+<tr><td>ソウゴ・アマギ</td><td>そうごあまぎ</td><td>nan</td><td>nan</td><td>コメットルシファー</td><td>Project Felia、エイトビット</td></tr>
+<tr><td>宗介</td><td>そうすけ</td><td>5歳</td><td>5</td><td>崖の上のポニョ</td><td>宮崎駿</td></tr>
+<tr><td>双頭院学</td><td>そうとういんまなぶ</td><td>小5</td><td>11</td><td>美少年探偵団</td><td>西尾維新</td></tr>
+<tr><td>宗野哲</td><td>そうのさとし</td><td>13歳=中1</td><td>13</td><td>ステップファザー・ステップ</td><td>宮部みゆき</td></tr>
+<tr><td>宗野直</td><td>そうのただし</td><td>13歳=中1</td><td>13</td><td>ステップファザー・ステップ</td><td>宮部みゆき</td></tr>
+<tr><td>相馬空海</td><td>そうまくうかい</td><td>小5</td><td>11</td><td>しゅごキャラ!</td><td>PEACH-PIT</td></tr>
+<tr><td>草摩燈路</td><td>そうまひろ</td><td>nan</td><td>nan</td><td>フルーツバスケット</td><td>高屋奈月</td></tr>
+<tr><td>草摩紅葉</td><td>そうまもみじ</td><td>nan</td><td>nan</td><td>フルーツバスケット</td><td>高屋奈月</td></tr>
+<tr><td>ソウル＝イーター</td><td>そうるいーたー</td><td>nan</td><td>nan</td><td>ソウルイーター</td><td>大久保篤</td></tr>
+<tr><td>ソーマ</td><td>そーま</td><td>nan</td><td>nan</td><td>Tartaros-タルタロス-</td><td>INTIVSOFT</td></tr>
+<tr><td>ソーマ</td><td>そーま</td><td>nan</td><td>nan</td><td>甲虫王者ムシキング～森の民の伝説～</td><td>セガ</td></tr>
+<tr><td>シンク・イズミ</td><td>そしんくいずみ</td><td>中1</td><td>13</td><td>DOG DAYS</td><td>都築真紀</td></tr>
+<tr><td>ソラ</td><td>そら</td><td>14歳</td><td>14</td><td>キングダム ハーツ</td><td>スクウェアエニックス</td></tr>
+<tr><td>ソル</td><td>そる</td><td>16歳</td><td>16</td><td>サモンナイト1</td><td>バンプレスト</td></tr>
+<tr><td>ソルト</td><td>そると</td><td>9歳</td><td>9</td><td>ちっちゃな雪使いシュガー</td><td>蒼はるか</td></tr>
+<tr><td>ソルト</td><td>そると</td><td>nan</td><td>nan</td><td>ゾイドワイルド</td><td>タカラトミー</td></tr>
+<tr><td>ゾロメ(Code:666)</td><td>ぞろめ</td><td>nan</td><td>nan</td><td>ダーリン・イン・ザ・フランキス</td><td>Code:000</td></tr>
+<tr><td>孫悟天</td><td>そんごくう</td><td>7歳</td><td>7</td><td>ドラゴンボール</td><td>鳥山明</td></tr>
+<tr><td>孫悟空</td><td>そんごくう</td><td>19歳</td><td>19</td><td>最遊記RELOAD BLAST</td><td>峰倉かずや</td></tr>
+<tr><td>ダーク・キリサキ</td><td>だーくきりさき</td><td>nan</td><td>nan</td><td>ロックマンエグゼ</td><td>カプコン</td></tr>
+<tr><td>ダイ</td><td>だい</td><td>12歳</td><td>12</td><td>DRAGON QUEST -ダイの大冒険-</td><td>三条陸</td></tr>
+<tr><td>タイガー</td><td>たいがー</td><td>nan</td><td>nan</td><td>パズドラクロス</td><td>ガンホー</td></tr>
+<tr><td>大牙和巳</td><td>たいがかずや</td><td>nan</td><td>nan</td><td>バトルスピリッツ ダブルドライブ</td><td>矢立肇</td></tr>
+<tr><td>大地翔</td><td>だいちかける</td><td>小4</td><td>10</td><td>がんばれ!キッカーズ</td><td>ながいのりあき</td></tr>
+<tr><td>大門山ツラヌキ</td><td>だいもんやまつらぬき</td><td>小5</td><td>11</td><td>新幹線変形ロボ シンカリオン</td><td>プロジェクトシンカリオン</td></tr>
+<tr><td>ダイヤモンド</td><td>だいやもんど</td><td>12歳</td><td>12</td><td>ポケットモンスターSPECIAL</td><td>日下秀憲</td></tr>
+<tr><td>道蓮</td><td>たおれん</td><td>中学生</td><td>nan</td><td>シャーマンキング</td><td>武井宏之</td></tr>
+<tr><td>高石タケル</td><td>たかいしたける</td><td>8歳=小2</td><td>8</td><td>デジモンアドベンチャー</td><td>本郷あきよし</td></tr>
+<tr><td>高尾優斗</td><td>たかおゆうと</td><td>小6</td><td>12</td><td>12歳。</td><td>まいた菜穂</td></tr>
+<tr><td>高上透</td><td>たかがみとおる</td><td>小6</td><td>12</td><td>我が家のお稲荷さま。</td><td>柴村仁 放電映像</td></tr>
+<tr><td>タカキ・ウノ</td><td>たかきうの</td><td>13歳=年少組</td><td>13</td><td>機動戦士ガンダム 鉄血のオルフェンズ</td><td>矢立肇 富野由悠季</td></tr>
+<tr><td>高桑悠希</td><td>たかくわゆうき</td><td>17歳</td><td>17</td><td>華麗なる食卓</td><td>ふなつ一輝</td></tr>
+<tr><td>高津睦月</td><td>たかつむつき</td><td>中1</td><td>13</td><td>最後は?ストレート!!</td><td>寒川一之</td></tr>
+<tr><td>鷹村蘇芳</td><td>たかむらすおう</td><td>小5</td><td>11</td><td>CLAMP学園探偵団</td><td>CLAMP</td></tr>
+<tr><td>タキ</td><td>たき</td><td>7歳</td><td>7</td><td>北斗の拳</td><td>武論尊</td></tr>
+<tr><td>瀧沢勇太</td><td>たきざわゆうた</td><td>9歳</td><td>9</td><td>アライブ-最終進化的少年-</td><td>河島正・あだちとか</td></tr>
+<tr><td>タク</td><td>たく</td><td>nan</td><td>nan</td><td>ジャンキー・フィクション</td><td>為我井 徹・明治ていか</td></tr>
+<tr><td>巧美</td><td>たくみ</td><td>29歳</td><td>29</td><td>ストレンジ・プラス</td><td>美川べるの</td></tr>
+<tr><td>竹中夏陽</td><td>たけなかなつひ</td><td>小6</td><td>12</td><td>ロウきゅーぶ!</td><td>蒼山サグ</td></tr>
+<tr><td>竹中半兵衛</td><td>たけなかはんべえ</td><td>nan</td><td>nan</td><td>戦国無双</td><td>Koei</td></tr>
+<tr><td>竹林竜馬</td><td>たけばやしりょうま</td><td>8歳(39歳)</td><td>8</td><td>神達に拾われた男</td><td>Roy</td></tr>
+<tr><td>多田万里</td><td>ただばんり</td><td>大1</td><td>19</td><td>ゴールデンタイム</td><td>竹宮ゆゆこ</td></tr>
+<tr><td>立津手トッタ</td><td>たちつてとった</td><td>10歳</td><td>10</td><td>爆釣バーハンター</td><td>オリジナル</td></tr>
+<tr><td>橘真琴</td><td>たちばなまこと</td><td>中1(映画)</td><td>13</td><td>ハイ☆スピード！</td><td>おおじこうじ</td></tr>
+<tr><td>立花ユズヒコ</td><td>たちばなゆずひこ</td><td>中2</td><td>14</td><td>あたしンち</td><td>けらえいこ</td></tr>
+<tr><td>太刀花リク</td><td>たちばなりく</td><td>12歳</td><td>12</td><td>陰陽大戦記</td><td>WiZ</td></tr>
+<tr><td>橘ワタル</td><td>たちばなわたる</td><td>13歳</td><td>13</td><td>ハヤテのごとく!</td><td>畑健二郎</td></tr>
+<tr><td>立向居勇気</td><td>たちむかいゆうき</td><td>中学生</td><td>nan</td><td>イナズマイレブン</td><td>レベルファイブ</td></tr>
+<tr><td>タヅナ</td><td>たづな</td><td>nan</td><td>nan</td><td>ハンドシェイカー</td><td>内田孝行</td></tr>
+<tr><td>タツミ</td><td>たつみ</td><td>nan</td><td>nan</td><td>バトルスピリッツ ダブルドライブ</td><td>矢立肇</td></tr>
+<tr><td>タツミ</td><td>たつみ</td><td>nan</td><td>nan</td><td>牧場物語 3つの里の大切な友だち</td><td>マーベラス</td></tr>
+<tr><td>タツミ</td><td>たつみ</td><td>nan</td><td>nan</td><td>アカメが斬る！</td><td>タカヒロ</td></tr>
+<tr><td>立石秀一</td><td>たていししゅういち</td><td>小5</td><td>11</td><td>カミワザ・ワンダ</td><td>タカラトミー</td></tr>
+<tr><td>伊達政宗</td><td>だてまさむね</td><td>14歳</td><td>14</td><td>戦国無双</td><td>Koei</td></tr>
+<tr><td>蓼丸織</td><td>たでまるしき</td><td>14</td><td>14</td><td>怪物事変</td><td>藍本松</td></tr>
+<tr><td>田中</td><td>たなか</td><td>高1</td><td>16</td><td>田中くんはいつもけだるげ</td><td>ウダノゾミ</td></tr>
+<tr><td>田中</td><td>たなか</td><td>中2</td><td>14</td><td>上野さんは不器用</td><td>tugeneko</td></tr>
+<tr><td>タニス</td><td>たにす</td><td>11歳</td><td>11</td><td>実験品家族</td><td>Yanai</td></tr>
+<tr><td>玉賀必人</td><td>たまがひっと</td><td>11歳</td><td>11</td><td>爆球Hit! クラッシュビーダマン</td><td>木村豪、金相国</td></tr>
+<tr><td>多聞三志郎</td><td>たもんさんしろう</td><td>小学生</td><td>nan</td><td>妖逆門</td><td>藤田和日郎・田村光久</td></tr>
+<tr><td>タルるート</td><td>たるるーと</td><td>nan</td><td>nan</td><td>まじかる タルるートくん</td><td>江川達也</td></tr>
+<tr><td>タロー</td><td>たろー</td><td>11歳</td><td>11</td><td>魔界戦記ディスガイア2</td><td>日本一ソフトウェア・原田たけひと</td></tr>
+<tr><td>ダン・クーソー</td><td>だんくーそー</td><td>nan</td><td>nan</td><td>爆丸バトルプラネット</td><td>SPIN MASTER</td></tr>
+<tr><td>ダンジ・エイレイ</td><td>だんじえいれい</td><td>年少組</td><td>nan</td><td>機動戦士ガンダム 鉄血のオルフェンズ</td><td>矢立肇 富野由悠季</td></tr>
+<tr><td>壇太一</td><td>だんたいち</td><td>中1</td><td>13</td><td>テニスの王子様</td><td>許斐剛</td></tr>
+<tr><td>小さな勇者ゲット</td><td>ちいさなゆうしゃげっと</td><td>nan</td><td>nan</td><td>デュエル・マスターズ</td><td>ウィザーズ・オブ・ザ・コースト</td></tr>
+<tr><td>チクちゃん</td><td>ちくちゃん</td><td>nan</td><td>nan</td><td>まけるな!! あくのぐんだん!</td><td>徳井青空</td></tr>
+<tr><td>知念実也(MIYA)</td><td>ちねんみや</td><td>中1</td><td>13</td><td>SK∞ エスケーエイト</td><td>ボンズ</td></tr>
+<tr><td>チャグム</td><td>ちゃぐむ</td><td>nan</td><td>11</td><td>精霊の守り人</td><td>上橋菜穂子</td></tr>
+<tr><td>チャクロ</td><td>ちゃくろ</td><td>14歳</td><td>14</td><td>クジラの子らは砂上に歌う</td><td>梅田阿比</td></tr>
+<tr><td>チェスワフ・メイエル</td><td>ちゃすわふめいえる</td><td>nan</td><td>nan</td><td>バッカーノ!</td><td>成田良悟</td></tr>
+<tr><td>チャップ・マスタード</td><td>ちゃっぷますたーど</td><td>nan</td><td>nan</td><td>スナックワールド</td><td>レベルファイブ</td></tr>
+<tr><td>チャド</td><td>ちゃど</td><td>nan</td><td>nan</td><td>ファイアーエムブレム 封印の剣</td><td>任天堂、インテリジェントシステムズ</td></tr>
+<tr><td>チャロ</td><td>ちゃろ</td><td>nan</td><td>nan</td><td>パズドラクロス</td><td>ガンホー</td></tr>
+<tr><td>ツィーラン</td><td>つぃーらん</td><td>16歳</td><td>16</td><td>旋光の輪舞</td><td>グレフ</td></tr>
+<tr><td>ツィリル</td><td>つぃりる</td><td>14歳</td><td>14</td><td>ファイアーエムブレム 風花雪月</td><td>任天堂</td></tr>
+<tr><td>ツエルブ(久見冬二)</td><td>つえるぶ(ひさみとうじ)</td><td>17歳</td><td>17</td><td>残響のテロル</td><td>渡辺信一郎</td></tr>
+<tr><td>柄本つくし</td><td>つかもとつくし</td><td>高1</td><td>16</td><td>DAYS</td><td>安田剛士</td></tr>
+<tr><td>月影トシ</td><td>つきかげとし</td><td>小5</td><td>11</td><td>飛べ!イサミ</td><td>NHK・NHKエンタープライズ21</td></tr>
+<tr><td>月浪トウマ</td><td>つきなみとうま</td><td>13歳</td><td>13</td><td>妖怪ウォッチ シャドウサイド</td><td>レベルファイブ</td></tr>
+<tr><td>月野コン太</td><td>つきのこんた</td><td>10歳</td><td>10</td><td>爆球Hit! クラッシュビーダマン</td><td>倉谷友也</td></tr>
+<tr><td>月野ルカ(ルカ)</td><td>つきのるか</td><td>1010歳</td><td>1010</td><td>ドラえもん のび太の月面探査記</td><td>八鍬新之介</td></tr>
+<tr><td>月山シノブ</td><td>つきやましのぶ</td><td>小4</td><td>10</td><td>新幹線変形ロボ シンカリオン</td><td>プロジェクトシンカリオン</td></tr>
+<tr><td>ツクシ</td><td>つくし</td><td>nan</td><td>nan</td><td>ポケットモンスター</td><td>田尻智</td></tr>
+<tr><td>九十九遊馬</td><td>つくもゆうま</td><td>中1</td><td>13</td><td>遊☆戯☆王ZEXAL</td><td>高橋和希</td></tr>
+<tr><td>ツクヨミ</td><td>つくよみ</td><td>nan</td><td>nan</td><td>ファイアーエムブレムif</td><td>インテリジェントシステムズ</td></tr>
+<tr><td>堤歩</td><td>つつみあゆむ</td><td>小6</td><td>12</td><td>12歳。</td><td>まいた菜穂</td></tr>
+<tr><td>燕ツバメ</td><td>つばくらつばめ</td><td>10歳</td><td>10</td><td>B-伝説! バトルビーダマン</td><td>犬木栄治</td></tr>
+<tr><td>ツルギ・タテワキ</td><td>つるぎたてわき</td><td>14歳</td><td>14</td><td>バトルスピリッツ ソードアイズ</td><td>矢立肇</td></tr>
+<tr><td>ツワブキ・ダイヤ</td><td>つわぶきだいや</td><td>13歳</td><td>13</td><td>ガイキング LEGEND OF DAIKU-MARYU</td><td>MK企画</td></tr>
+<tr><td>ティグレ</td><td>てぃぐれ</td><td>nan</td><td>nan</td><td>牧場物語 3つの里の大切な友だち</td><td>マーベラス</td></tr>
+<tr><td>ディック</td><td>でぃっく</td><td>nan</td><td>nan</td><td>Laughter Land</td><td>郎猫儿</td></tr>
+<tr><td>ティム・トイ</td><td>てぃむとい</td><td>nan</td><td>nan</td><td>絶対可憐チルドレン</td><td>椎名高志</td></tr>
+<tr><td>ティム・ライムレス</td><td>てぃむらいむれす</td><td>12歳</td><td>12</td><td>ワイルドアームズ セカンドイグニッション</td><td>メディアビジョン</td></tr>
+<tr><td>ティム・ローレンス</td><td>てぃむろーれんす</td><td>15歳</td><td>15</td><td>ディエンビエンフー</td><td>西島大介</td></tr>
+<tr><td>ティル</td><td>てぃる</td><td>nan</td><td>nan</td><td>ドラゴンクエストIX 星空の守り人</td><td>レベルファイブ</td></tr>
+<tr><td>テイルス</td><td>ているす</td><td>8歳</td><td>8</td><td>ソニック・ザ・ヘッジホッグ2</td><td>セガ</td></tr>
+<tr><td>ティント(少年タイプ)</td><td>てぃんと</td><td>nan</td><td>nan</td><td>ボーダーブレイク(BORDER BREAK)</td><td>SEGA</td></tr>
+<tr><td>テスタ・リールベール教授</td><td>てすとりーるべーる教授</td><td>17歳</td><td>17</td><td>ルガーコード1951</td><td>羽木遼人</td></tr>
+<tr><td>テツ</td><td>てつ</td><td>5歳</td><td>5</td><td>機巧奇傳ヒヲウ戦記</td><td>BONES、會川昇</td></tr>
+<tr><td>鉄腕アトム</td><td>てつわんあとむ</td><td>nan</td><td>nan</td><td>鉄腕アトム</td><td>手塚治虫</td></tr>
+<tr><td>テヨン</td><td>てよん</td><td>nan</td><td>nan</td><td>暁のヨナ</td><td>草凪みずほ</td></tr>
+<tr><td>テン</td><td>てん</td><td>6歳</td><td>6</td><td>ドラゴンクエスト 天空物語</td><td>幸宮チノ、エニックス</td></tr>
+<tr><td>伝木凱タモツ</td><td>でんきがいたもつ</td><td>19歳</td><td>19</td><td>AKIBA’S TRIP -THE ANIMATION-</td><td>ACQUIRE</td></tr>
+<tr><td>天城ハルト</td><td>てんじょうはると</td><td>nan</td><td>nan</td><td>遊☆戯☆王ZEXAL</td><td>高橋和希</td></tr>
+<tr><td>天神林ゴウ</td><td>てんじんばやしごう</td><td>nan</td><td>nan</td><td>緊急発進セイバーキッズ</td><td>モンキー・パンチ</td></tr>
+<tr><td>デンゼル</td><td>でんぜる</td><td>9歳</td><td>9</td><td>ファイナルファンタジーVII アドベントチルドレン</td><td>スクウェア・エニックス</td></tr>
+<tr><td>天童遊</td><td>てんどうゆう</td><td>nan</td><td>nan</td><td>メタルファイト ベイブレード</td><td>足立たかふみ</td></tr>
+<tr><td>テンマ</td><td>てんま</td><td>nan</td><td>nan</td><td>メダロット9</td><td>ほるまりん</td></tr>
+<tr><td>天領イッキ</td><td>てんりょういっき</td><td>小4</td><td>10</td><td>メダロット</td><td>ほるまりん</td></tr>
+<tr><td>童帝</td><td>どうてい</td><td>10</td><td>10</td><td>ワンパンマン</td><td>ONE</td></tr>
+<tr><td>燈馬想</td><td>とうまそう</td><td>16歳</td><td>16</td><td>Q.E.D. 証明終了</td><td>加藤元浩</td></tr>
+<tr><td>トウヤ</td><td>とうや</td><td>14歳</td><td>14</td><td>ポケットモンスターブラック・ホワイト</td><td>ゲームフリーク</td></tr>
+<tr><td>トウヤ</td><td>とうや</td><td>中学生</td><td>nan</td><td>ログ・ホライズン</td><td>橙乃ままれ</td></tr>
+<tr><td>塔矢アキラ</td><td>とうやあきら</td><td>13歳</td><td>13</td><td>ヒカルの碁</td><td>ほったゆみ</td></tr>
+<tr><td>杜影月</td><td>とえいげつ</td><td>13歳(?)</td><td>13</td><td>彩雲国物語</td><td>宍戸淳</td></tr>
+<tr><td>遠野貴樹</td><td>とおのたかき</td><td>小3</td><td>9</td><td>秒速5センチメートル</td><td>新海誠</td></tr>
+<tr><td>トーマ</td><td>とーま</td><td>7</td><td>7</td><td>約束のネバーランド</td><td>白井カイウ</td></tr>
+<tr><td>遠松エイジ</td><td>とおまつえいじ</td><td>小5</td><td>11</td><td>ポチっと発明ピカちんキット</td><td>バンダイ</td></tr>
+<tr><td>遠山金太郎</td><td>とおやまきんたろう</td><td>中1</td><td>13</td><td>テニスの王子様</td><td>許斐剛</td></tr>
+<tr><td>戸隠タイジュ</td><td>とがくしたいじゅ</td><td>10</td><td>10</td><td>新幹線変形ロボシンカリオンZ</td><td>池添隆博</td></tr>
+<tr><td>渡嘉敷</td><td>とかしき</td><td>高校生</td><td>nan</td><td>MAJOR</td><td>満田拓也</td></tr>
+<tr><td>富樫勇太</td><td>とがしゆうた</td><td>高1</td><td>16</td><td>中二病でも恋がしたい！</td><td>虎虎</td></tr>
+<tr><td>トキオ</td><td>ときお</td><td>14歳</td><td>14</td><td>タイムボカン24</td><td>タツノコプロ</td></tr>
+<tr><td>都北一喜</td><td>ときたかずき</td><td>nan</td><td>nan</td><td>パズル&ドラゴンズ</td><td>スタジオコロリド</td></tr>
+<tr><td>トト</td><td>とと</td><td>nan</td><td>nan</td><td>フリップフラッパーズ</td><td>ピュア・イリュージョニスト</td></tr>
+<tr><td>轟駆流</td><td>とどろきかける</td><td>小5</td><td>11</td><td>超速変形ジャイロゼッター</td><td>スクウェア・エニックス</td></tr>
+<tr><td>轟焦凍</td><td>とどろきしょうと</td><td>高1</td><td>16</td><td>僕のヒーローアカデミア</td><td>堀越耕平</td></tr>
+<tr><td>ドナルカミ・ドード</td><td>どなるかみどーど</td><td>10歳</td><td>10</td><td>超魔神英雄伝ワタル</td><td>矢立肇</td></tr>
+<tr><td>飛竜ハネル</td><td>とびたつはねる</td><td>中1</td><td>13</td><td>トライブクルクル</td><td>矢立肇</td></tr>
+<tr><td>トマ</td><td>とま</td><td>11歳</td><td>11</td><td>魔法陣グルグル</td><td>衛藤ヒロユキ</td></tr>
+<tr><td>兎丸比乃</td><td>とまるぴの</td><td>高1</td><td>16</td><td>Mr.FULLSWING(ミスターフルスイング)</td><td>鈴木信也</td></tr>
+<tr><td>知花まもる</td><td>ともかまもる</td><td>12歳</td><td>12</td><td>まもるクンは呪われてしまった！</td><td>グレフとガルチ</td></tr>
+<tr><td>友永勇太</td><td>ともながゆうた</td><td>10歳</td><td>10</td><td>勇者警察ジェイデッカー</td><td>矢立肇</td></tr>
+<tr><td>虎王</td><td>とらおう</td><td>10歳</td><td>10</td><td>魔神英雄伝ワタル</td><td>矢立肇</td></tr>
+<tr><td>虎水ギンタ</td><td>とらみずぎんた</td><td>14歳</td><td>14</td><td>MÄR - Märchen Awakens Romance</td><td>安西信行</td></tr>
+<tr><td>トリル</td><td>とりる</td><td>0歳</td><td>0</td><td>ロックマンエグゼ</td><td>カプコン</td></tr>
+<tr><td>ドレイク</td><td>どれいく</td><td>nan</td><td>nan</td><td>ゾイドワイルド</td><td>タカラトミー</td></tr>
+<tr><td>トロン・ボーン</td><td>とろんぼーん</td><td>9歳</td><td>9</td><td>ハーメルンのバイオリン弾き</td><td>渡辺道明</td></tr>
+<tr><td>无</td><td>ない</td><td>中2</td><td>14</td><td>カーニヴァル</td><td>御巫桃也</td></tr>
+<tr><td>ナイン(九重新)</td><td>ないん(このえあらた)</td><td>17歳</td><td>17</td><td>残響のテロル</td><td>渡辺信一郎</td></tr>
+<tr><td>苗木誠</td><td>なえぎまこと</td><td>高1</td><td>16</td><td>ダンガンロンパ</td><td>スパイク</td></tr>
+<tr><td>直枝理樹</td><td>なおえりき</td><td>高2</td><td>17</td><td>リトルバスターズ!</td><td>Key</td></tr>
+<tr><td>永井圭</td><td>ながいけい</td><td>高2 or 高3</td><td>17</td><td>亜人</td><td>桜井画門</td></tr>
+<tr><td>中島敦</td><td>なかじまあつし</td><td>18歳</td><td>18</td><td>文豪ストレイドッグス</td><td>朝霧カフカ</td></tr>
+<tr><td>中嶋匡幸</td><td>なかじままさゆき</td><td>14歳</td><td>14</td><td>神霊狩/GHOST HOUND</td><td>士郎正宗</td></tr>
+<tr><td>中野攻</td><td>なかのこう</td><td>nan</td><td>nan</td><td>亜人</td><td>桜井画門</td></tr>
+<tr><td>渚カヲル</td><td>なぎさかをる</td><td>15歳</td><td>15</td><td>新世紀エヴァンゲリオン</td><td>GAINAX</td></tr>
+<tr><td>凪野智史</td><td>なぎのさとし</td><td>中2</td><td>14</td><td>恋愛ラボ</td><td>宮原るり</td></tr>
+<tr><td>ナタ</td><td>なた</td><td>nan</td><td>nan</td><td>ゲーマーズヘブン!</td><td>村上真記</td></tr>
+<tr><td>ナタク孫</td><td>なたくそん</td><td>11歳</td><td>11</td><td>炎炎ノ消防隊</td><td>大久保篤</td></tr>
+<tr><td>菜月昴(ナツキ･スバル)</td><td>なつきすばる</td><td>17歳</td><td>17</td><td>Re:ゼロから始める異世界生活</td><td>長月達平</td></tr>
+<tr><td>ナッシュ</td><td>なっしゅ</td><td>nan</td><td>nan</td><td>ファイナルファンタジー・クリスタルクロニクル リング・オブ・フェイト</td><td>スクウェア・エニックス</td></tr>
+<tr><td>ナット</td><td>なっと</td><td>nan</td><td>nan</td><td>メイドインアビス</td><td>つくしあきひと</td></tr>
+<tr><td>ナップ</td><td>なっぷ</td><td>nan</td><td>nan</td><td>サモンナイト3</td><td>バンプレスト</td></tr>
+<tr><td>なつ坊</td><td>なつぼう</td><td>nan</td><td>nan</td><td>ポップンミュージック15 アドベンチャー</td><td>コナミ</td></tr>
+<tr><td>夏目アキラ</td><td>なつめあきら</td><td>高校生</td><td>nan</td><td>EX-ARM エクスアーム</td><td>HiRock</td></tr>
+<tr><td>夏目龍之介</td><td>なつめりゅうのすけ</td><td>nan</td><td>nan</td><td>万能文化猫娘</td><td>高田裕三</td></tr>
+<tr><td>七瀬遙</td><td>ななせはるか</td><td>中1(映画)</td><td>13</td><td>ハイ☆スピード！</td><td>おおじこうじ</td></tr>
+<tr><td>7代目小林少年</td><td>ななだいめこばやししょうねん</td><td>nan</td><td>nan</td><td>超・少年探偵団NEO</td><td>江戸川乱歩</td></tr>
+<tr><td>鳴滝</td><td>なるたき</td><td>nan</td><td>nan</td><td>快傑蒸気探偵団</td><td>麻宮騎亜</td></tr>
+<tr><td>ナンダバ・ナオ太</td><td>なんだばなおた</td><td>小6</td><td>12</td><td>フリクリ(FLCL)</td><td>貞本義行</td></tr>
+<tr><td>ニア</td><td>にあ</td><td>nan</td><td>nan</td><td>DEATH NOTE</td><td>大場つぐみ</td></tr>
+<tr><td>新島良次</td><td>にいじまりょうじ</td><td>11歳</td><td>11</td><td>地獄堂霊界通信</td><td>香月日輪</td></tr>
+<tr><td>ニケ</td><td>にけ</td><td>13歳</td><td>13</td><td>魔法陣グルグル</td><td>衛藤ヒロユキ</td></tr>
+<tr><td>にこまる</td><td>にこまる</td><td>15歳</td><td>15</td><td>ラブ米(ラブコメ)-WE LOVE RICE-</td><td>高林ユーキ</td></tr>
+<tr><td>ニコル・アマルフィ</td><td>にこるあまるふぃ</td><td>15歳</td><td>15</td><td>機動戦士ガンダムSEED</td><td>福田己津央</td></tr>
+<tr><td>仁坂悠介</td><td>にさか ゆうすけ</td><td>高1</td><td>16</td><td>恋と嘘</td><td>ムサヲ</td></tr>
+<tr><td>西鍵健一</td><td>にしかぎけんいち</td><td>小6</td><td>12</td><td>秘密警察ホームズ</td><td>犬木栄治</td></tr>
+<tr><td>西片くん</td><td>にしかたくん</td><td>中1</td><td>13</td><td>からかい上手の高木さん</td><td>山本崇一朗</td></tr>
+<tr><td>西園信助</td><td>にしぞのしんすけ</td><td>12歳</td><td>12</td><td>イナズマイレブンGO</td><td>レベルファイブ</td></tr>
+<tr><td>西中島三郎</td><td>にしなかじまさぶろう</td><td>小5</td><td>11</td><td>ラブやん</td><td>田丸浩史</td></tr>
+<tr><td>二谷コウキ</td><td>にたにこうき</td><td>保育園</td><td>nan</td><td>うさぎドロップ</td><td>宇仁田ゆみ</td></tr>
+<tr><td>新田ケン</td><td>にったけん</td><td>中1</td><td>13</td><td>ガイストクラッシャー</td><td>CAPCOM</td></tr>
+<tr><td>二鳥修一</td><td>にとりしゅういち</td><td>小5</td><td>11</td><td>放浪息子</td><td>志村貴子</td></tr>
+<tr><td>ニビル</td><td>にびる</td><td>nan</td><td>nan</td><td>爆TECH!爆丸</td><td>槙吾</td></tr>
+<tr><td>ニルス</td><td>にるす</td><td>nan</td><td>nan</td><td>ファイアーエムブレム 烈火の剣</td><td>任天堂、インテリジェントシステムズ</td></tr>
+<tr><td>丹羽大助</td><td>にわだいすけ</td><td>中2</td><td>14</td><td>D・N・ANGEL</td><td>杉崎ゆきる</td></tr>
+<tr><td>ネギ＝スプリングフィールド</td><td>ねぎすぷりんぐふぃーるど</td><td>9歳</td><td>9</td><td>魔法先生ネギま!</td><td>赤松健</td></tr>
+<tr><td>ネク(桜庭音操)</td><td>ねく(さくらばねく)</td><td>15</td><td>15</td><td>すばらしきこのせかい</td><td>スクウェア・エニックス</td></tr>
+<tr><td>猫目タケル</td><td>ねこめたける</td><td>小学生</td><td>nan</td><td>電脳コイル</td><td>磯光雄</td></tr>
+<tr><td>根島由佳吏</td><td>ねじまゆかり</td><td>高1</td><td>16</td><td>恋と嘘</td><td>ムサヲ</td></tr>
+<tr><td>ネジル･ネジール</td><td>ねじるねじーる</td><td>11歳</td><td>11</td><td>ヘボット!</td><td>バンダイ</td></tr>
+<tr><td>ネス</td><td>ねす</td><td>12歳</td><td>12</td><td>MOTHER2 ギーグの逆襲</td><td>任天堂・糸井重里</td></tr>
+<tr><td>ネモ</td><td>ねも</td><td>nan</td><td>nan</td><td>セブンナイツ レボリューション -英雄の継承者-</td><td>Seven Knights Revolution</td></tr>
+<tr><td>ノーザン・タイガー</td><td>のーざんたいがー</td><td>nan</td><td>nan</td><td>魔神英雄伝ワタル3</td><td>矢立肇</td></tr>
+<tr><td>ノーマン</td><td>のーまん</td><td>11歳</td><td>11</td><td>約束のネバーランド</td><td>白井カイウ</td></tr>
+<tr><td>乃木流架</td><td>のぎるか</td><td>10歳</td><td>10</td><td>学園アリス</td><td>樋口橘</td></tr>
+<tr><td>野口一男</td><td>のぐちかずお</td><td>小5</td><td>11</td><td>初恋モンスター</td><td>日吉丸晃</td></tr>
+<tr><td>野坂悠馬</td><td>のさかゆうま</td><td>中2</td><td>14</td><td>イナズマイレブン アレスの天秤</td><td>レベルファイブ</td></tr>
+<tr><td>野々柊</td><td>ののひいらぎ</td><td>16歳</td><td>16</td><td>ブブキ・ブランキ</td><td>Quadrangle</td></tr>
+<tr><td>野火丸</td><td>のびまる</td><td>nan</td><td>nan</td><td>怪物事変</td><td>藍本松</td></tr>
+<tr><td>野村たかし</td><td>のむらたかし</td><td>14歳</td><td>14</td><td>まもって守護月天!</td><td>桜野みねね</td></tr>
+<tr><td>ノル・スタルジア</td><td>のるすたるじあ</td><td>nan</td><td>nan</td><td>俺だけ入れる隠しダンジョン</td><td>瀬戸メグル</td></tr>
+<tr><td>ハーリー</td><td>はーりー</td><td>nan</td><td>nan</td><td>はりもぐハーリー</td><td>村上たかし</td></tr>
+<tr><td>パール</td><td>ぱーる</td><td>12歳</td><td>12</td><td>ポケットモンスターSPECIAL</td><td>日下秀憲</td></tr>
+<tr><td>灰村切</td><td>はいむらきり</td><td>中2</td><td>14</td><td>断裁分離のクライムエッジ</td><td>緋鍵龍彦</td></tr>
+<tr><td>ハウ</td><td>はう</td><td>11歳</td><td>11</td><td>ポケットモンスター サン・ムーン</td><td>ゲームフリーク</td></tr>
+<tr><td>バオ</td><td>ばお</td><td>8歳</td><td>8</td><td>ディエンビエンフー</td><td>西島大介</td></tr>
+<tr><td>ハガクレ・シドー</td><td>はがくれしどー</td><td>nan</td><td>nan</td><td>バトルスピリッツ ソードアイズ</td><td>矢立肇</td></tr>
+<tr><td>ハガン</td><td>はがん</td><td>nan</td><td>nan</td><td>探検ドリランド -1000年の真宝-</td><td>グリー</td></tr>
+<tr><td>ハクア・エストック</td><td>はくあえすとっく</td><td>nan</td><td>nan</td><td>バトルスピリッツ ソードアイズ</td><td>矢立肇</td></tr>
+<tr><td>白月初</td><td>はくげっしゅう</td><td>nan</td><td>nan</td><td>縁結びの妖狐ちゃん</td><td>小新</td></tr>
+<tr><td>爆豪勝己</td><td>ばくごうかつき</td><td>中3</td><td>15</td><td>僕のヒーローアカデミア</td><td>堀越耕平</td></tr>
+<tr><td>白童子</td><td>はくどうし</td><td>0歳</td><td>0</td><td>犬夜叉</td><td>高橋留美子</td></tr>
+<tr><td>橋坂真</td><td>はしさかまこと</td><td>5歳</td><td>5</td><td>ブギーポップは笑わない</td><td>上遠野浩平</td></tr>
+<tr><td>ハシバ</td><td>はしば</td><td>14歳</td><td>14</td><td>乱歩奇譚 Game of Laplace</td><td>江戸川乱歩(原案)</td></tr>
+<tr><td>橋本アキラ</td><td>はしもとあきら</td><td>小4</td><td>10</td><td>電脳コイル</td><td>磯光雄</td></tr>
+<tr><td>バジリコン</td><td>ばじりこん</td><td>14歳</td><td>14</td><td>家庭教師ヒットマンREBORN!</td><td>天野明</td></tr>
+<tr><td>バジル</td><td>ばじる</td><td>9歳</td><td>9</td><td>ちっちゃな雪使いシュガー</td><td>蒼はるか</td></tr>
+<tr><td>馬神弾</td><td>ばしんだん</td><td>12歳</td><td>12</td><td>バトルスピリッツ 少年激覇ダン</td><td>矢立肇</td></tr>
+<tr><td>馬神トッパ</td><td>ばしんとっぱ</td><td>小6</td><td>12</td><td>バトルスピリッツ 少年突破バシン</td><td>矢立肇</td></tr>
+<tr><td>ハス太</td><td>はすた</td><td>高校生</td><td>nan</td><td>這いよれ!ニャル子さん!</td><td>逢空万太</td></tr>
+<tr><td>長谷川君生</td><td>はせがわきみお</td><td>高1</td><td>16</td><td>キミオアライブ</td><td>恵口公生</td></tr>
+<tr><td>長谷部純</td><td>はせべじゅん</td><td>15歳</td><td>15</td><td>RING of RED</td><td>コナミ</td></tr>
+<tr><td>ハチ</td><td>はち</td><td>nan</td><td>nan</td><td>怪盗ジョーカー</td><td>たかはしひでやす</td></tr>
+<tr><td>蜂須賀チュウキ</td><td>はちすがちゅうき</td><td>小6</td><td>12</td><td>テンカイナイト</td><td>ボンズ</td></tr>
+<tr><td>葉月渚</td><td>はづきなぎさ</td><td>小6(映画)</td><td>12</td><td>ハイ☆スピード！</td><td>おおじこうじ</td></tr>
+<tr><td>バット</td><td>ばっと</td><td>nan</td><td>nan</td><td>北斗の拳</td><td>武論尊</td></tr>
+<tr><td>バナージ・リンクス</td><td>ばなーじりんくす</td><td>16歳</td><td>16</td><td>機動戦士ガンダムUC</td><td>福井晴敏</td></tr>
+<tr><td>花子くん</td><td>はなこくん</td><td>nan</td><td>nan</td><td>地縛少年花子くん</td><td>あいだいろ</td></tr>
+<tr><td>花崎健介</td><td>はなさきけんすけ</td><td>15歳</td><td>15</td><td>TRICKSTER -江戸川乱歩「少年探偵団」より-</td><td>Jordan森杉</td></tr>
+<tr><td>パナシェ</td><td>ぱなしぇ</td><td>nan</td><td>nan</td><td>サモンナイト3</td><td>バンプレスト</td></tr>
+<tr><td>花鳥兜</td><td>はなどりかぶと</td><td>高2</td><td>17</td><td>ぼくのとなりに暗黒破壊神がいます。</td><td>亜樹新</td></tr>
+<tr><td>花房葉太郎</td><td>はなぶさようたろう</td><td>nan</td><td>nan</td><td>ランス・アンド・マスクス(Lance N' Masques)</td><td>子安秀明</td></tr>
+<tr><td>埴之塚光邦(ハニー先輩)</td><td>はにのづかみつくに</td><td>高3</td><td>18</td><td>桜蘭高校ホスト部</td><td>葉鳥ビスコ</td></tr>
+<tr><td>羽田ひろし</td><td>はねだひろし</td><td>小3</td><td>9</td><td>ヒゲぴよ</td><td>伊藤理佐</td></tr>
+<tr><td>馬場ラムネ</td><td>ばばらむね</td><td>10歳</td><td>10</td><td>NG騎士ラムネ&40</td><td>葦プロダクション</td></tr>
+<tr><td>馬場ラムネード</td><td>ばばらむねーど</td><td>15歳</td><td>15</td><td>VS騎士ラムネ＆40炎</td><td>葦プロダクション</td></tr>
+<tr><td>濱田くん</td><td>はまだくん</td><td>nan</td><td>nan</td><td>スティッチ</td><td>ディズニー</td></tr>
+<tr><td>早川はやと</td><td>はやかわはやと</td><td>nan</td><td>nan</td><td>100%パスカル先生</td><td>永井ゆうじ</td></tr>
+<tr><td>速杉ハヤト</td><td>はやすぎはやと</td><td>小5</td><td>11</td><td>新幹線変形ロボ シンカリオン</td><td>プロジェクトシンカリオン</td></tr>
+<tr><td>ハヤト</td><td>はやと</td><td>nan</td><td>nan</td><td>サモンナイト1</td><td>バンプレスト</td></tr>
+<tr><td>羽山秋人</td><td>はやまあきと</td><td>小6</td><td>12</td><td>こどものおもちゃ</td><td>小花美穂</td></tr>
+<tr><td>速水厚志</td><td>はやみあつし</td><td>14歳</td><td>14</td><td>高機動幻想ガンパレード・マーチ</td><td>アルファ・システム</td></tr>
+<tr><td>原川研一</td><td>はらかわけんいち</td><td>小学生</td><td>nan</td><td>電脳コイル</td><td>磯光雄</td></tr>
+<tr><td>原島拓矢</td><td>はらしまたくや</td><td>12歳</td><td>12</td><td>黄金勇者ゴルドラン</td><td>矢立肇</td></tr>
+<tr><td>原田青波</td><td>はらだせいは</td><td>小4</td><td>10</td><td>バッテリー</td><td>あさのあつこ</td></tr>
+<tr><td>原田巧</td><td>はらだたくみ</td><td>中1</td><td>13</td><td>バッテリー</td><td>あさのあつこ</td></tr>
+<tr><td>ハル</td><td>はる</td><td>nan</td><td>nan</td><td>ラストピリオド -終わりなき螺旋の物語-</td><td>Happy Elements</td></tr>
+<tr><td>パルヴィーズ(パトリック・アレクサンドル・レオナール・アルジェ)</td><td>ぱるゔぃーず</td><td>nan</td><td>nan</td><td>ガンダムビルドダイバーズRe:RISE</td><td>矢立肇</td></tr>
+<tr><td>バル・クロウ</td><td>ばるくろう</td><td>nan</td><td>nan</td><td>重機人間ユンボル</td><td>武井宏之</td></tr>
+<tr><td>春瀬和哉</td><td>はるせかずや</td><td>高1</td><td>16</td><td>歌恋</td><td>桜井ひかる</td></tr>
+<tr><td>ハルヒロ</td><td>はるひろ</td><td>10代</td><td>nan</td><td>灰と幻想のグリムガル</td><td>	十文字青</td></tr>
+<tr><td>バルレル</td><td>ばるれる</td><td>nan</td><td>nan</td><td>サモンナイト2</td><td>バンプレスト</td></tr>
+<tr><td>ハレ</td><td>ばれ</td><td>10歳</td><td>10</td><td>ジャングルはいつもハレのちグゥ</td><td>金田一蓮十郎</td></tr>
+<tr><td>バレット・シルバー</td><td>ばれっとしるばー</td><td>nan</td><td>nan</td><td>絶対可憐チルドレン</td><td>椎名高志</td></tr>
+<tr><td>伴俊作</td><td>ばんしゅんさく</td><td>高校生</td><td>nan</td><td>アトム ザ・ビギニング</td><td>手塚治虫</td></tr>
+<tr><td>バンジョー・ウエキ・タイラー</td><td>ばんじょーうえきたいらー</td><td>14歳</td><td>14</td><td>無責任ギャラクシー☆タイラー</td><td>吉岡平</td></tr>
+<tr><td>反田省太</td><td>はんだしょうた</td><td>小5(中は25歳)</td><td>11</td><td>無邪気の楽園</td><td>雨蘭</td></tr>
+<tr><td>半田真一</td><td>はんだしんいち</td><td>中2</td><td>14</td><td>イナズマイレブン</td><td>レベルファイブ</td></tr>
+<tr><td>バン・フライハイト</td><td>ばんふらいはいと</td><td>nan</td><td>nan</td><td>ゾイド -ZOIDS-</td><td>タカラトミー</td></tr>
+<tr><td>ビート</td><td>びーと</td><td>8歳</td><td>8</td><td>トラスティベル 〜ショパンの夢〜</td><td>NAMCO</td></tr>
+<tr><td>ビート</td><td>びーと</td><td>nan</td><td>nan</td><td>ポケットモンスター ソード・シールド</td><td>ゲームフリーク</td></tr>
+<tr><td>ピート・ロス</td><td>びーとろす</td><td>14歳</td><td>14</td><td>悠久幻想曲</td><td>スターライトマリー、メディアワークス</td></tr>
+<tr><td>ピエトロ</td><td>ぴえとろ</td><td>10歳</td><td>10</td><td>ポポロクロイス物語</td><td>田森庸介</td></tr>
+<tr><td>光彩斗</td><td>ひかりさいと</td><td>nan</td><td>nan</td><td>ロックマンエグゼ</td><td>カプコン</td></tr>
+<tr><td>光熱斗</td><td>ひかりねっと</td><td>小5</td><td>11</td><td>ロックマンエグゼ</td><td>カプコン</td></tr>
+<tr><td>緋雨閑丸</td><td>ひさめしずまる</td><td>nan</td><td>nan</td><td>サムライスピリッツ</td><td>SNKプレイモア</td></tr>
+<tr><td>ビシュヌ・ティキ</td><td>びしゅぬてぃき</td><td>nan</td><td>nan</td><td>スーパービックリマン</td><td>朝日放送 旭通信社 東映動画</td></tr>
+<tr><td>日番谷冬獅郎</td><td>ひつがやとうしろう</td><td>9歳</td><td>9</td><td>BLEACH</td><td>久保帯人</td></tr>
+<tr><td>ピット</td><td>びっと</td><td>13歳</td><td>13</td><td>光神話 パルテナの鏡</td><td>任天堂</td></tr>
+<tr><td>一橋章吉</td><td>ひとつばししょうきち</td><td>中1</td><td>13</td><td>かみちゅ!</td><td>ベサメムーチョ</td></tr>
+<tr><td>日向伊智朗</td><td>ひなたいちろう</td><td>12歳</td><td>12</td><td>少年ラケット</td><td>掛丸翔</td></tr>
+<tr><td>日向冬樹</td><td>ひなたふゆき</td><td>中1</td><td>13</td><td>ケロロ軍曹</td><td>吉崎観音</td></tr>
+<tr><td>ピネ</td><td>ぴね</td><td>11歳</td><td>11</td><td>ソウルクレイドル 世界を喰らう者</td><td>日本一ソフトウェア</td></tr>
+<tr><td>日ノ出春晴</td><td>ひのではるばる</td><td>nan</td><td>nan</td><td>爆TECH!爆丸</td><td>槙吾</td></tr>
+<tr><td>ひのひかり</td><td>ひのひかり</td><td>15歳</td><td>15</td><td>ラブ米(ラブコメ)-WE LOVE RICE-</td><td>高林ユーキ</td></tr>
+<tr><td>陽昇ハジメ</td><td>ひのぼりはじめ</td><td>中1</td><td>13</td><td>バトルスピリッツ 覇王</td><td>矢立肇</td></tr>
+<tr><td>日野祐司</td><td>ひのゆうじ</td><td>小5</td><td>11</td><td>少年メイド</td><td>乙橘</td></tr>
+<tr><td>日ノ輪泊</td><td>ひのわとまり</td><td>高1</td><td>16</td><td>人外さんの嫁</td><td>八坂アキヲ・相川有</td></tr>
+<tr><td>ピノン</td><td>ぴのん</td><td>8歳</td><td>8</td><td>ポポロクロイス 月の掟の冒険</td><td>田森庸介</td></tr>
+<tr><td>ヒビキ</td><td>ひびき</td><td>nan</td><td>nan</td><td>ポケットモンスターハートゴールド・ソウルシルバー</td><td>ゲームフリーク</td></tr>
+<tr><td>響裕太</td><td>ひびきゆうた</td><td>高1</td><td>16</td><td>SSSS.GRIDMAN</td><td>TRIGGER</td></tr>
+<tr><td>一二三ススム</td><td>ひふみすすむ</td><td>小4</td><td>10</td><td>エレクトエージェンツ</td><td>TEAM ELECT AGENTS</td></tr>
+<tr><td>氷見友樹</td><td>ひみともき</td><td>小3</td><td>9</td><td>デジモンフロンティア</td><td>本郷あきよし</td></tr>
+<tr><td>姫野かのん</td><td>ひめのかのん</td><td>nan</td><td>nan</td><td>アイドルマスター SideM</td><td>オルトプラス</td></tr>
+<tr><td>白夜王ヤイバ</td><td>びゃくやおうやいば</td><td>17歳</td><td>17</td><td>バトルスピリッツ ソードアイズ</td><td>矢立肇</td></tr>
+<tr><td>百夜ミカエラ</td><td>ひゃくやみかえら</td><td>nan</td><td>nan</td><td>終わりのセラフ</td><td>鏡貴也</td></tr>
+<tr><td>百夜優一郎</td><td>ひゃくやゆういちろう</td><td>nan</td><td>nan</td><td>終わりのセラフ</td><td>鏡貴也</td></tr>
+<tr><td>百鬼丸</td><td>ひゃっきまる</td><td>14歳</td><td>14</td><td>どろろ</td><td>手塚治虫</td></tr>
+<tr><td>桧山一翔</td><td>ひやまかずま</td><td>小6</td><td>12</td><td>12歳。</td><td>まいた菜穂</td></tr>
+<tr><td>日向仁</td><td>ひゅうがじん</td><td>小5</td><td>11</td><td>絶対無敵ライジンオー</td><td>矢立肇</td></tr>
+<tr><td>兵堂剣蔵</td><td>ひょうどうけんぞう</td><td>9歳</td><td>9</td><td>バトルスピリッツ 少年激覇ダン</td><td>矢立肇</td></tr>
+<tr><td>兵部京介</td><td>ひょうぶきょうすけ</td><td>7歳</td><td>7</td><td>THE UNLIMITED 兵部京介</td><td>椎名高志</td></tr>
+<tr><td>氷竜キリ</td><td>ひょうりゅうきり</td><td>小6</td><td>12</td><td>フューチャーカード バディファイト</td><td>ブシロード</td></tr>
+<tr><td>平賀才人</td><td>ひらがさいと</td><td>17歳</td><td>17</td><td>ゼロの使い魔</td><td>ヤマグチノボル</td></tr>
+<tr><td>ビルク</td><td>びるく</td><td>nan</td><td>nan</td><td>山賊の娘ローニャ</td><td>アストリッド・リンドグレーン</td></tr>
+<tr><td>ピルソイン</td><td>ぴるそいん</td><td>nan</td><td>nan</td><td>灼眼のシャナ</td><td>高橋弥七郎</td></tr>
+<tr><td>ヒロ(Code:016)</td><td>ひろ</td><td>nan</td><td>nan</td><td>ダーリン・イン・ザ・フランキス</td><td>Code:000</td></tr>
+<tr><td>ひろし</td><td>ひろし</td><td>nan</td><td>nan</td><td>あおおに ～じ・あにめぇしょん～</td><td>noprops</td></tr>
+<tr><td>ヒロト</td><td>ひろと</td><td>小5</td><td>11</td><td>ニンジャボックス</td><td>バンダイ</td></tr>
+<tr><td>ヒロ・ハマダ</td><td>ひろはまだ</td><td>14歳</td><td>14</td><td>ベイマックス(Big Hero 6)</td><td>ウォルト・ディズニー</td></tr>
+<tr><td>火渡カイ</td><td>ひわたりかい</td><td>小学生</td><td>nan</td><td>爆転シュート ベイブレード</td><td>青木たかお</td></tr>
+<tr><td>ヒヲウ</td><td>ひをう</td><td>8歳</td><td>8</td><td>機巧奇傳ヒヲウ戦記</td><td>BONES、會川昇</td></tr>
+<tr><td>フェイト・アーウェルンクス</td><td>ふぁいとあーうぇるんくす</td><td>nan</td><td>nan</td><td>魔法先生ネギま!</td><td>赤松健</td></tr>
+<tr><td>ファルコ・グライス</td><td>ふぁるこ・ぐらいす</td><td>nan</td><td>nan</td><td>進撃の巨人</td><td>諫山創</td></tr>
+<tr><td>フィル</td><td>ふぃる</td><td>11歳</td><td>11</td><td>ちっちゃな雪使いシュガー</td><td>蒼はるか</td></tr>
+<tr><td>フィル</td><td>ふぃる</td><td>4</td><td>4</td><td>約束のネバーランド</td><td>白井カイウ</td></tr>
+<tr><td>フィル</td><td>ふぃる</td><td>nan</td><td>nan</td><td>New ポケモンスナップ</td><td>バンダイナムコスタジオ</td></tr>
+<tr><td>フィル＝ブラウン</td><td>ふぃるぶらうん</td><td>15歳</td><td>15</td><td>ウィザーズ・ハーモニーR</td><td>アークシステムワークス</td></tr>
+<tr><td>フゥ太</td><td>ふぅた</td><td>9歳</td><td>9</td><td>家庭教師ヒットマンREBORN!</td><td>天野明</td></tr>
+<tr><td>フータ・デッレ・ステッレ</td><td>ふーたでぃれすてっれ</td><td>9歳</td><td>9</td><td>家庭教師ヒットマンREBORN!</td><td>天野明</td></tr>
+<tr><td>風魔小太郎</td><td>ふうまこうたろう</td><td>nan</td><td>nan</td><td>Fate/Grand Order</td><td>TYPE-MOON</td></tr>
+<tr><td>風郎太</td><td>ふうろうた</td><td>nan</td><td>nan</td><td>コンクリート・レボルティオ〜超人幻想〜</td><td>	BONES</td></tr>
+<tr><td>フェイ・ルーン</td><td>ふぇいるーん</td><td>13歳</td><td>13</td><td>イナズマイレブンGO</td><td>レベルファイブ</td></tr>
+<tr><td>フェニックス</td><td>ふぇにっくす</td><td>10歳</td><td>10</td><td>スーパービックリマン</td><td>朝日放送 旭通信社 東映動画</td></tr>
+<tr><td>フェニックス</td><td>ふぇにっくす</td><td>nan</td><td>nan</td><td>怪盗ジョーカー</td><td>たかはしひでやす</td></tr>
+<tr><td>フカイアオ</td><td>ふかいあお</td><td>中1</td><td>13</td><td>エウレカセブンAO</td><td>BONES</td></tr>
+<tr><td>フシ</td><td>ふし</td><td>nan</td><td>nan</td><td>不滅のあなたへ</td><td>大今良時</td></tr>
+<tr><td>藤木遊作</td><td>ふじきゆうさく</td><td>高1</td><td>16</td><td>遊☆戯☆王VRAINS</td><td>高橋和希</td></tr>
+<tr><td>不二咲千尋</td><td>ふじさきちひろ</td><td>高1</td><td>16</td><td>ダンガンロンパ</td><td>スパイク</td></tr>
+<tr><td>藤沼悟</td><td>ふじぬまさとる</td><td>10歳</td><td>10</td><td>僕だけがいない街</td><td>三部けい</td></tr>
+<tr><td>藤巻駿</td><td>ふじまきしゅん</td><td>中1</td><td>13</td><td>ガンバ!Fly high</td><td>森末慎二</td></tr>
+<tr><td>藤丸立香</td><td>ふじまるりつか</td><td>未成年</td><td>nan</td><td>Fate/Grand Order</td><td>TYPE-MOON</td></tr>
+<tr><td>双葉翔太郎</td><td>ふたばしょうたろう</td><td>高1</td><td>16</td><td>バクテン!!</td><td>四ッ木えんぴつ</td></tr>
+<tr><td>双葉なぎ</td><td>ふたばなぎ</td><td>13歳</td><td>13</td><td>どきどき魔女神判2</td><td>SNKプレイモア</td></tr>
+<tr><td>吹雪アツヤ</td><td>ふぶきあつや</td><td>中学生</td><td>nan</td><td>イナズマイレブン</td><td>レベルファイブ</td></tr>
+<tr><td>吹雪士郎</td><td>ふぶきしろう</td><td>中学生</td><td>nan</td><td>イナズマイレブン</td><td>レベルファイブ</td></tr>
+<tr><td>ブラック</td><td>ぶらっく</td><td>nan</td><td>nan</td><td>血界戦線</td><td>内藤泰弘</td></tr>
+<tr><td>ブラック☆スター</td><td>ぶらっくすたー</td><td>nan</td><td>nan</td><td>ソウルイーター</td><td>大久保篤</td></tr>
+<tr><td>ブラックピット(ブラピ)</td><td>ぶらっくぴっと(ぶらぴ)</td><td>13歳</td><td>13</td><td>新・光神話 パルテナの鏡</td><td>プロジェクトソラ</td></tr>
+<tr><td>フラット・エスカルドス</td><td>ふらっとえすかるどす</td><td>nan</td><td>nan</td><td>Fateシリーズ</td><td>TYPE-MOON</td></tr>
+<tr><td>フリー・デラホーヤ</td><td>ふりーでらほーや</td><td>nan</td><td>nan</td><td>ベイブレードバースト</td><td>森多ヒロ</td></tr>
+<tr><td>ブリジット</td><td>ぶりじっと</td><td>nan</td><td>nan</td><td>GUILTY GEARシリーズ</td><td>アークシステムワークス</td></tr>
+<tr><td>フリット・アスノ</td><td>ふりっとあすの</td><td>14歳</td><td>14</td><td>機動戦士ガンダムAGE</td><td>矢立肇 富野由悠季</td></tr>
+<tr><td>降矢凰壮</td><td>ふるやおうぞう</td><td>小6</td><td>12</td><td>銀河へキックオフ!!</td><td>川端裕人</td></tr>
+<tr><td>降矢虎太</td><td>ふるやこた</td><td>小6</td><td>12</td><td>銀河へキックオフ!!</td><td>川端裕人</td></tr>
+<tr><td>降矢竜持</td><td>ふるやりゅうじ</td><td>小6</td><td>12</td><td>銀河へキックオフ!!</td><td>川端裕人</td></tr>
+<tr><td>ぺぷちゃん</td><td>ぺぷちゃん</td><td>nan</td><td>nan</td><td>まけるな!! あくのぐんだん!</td><td>徳井青空</td></tr>
+<tr><td>ベベル</td><td>べべる</td><td>nan</td><td>nan</td><td>翠星のガルガンティア</td><td>オケアノス</td></tr>
+<tr><td>ベル・クラネル</td><td>べるくらねる</td><td>14歳</td><td>14</td><td>ダンジョンに出会いを求めるのは間違っているだろうか</td><td>大森藤ノ</td></tr>
+<tr><td>ベルナール・オクタビアス</td><td>べるなーるおくたびあす</td><td>17歳</td><td>17</td><td>龍の歯医者</td><td>舞城王太郎</td></tr>
+<tr><td>ベルリ・ゼナム</td><td>べるりぜらむ</td><td>nan</td><td>nan</td><td>ガンダム Gのレコンギスタ</td><td>矢立肇 富野由悠季</td></tr>
+<tr><td>ヘンリー</td><td>へんりー</td><td>nan</td><td>nan</td><td>ポップンミュージック4</td><td>コナミ</td></tr>
+<tr><td>ホウライ</td><td>ほうらい</td><td>nan</td><td>nan</td><td>ドラゴンフォース</td><td>セガ</td></tr>
+<tr><td>ポール＝マッセ</td><td>ぽーるまっせ</td><td>11歳</td><td>11</td><td>アマリリス</td><td>福島鉄平</td></tr>
+<tr><td>ポコ</td><td>ぽこ</td><td>nan</td><td>nan</td><td>うどんの国の金色毛鞠</td><td>篠丸のどか</td></tr>
+<tr><td>星川コウタ</td><td>ほしかわこうた</td><td>小3</td><td>9</td><td>勇者エクスカイザー</td><td>矢立肇</td></tr>
+<tr><td>星河スバル</td><td>ほしかわすばる</td><td>小5</td><td>11</td><td>流星のロックマン</td><td>カプコン</td></tr>
+<tr><td>星川リリィ</td><td>ほしかわりりぃ</td><td>12歳</td><td>12</td><td>ゾンビランドサガ</td><td>広報広聴課ゾンビ係</td></tr>
+<tr><td>星野歩</td><td>ほしのあゆむ</td><td>中学生</td><td>nan</td><td>星空へ架かる橋</td><td>feng</td></tr>
+<tr><td>星原ヒカル</td><td>ほしはらひかる</td><td>14歳</td><td>14</td><td>ダンボール戦機WARS</td><td>レベルファイブ</td></tr>
+<tr><td>星渡ゴロー</td><td>ほしわたりごろー</td><td>16歳</td><td>16</td><td>YAT安心!宇宙旅行</td><td>西川伸司</td></tr>
+<tr><td>蛍丸</td><td>ほたるまる</td><td>nan</td><td>nan</td><td>刀剣乱舞</td><td>CLARITY STUDIO</td></tr>
+<tr><td>ポッド</td><td>ぽっど</td><td>nan</td><td>nan</td><td>ポケットモンスター ブラック・ホワイト</td><td>ゲームフリーク</td></tr>
+<tr><td>ホップ</td><td>ほっぷ</td><td>nan</td><td>nan</td><td>ポケットモンスター ソード・シールド</td><td>ゲームフリーク</td></tr>
+<tr><td>ポップ</td><td>ぽっぷ</td><td>nan</td><td>nan</td><td>DRAGON QUEST -ダイの大冒険-</td><td>三条陸</td></tr>
+<tr><td>辺里唯世</td><td>ほとりただせ</td><td>小6</td><td>12</td><td>しゅごキャラ!</td><td>PEACH-PIT</td></tr>
+<tr><td>ホプル</td><td>ほぷる</td><td>nan</td><td>nan</td><td>ワールドフリッパー</td><td>Cygames</td></tr>
+<tr><td>ポポ</td><td>ぽぽ</td><td>nan</td><td>nan</td><td>甲虫王者ムシキング～森の民の伝説～</td><td>セガ</td></tr>
+<tr><td>炎部ワタル</td><td>ほむらべわたる</td><td>10歳</td><td>10</td><td>超魔神英雄伝ワタル</td><td>矢立肇</td></tr>
+<tr><td>焔レン</td><td>ほむられん</td><td>小6</td><td>12</td><td>モンスターストライク</td><td>XFLAG</td></tr>
+<tr><td>ホリ・ススム</td><td>ほりすすむ</td><td>nan</td><td>nan</td><td>ミスタードリラー(Mr. Driller)</td><td>ナムコ</td></tr>
+<tr><td>ホロホロ(碓氷ホロケウ)</td><td>ほろほろ(うすいほろけう)</td><td>nan</td><td>nan</td><td>シャーマンキング</td><td>武井宏之</td></tr>
+<tr><td>本田(茂野)吾郎</td><td>ほんだごろう(しげの)</td><td>小4</td><td>10</td><td>MAJOR</td><td>満田拓也</td></tr>
+<tr><td>真薄牡丹</td><td>まうすぼたん</td><td>小学生</td><td>nan</td><td>パワポケダッシュ</td><td>コナミ</td></tr>
+<tr><td>前原圭一</td><td>まえばらけいいち</td><td>中2</td><td>14</td><td>ひぐらしのなく頃に</td><td>07th Expansion</td></tr>
+<tr><td>マオ</td><td>まお</td><td>1578歳</td><td>1578</td><td>魔界戦記ディスガイア3</td><td>日本一ソフトウェア・原田たけひと</td></tr>
+<tr><td>マオ</td><td>まお</td><td>nan</td><td>nan</td><td>テイルズ オブ リバース</td><td>ナムコ</td></tr>
+<tr><td>マオ(劉昴星)</td><td>まお(りゅうまおしん)</td><td>13</td><td>13</td><td>中華一番！</td><td>小川悦司</td></tr>
+<tr><td>まおちゃん</td><td>まおちゃん</td><td>小1</td><td>7</td><td>少年アシベ</td><td>森下裕美</td></tr>
+<tr><td>真ヶ土翔太</td><td>まがつちしょうた</td><td>小5</td><td>11</td><td>小林さんちのメイドラゴン</td><td>クール教信者</td></tr>
+<tr><td>マキビ・ハリ</td><td>まきびはり</td><td>11歳</td><td>11</td><td>機動戦艦ナデシコ</td><td>XEBEC</td></tr>
+<tr><td>マグ・ランチャー</td><td>まぐらんちゃー</td><td>16歳</td><td>16</td><td>神機世界エヴォリューション</td><td>スティング</td></tr>
+<tr><td>真/マコちゃん</td><td>まこと・まこちゃん</td><td>小6</td><td>12</td><td>みなみけ</td><td>桜場コハル</td></tr>
+<tr><td>マコト(ハリケーン)</td><td>まこと(はりけーん)</td><td>nan</td><td>nan</td><td>マーベル フューチャー・アベンジャーズ</td><td>マーベル</td></tr>
+<tr><td>マサト</td><td>まさと</td><td>7歳</td><td>7</td><td>ポケットモンスター アドバンスジェネレーション</td><td>田尻智 増田順一 杉森建</td></tr>
+<tr><td>マサル</td><td>まさる</td><td>nan</td><td>nan</td><td>ポケットモンスター ソード・シールド</td><td>ゲームフリーク</td></tr>
+<tr><td>マジク・リン</td><td>まじくりん</td><td>14</td><td>14</td><td>魔術士オーフェン</td><td>秋田禎信</td></tr>
+<tr><td>マシュラ</td><td>ましゅら</td><td>12歳</td><td>12</td><td>マシュランボー</td><td>東堂いづみ</td></tr>
+<tr><td>松岡勝治</td><td>まつおかかつじ</td><td>10歳</td><td>10</td><td>人造昆虫カブトボーグ V×V</td><td>タカラトミー（原案）</td></tr>
+<tr><td>松風天馬</td><td>まつかぜてんま</td><td>13歳</td><td>13</td><td>イナズマイレブンGO</td><td>レベルファイブ</td></tr>
+<tr><td>松田啓人</td><td>まつだたかと</td><td>10歳</td><td>10</td><td>デジモンテイマーズ</td><td>本郷あきよし</td></tr>
+<tr><td>真羽勝</td><td>まっはまさる</td><td>小5</td><td>11</td><td>クラッシュギアNitro</td><td>矢立肇</td></tr>
+<tr><td>松原龍二</td><td>まつばらりゅじ</td><td>nan</td><td>nan</td><td>パズドラ</td><td>ガンホー</td></tr>
+<tr><td>円竜也</td><td>まどかたつや</td><td>15歳</td><td>15</td><td>ギルガメッシュ</td><td>石ノ森章太郎</td></tr>
+<tr><td>真夏ダイチ</td><td>まなつだいち</td><td>高2</td><td>17</td><td>キャプテン・アース</td><td>BONES</td></tr>
+<tr><td>真壁一騎</td><td>まなべかずき</td><td>14歳</td><td>14</td><td>蒼穹のファフナー</td><td>XEBEC</td></tr>
+<tr><td>マフムート</td><td>まふむーと</td><td>17歳</td><td>17</td><td>将国のアルタイル</td><td>カトウコトノ</td></tr>
+<tr><td>真火</td><td>まほ</td><td>nan</td><td>nan</td><td>蟲師</td><td>漆原友紀</td></tr>
+<tr><td>まめっち</td><td>まめっち</td><td>nan</td><td>nan</td><td>たまごっち!</td><td>バンダイ</td></tr>
+<tr><td>まもるくん</td><td>まもるくん</td><td>nan</td><td>nan</td><td>福岡県防災イメージキャラクター</td><td>サイバーコネクトツー</td></tr>
+<tr><td>真理谷四郎</td><td>まりやしろう</td><td>中3</td><td>15</td><td>エデンの檻</td><td>山田恵庸</td></tr>
+<tr><td>マルクル</td><td>まるくる</td><td>nan</td><td>nan</td><td>ハウルの動く城</td><td>宮崎駿</td></tr>
+<tr><td>丸山レイジ</td><td>まるやまレイジ</td><td>中2</td><td>14</td><td>DIVE!!</td><td>森絵都</td></tr>
+<tr><td>マルルク</td><td>まるるく</td><td>nan</td><td>nan</td><td>メイドインアビス</td><td>つくしあきひと</td></tr>
+<tr><td>見浦ナオト</td><td>みうらなおと</td><td>高校生</td><td>nan</td><td>クロックワーク・プラネット</td><td>榎宮祐・暇奈椿</td></tr>
+<tr><td>ミエル</td><td>みえる</td><td>4歳</td><td>4</td><td>英国一家、日本を食べる</td><td>マイケル・ブース</td></tr>
+<tr><td>三日月・オーガス</td><td>みかづきおーがす</td><td>nan</td><td>nan</td><td>機動戦士ガンダム 鉄血のオルフェンズ</td><td>矢立肇 富野由悠季</td></tr>
+<tr><td>未門牙王</td><td>みかどがおう</td><td>小6</td><td>12</td><td>フューチャーカード バディファイト</td><td>ブシロード</td></tr>
+<tr><td>御角威斗</td><td>みかどたけと</td><td>中1</td><td>13</td><td>最後は?ストレート!!</td><td>寒川一之</td></tr>
+<tr><td>未門陽太</td><td>みかどようた</td><td>12歳</td><td>12</td><td>フューチャーカード バディファイト</td><td>ブシロード</td></tr>
+<tr><td>御門零央</td><td>みかどれお</td><td>中3</td><td>15</td><td>蒼穹のファフナー</td><td>XEBEC</td></tr>
+<tr><td>三上稲葉</td><td>みかみいなば</td><td>小6</td><td>12</td><td>12歳。</td><td>まいた菜穂</td></tr>
+<tr><td>三雲修</td><td>みくもおさむ</td><td>15歳</td><td>15</td><td>ワールドトリガー</td><td>葦原 大介</td></tr>
+<tr><td>御蔵イオ</td><td>みくらいお</td><td>小学生</td><td>nan</td><td>大怪獣バトル ウルトラアドベンチャー</td><td>西川伸司</td></tr>
+<tr><td>御厨仁</td><td>みくりやじん</td><td>高1</td><td>16</td><td>かんなぎ</td><td>武梨えり</td></tr>
+<tr><td>ミゲル</td><td>みげる</td><td>12歳</td><td>12</td><td>リメンバー・ミー</td><td>ピクサー</td></tr>
+<tr><td>水窪ユウマ</td><td>みさくぼゆうま</td><td>12歳</td><td>12</td><td>怪談レストラン</td><td>松谷みよ子</td></tr>
+<tr><td>水原朋也</td><td>みずはらともや</td><td>13歳</td><td>13</td><td>お姉ちゃんが来た</td><td>安西理晃</td></tr>
+<tr><td>水原マックス</td><td>みずはらまっくす</td><td>小学生</td><td>nan</td><td>爆転シュート ベイブレード</td><td>青木たかお</td></tr>
+<tr><td>三谷亘</td><td>みたにわたる</td><td>小5</td><td>11</td><td>ブレイブストーリー</td><td>宮部みゆき</td></tr>
+<tr><td>観束総ニ</td><td>みつかそうじ</td><td>高1(15)</td><td>15</td><td>俺、ツインテールになります。</td><td>水沢夢</td></tr>
+<tr><td>ミツキ</td><td>みつき</td><td>nan</td><td>nan</td><td>BORUTO-ボルト- -NARUTO NEXT GENERATIONS-</td><td>岸本斉史</td></tr>
+<tr><td>三ツ橋蛍</td><td>みつはしけい</td><td>高1</td><td>16</td><td>火ノ丸相撲</td><td>川田</td></tr>
+<tr><td>緑川犬介</td><td>みどりかわけんすけ</td><td>小5</td><td>11</td><td>ベイブレードバースト</td><td>森多ヒロ</td></tr>
+<tr><td>緑川駿</td><td>みどりかわしゅん</td><td>14歳</td><td>14</td><td>ワールドトリガー</td><td>葦原大介</td></tr>
+<tr><td>緑谷出久(デク)</td><td>みどりやでく</td><td>中3</td><td>15</td><td>僕のヒーローアカデミア</td><td>堀越耕平</td></tr>
+<tr><td>皆城総士</td><td>みなしろそうし</td><td>13歳</td><td>13</td><td>蒼穹のファフナー</td><td>XEBEC</td></tr>
+<tr><td>皆城総士</td><td>みなしろそうし</td><td>14歳</td><td>14</td><td>蒼穹のファフナー THE BEYOND</td><td>XEBEC</td></tr>
+<tr><td>水早賢次</td><td>みなはやけんじ</td><td>nan</td><td>nan</td><td>サブマリン707R</td><td>小沢さとる</td></tr>
+<tr><td>南健次郎</td><td>みなみけんじろう</td><td>17歳</td><td>17</td><td>ユーリ!!! on ICE</td><td>久保ミツロウ×山本沙代</td></tr>
+<tr><td>源輝二</td><td>みなもとこうじ</td><td>小5</td><td>11</td><td>デジモンフロンティア</td><td>本郷あきよし</td></tr>
+<tr><td>峯崎拳一</td><td>みねざきけんいち</td><td>小6(11歳)</td><td>11</td><td>熱血最強ゴウザウラー</td><td>矢立肇</td></tr>
+<tr><td>三橋廉</td><td>みはしれん</td><td>高1</td><td>16</td><td>おおきく振りかぶって</td><td>ひぐちアサ</td></tr>
+<tr><td>壬生小太郎</td><td>みぶこたろう</td><td>15歳</td><td>15</td><td>緋色の欠片 翡翠の雫</td><td>カズキヨネ</td></tr>
+<tr><td>宮川あつし</td><td>みやがわあつし</td><td>小5</td><td>11</td><td>リコーダーとランドセル</td><td>東屋めめ</td></tr>
+<tr><td>宮城リク</td><td>みやぐすくりく</td><td>14歳</td><td>14</td><td>BLOOD+</td><td>ProductionI.G</td></tr>
+<tr><td>宮沢賢治</td><td>みやざわけんじ</td><td>14歳</td><td>14</td><td>文豪ストレイドッグス</td><td>朝霧カフカ</td></tr>
+<tr><td>宮ノ下敬一郎</td><td>みやのしたけいいちろう</td><td>小1</td><td>7</td><td>学校の怪談</td><td>常光徹</td></tr>
+<tr><td>美山写影</td><td>みやましゃえい</td><td>小4</td><td>10</td><td>とある科学の超電磁砲</td><td>鎌池和馬</td></tr>
+<tr><td>ミョウ</td><td>みょう</td><td>nan</td><td>nan</td><td>ほら、耳がみえてるよ！</td><td>特雷西胡</td></tr>
+<tr><td>みるん</td><td>みるん</td><td>nan</td><td>nan</td><td>ユリ熊嵐</td><td>イクニゴマモナカ</td></tr>
+<tr><td>夢幻ダイ</td><td>むげんだい</td><td>小5</td><td>11</td><td>最響カミズモード!</td><td>バンダイ</td></tr>
+<tr><td>武藤遊戯</td><td>むとうゆうぎ</td><td>高1</td><td>16</td><td>遊☆戯☆王</td><td>高橋和希</td></tr>
+<tr><td>村田始</td><td>むらたはじめ</td><td>中2</td><td>14</td><td>学園戦記ムリョウ</td><td>佐藤竜雄</td></tr>
+<tr><td>むらびと</td><td>むらびと</td><td>nan</td><td>nan</td><td>どうぶつの森</td><td>任天堂</td></tr>
+<tr><td>冥王フィブリゾ</td><td>めいおうふぃぶりぞ</td><td>nan</td><td>nan</td><td>スレイヤーズ</td><td>神坂一</td></tr>
+<tr><td>メイ・メリーハッダ</td><td>めいめりーはっだ</td><td>nan</td><td>nan</td><td>バトルスピリッツ ダブルドライブ</td><td>矢立肇</td></tr>
+<tr><td>メリオダス</td><td>めりおだす</td><td>nan</td><td>nan</td><td>七つの大罪</td><td>鈴木央</td></tr>
+<tr><td>もーちゃす</td><td>もーちゃす</td><td>nan</td><td>nan</td><td>タオルケットをもう一度</td><td>水野輝和（かなしみホッチキス）</td></tr>
+<tr><td>モーリス</td><td>もーりす</td><td>5歳</td><td>5</td><td>交響詩篇エウレカセブン</td><td>BONES</td></tr>
+<tr><td>茂上健斗</td><td>もがみけんと</td><td>nan</td><td>nan</td><td>バトルスピリッツ ダブルドライブ</td><td>矢立肇</td></tr>
+<tr><td>茂上駿太</td><td>もがみしゅんた</td><td>小6</td><td>12</td><td>バトルスピリッツ ダブルドライブ</td><td>矢立肇</td></tr>
+<tr><td>望月冬夜</td><td>もちづきとうや</td><td>15歳</td><td>15</td><td>異世界はスマートフォンとともに。</td><td>冬原パトラ</td></tr>
+<tr><td>望月ゆーま</td><td>もちづきゆーま</td><td>13歳</td><td>13</td><td>どきどき魔女神判!</td><td>SNKプレイモア</td></tr>
+<tr><td>本宮大輔</td><td>もとみやだいすけ</td><td>11歳</td><td>11</td><td>デジモンアドベンチャー02</td><td>本郷あきよし</td></tr>
+<tr><td>桃月心也</td><td>ももづきしんや</td><td>高1</td><td>16</td><td>ももくり</td><td>くろせ</td></tr>
+<tr><td>森嶋帆高</td><td>もりしまほだか</td><td>高1</td><td>16</td><td>天気の子</td><td>新海誠</td></tr>
+<tr><td>守機瞬</td><td>もりはたしゅん</td><td>中1</td><td>13</td><td>学園戦記ムリョウ</td><td>佐藤竜雄</td></tr>
+<tr><td>八神太一</td><td>やがみたいち</td><td>11歳=小5</td><td>11</td><td>デジモンアドベンチャー</td><td>本郷あきよし</td></tr>
+<tr><td>矢口春雄</td><td>やぐちはるお</td><td>nan</td><td>nan</td><td>ハイスコアガール</td><td>押切蓮介</td></tr>
+<tr><td>矢倉タイガ</td><td>やぐらたいが</td><td>小学生</td><td>nan</td><td>トミカハイパーシリーズ</td><td>タカラトミー</td></tr>
+<tr><td>薬研藤四郎</td><td>やげんとうしろう</td><td>nan</td><td>nan</td><td>刀剣乱舞</td><td>CLARITY STUDIO</td></tr>
+<tr><td>矢逆一稀</td><td>やさかかずき</td><td>中2</td><td>14</td><td>さらざんまい</td><td>イクニラッパー</td></tr>
+<tr><td>矢逆春河</td><td>やさかはるか</td><td>nan</td><td>nan</td><td>さらざんまい</td><td>イクニラッパー</td></tr>
+<tr><td>八坂真尋</td><td>やさかまひろ</td><td>高校生</td><td>nan</td><td>這いよれ!ニャル子さん!</td><td>逢空万太</td></tr>
+<tr><td>宿木明</td><td>やどりぎあきら</td><td>15歳</td><td>15</td><td>絶対可憐チルドレン</td><td>椎名高志</td></tr>
+<tr><td>ヤヒコ</td><td>やひこ</td><td>nan</td><td>nan</td><td>不機嫌なモノノケ庵</td><td>ワザワキリ</td></tr>
+<tr><td>ヤマギ・ギルマトン</td><td>やまぎぎるまとん</td><td>年少組</td><td>nan</td><td>機動戦士ガンダム 鉄血のオルフェンズ</td><td>矢立肇 富野由悠季</td></tr>
+<tr><td>山田ポチ</td><td>やまだぽち</td><td>nan</td><td>nan</td><td>うちタマ?! 〜うちのタマ知りませんか?〜</td><td>大塚舞</td></tr>
+<tr><td>ヤマト王子</td><td>やまとおうじ</td><td>nan</td><td>nan</td><td>ビックリマン</td><td>朝日放送 旭通信社 東映動画</td></tr>
+<tr><td>山野バン</td><td>やまのばん</td><td>13歳</td><td>13</td><td>ダンボール戦機</td><td>日野晃博</td></tr>
+<tr><td>山童</td><td>やまわろ</td><td>nan</td><td>nan</td><td>地獄少女</td><td>わたなべひろし</td></tr>
+<tr><td>ヤンチャー王子</td><td>やんちゃーおうじ</td><td>11歳</td><td>11</td><td>伝説の勇者ダ・ガーン</td><td>矢立肇</td></tr>
+<tr><td>ヤンヤン</td><td>やんやん</td><td>nan</td><td>nan</td><td>ヤッターマン</td><td>テレビ朝日</td></tr>
+<tr><td>ユウ</td><td>ゆう</td><td>nan</td><td>nan</td><td>クイズマジックアカデミー</td><td>コナミデジタルエンタテインメント</td></tr>
+<tr><td>ユウ</td><td>ゆう</td><td>15歳</td><td>15</td><td>メルクストーリア</td><td>Happy Elements</td></tr>
+<tr><td>ユウキ</td><td>ゆうき</td><td>11歳</td><td>11</td><td>ポケットモンスタールビー・サファイア</td><td>ゲームフリーク</td></tr>
+<tr><td>遊城十代</td><td>ゆうきじゅうだい</td><td>nan</td><td>nan</td><td>遊☆戯☆王GX</td><td>高橋和希</td></tr>
+<tr><td>結城直哉</td><td>ゆうきなおや</td><td>小5</td><td>11</td><td>プピポー!</td><td>押切 蓮介</td></tr>
+<tr><td>結城リト(梨斗)</td><td>ゆうきりと</td><td>15</td><td>15</td><td>To LOVEる -とらぶる-</td><td>長谷見沙貴</td></tr>
+<tr><td>ユーゴ</td><td>ゆーご</td><td>nan</td><td>nan</td><td>遊☆戯☆王ARC-V</td><td>三好直人</td></tr>
+<tr><td>ユージオ</td><td>ゆーじお</td><td>nan</td><td>nan</td><td>ソードアート・オンライン</td><td>川原礫</td></tr>
+<tr><td>勇者(主人公息子)</td><td>ゆうしゃ</td><td>8歳</td><td>8</td><td>ドラゴンクエストV 天空の花嫁</td><td>エニックス</td></tr>
+<tr><td>ユース・グリンホルン</td><td>ゆーすぐりんほるん</td><td>13歳</td><td>13</td><td>バトルスピリッツ ブレイヴ</td><td>矢立肇</td></tr>
+<tr><td>ユースケ</td><td>ゆーすけ</td><td>14歳</td><td>14</td><td>ロボットポンコッツ</td><td>ハドソン・レッドカンパニー</td></tr>
+<tr><td>ユーノ・スクライア</td><td>ゆーのすくらいあ</td><td>9歳</td><td>9</td><td>魔法少女リリカルなのは</td><td>都築真紀／ivory</td></tr>
+<tr><td>ゆうまくん</td><td>ゆうまくん</td><td>小1</td><td>7</td><td>少年アシベ</td><td>森下裕美</td></tr>
+<tr><td>ユーリィ</td><td>ゆーりぃ</td><td>nan</td><td>nan</td><td>ファイナルファンタジー・クリスタルクロニクル リング・オブ・フェイト</td><td>スクウェア・エニックス</td></tr>
+<tr><td>ユーリ・プリセツキー</td><td>ゆーりぷりせつきー</td><td>15歳</td><td>15</td><td>ユーリ!!! on ICE</td><td>久保ミツロウ×山本沙代</td></tr>
+<tr><td>ユーリ・レッセン</td><td>ゆーりれっせん</td><td>nan</td><td>nan</td><td>ポップアップストーリー 魔法の本と聖樹の学園</td><td>スクウェア・エニックス</td></tr>
+<tr><td>佑河真</td><td>ゆかわまこと</td><td>幼稚園</td><td>nan</td><td>刻刻</td><td>堀尾省太</td></tr>
+<tr><td>雪音</td><td>ゆきね</td><td>14歳</td><td>14</td><td>ノラガミ</td><td>あだちとか</td></tr>
+<tr><td>幸平創真</td><td>ゆきひらそうま</td><td>高1</td><td>16</td><td>食戟のソーマ</td><td>附田祐斗</td></tr>
+<tr><td>雪見ソウシ</td><td>ゆきみそうし</td><td>小5</td><td>11</td><td>飛べ!イサミ</td><td>NHK・NHKエンタープライズ21</td></tr>
+<tr><td>ユッキー（ヒダカ・ユキオ）</td><td>ゆっきー(ひだかゆきお)</td><td>14歳</td><td>14</td><td>ガンダムビルドダイバーズ</td><td>矢立肇</td></tr>
+<tr><td>ユノ</td><td>ゆの</td><td>15歳</td><td>15</td><td>ブラッククローバー</td><td>田畠裕基</td></tr>
+<tr><td>湯宮ケンタ</td><td>ゆのみやけんた</td><td>nan</td><td>nan</td><td>メタルファイト ベイブレード</td><td>足立たかふみ</td></tr>
+<tr><td>指輪創作</td><td>ゆびわそうさく</td><td>中1</td><td>13</td><td>美少年探偵団</td><td>西尾維新</td></tr>
+<tr><td>夢川ショウゴ</td><td>ゆめかわしょうご</td><td>中2</td><td>14</td><td>アイドルタイムプリパラ</td><td>タカラトミーアーツ、シンソフィア</td></tr>
+<tr><td>ヨアン</td><td>よあん</td><td>nan</td><td>nan</td><td>Laughter Land</td><td>郎猫儿</td></tr>
+<tr><td>ヨウ</td><td>よう</td><td>11歳</td><td>11</td><td>ポケットモンスター サン・ムーン</td><td>ゲームフリーク</td></tr>
+<tr><td>ヨク・アルバトロサ</td><td>よくあるばとろさ</td><td>nan</td><td>nan</td><td>バトルスピリッツ ダブルドライブ</td><td>矢立肇</td></tr>
+<tr><td>横寺陽人</td><td>よこでらようと</td><td>高2</td><td>17</td><td>変態王子と笑わない猫。</td><td>さがら総</td></tr>
+<tr><td>吉川ヤクモ</td><td>よしかわやくも</td><td>小5</td><td>11</td><td>陰陽大戦記</td><td>海童義行 WiZ</td></tr>
+<tr><td>吉沢修二</td><td>よしざわしゅうじ</td><td>高1</td><td>16</td><td>群青にサイレン</td><td>桃栗みかん</td></tr>
+<tr><td>吉沢空</td><td>よしざわそら</td><td>高1</td><td>16</td><td>群青にサイレン</td><td>桃栗みかん</td></tr>
+<tr><td>吉永和己</td><td>よしながかずみ</td><td>16歳</td><td>16</td><td>吉永さん家のガーゴイル</td><td>田口仙年堂 日向悠二</td></tr>
+<tr><td>吉村護</td><td>よしむらまもる</td><td>高1</td><td>16</td><td>護くんに女神の祝福を!</td><td>岩田洋季 佐藤利幸</td></tr>
+<tr><td>ヨシュア(桐生義弥)</td><td>よしゅあ(きりゅうよしや)</td><td>15</td><td>15</td><td>すばらしきこのせかい</td><td>スクウェア・エニックス</td></tr>
+<tr><td>ヨシュア・ブライト</td><td>よしゅあぶらいと</td><td>nan</td><td>nan</td><td>みんな集まれ!ファルコム学園</td><td>新久保だいすけ</td></tr>
+<tr><td>終夜空</td><td>よすがらうつほ</td><td>nan</td><td>nan</td><td>天獄 -HEAVEN'S PRISON-</td><td>うたたねひろゆき</td></tr>
+<tr><td>ヨナ(ジョナサン・マル)</td><td>よな(じょなさんまる)</td><td>nan</td><td>nan</td><td>ヨルムンガンド</td><td>高橋慶太郎</td></tr>
+<tr><td>ヨファ</td><td>よふぁ</td><td>nan</td><td>nan</td><td>ファイアーエムブレム 蒼炎の軌跡</td><td>任天堂、インテリジェントシステムズ</td></tr>
+<tr><td>ヨルハ九号S型(9S)</td><td>よるはきゅうごうえすがた(ないんえす)</td><td>nan</td><td>nan</td><td>NieR:Automata</td><td>スクウェア・エニックス</td></tr>
+<tr><td>ラーサー</td><td>らーさー</td><td>12歳</td><td>12</td><td>ファイナルファンタジーXII</td><td>スクウェアエニックス</td></tr>
+<tr><td>ライ</td><td>らい</td><td>15歳</td><td>15</td><td>サモンナイト4</td><td>バンプレスト</td></tr>
+<tr><td>ライド・マッス</td><td>らいどまっす</td><td>年少組</td><td>nan</td><td>機動戦士ガンダム 鉄血のオルフェンズ</td><td>矢立肇 富野由悠季</td></tr>
+<tr><td>ライフィセット</td><td>らいふぃせっと</td><td>10</td><td>10</td><td>テイルズオブベルセリア</td><td>バンダイナムコスタジオ</td></tr>
+<tr><td>ラグ・シーイング</td><td>らぐしーいんぐ</td><td>7歳</td><td>7</td><td>テガミバチ</td><td>浅田弘幸</td></tr>
+<tr><td>ラグナス・ビシャシ</td><td>らぐなすびしゃし</td><td>10歳(17歳)</td><td>10</td><td>ぷよぷよSUN</td><td>SEGA(コンパイル)</td></tr>
+<tr><td>等軍焔</td><td>らぐんえん</td><td>12歳=小6</td><td>12</td><td>ラグーンエンジン</td><td>杉崎ゆきる</td></tr>
+<tr><td>等軍陣</td><td>らぐんじん</td><td>11歳=小5</td><td>11</td><td>ラグーンエンジン</td><td>杉崎ゆきる</td></tr>
+<tr><td>ラスク</td><td>らすく</td><td>11歳</td><td>11</td><td>クイズマジックアカデミー</td><td>コナミデジタルエンタテインメント</td></tr>
+<tr><td>ラット(根津次郎)</td><td>らっと(ねづじろう)</td><td>nan</td><td>nan</td><td>探偵オペラミルキィホームズ</td><td>ブシロード</td></tr>
+<tr><td>ラトビア</td><td>らとびあ</td><td>nan</td><td>nan</td><td>Axis powers ヘタリア</td><td>日丸屋秀和</td></tr>
+<tr><td>ラニオン</td><td>らにおん</td><td>7</td><td>7</td><td>約束のネバーランド</td><td>白井カイウ</td></tr>
+<tr><td>ラハール</td><td>らはーる</td><td>1313歳</td><td>1313</td><td>魔界戦記ディスガイア</td><td>日本一ソフトウェア・原田たけひと</td></tr>
+<tr><td>ラビ</td><td>らび</td><td>11歳</td><td>11</td><td>魔動王グランゾート</td><td>矢立肇 広井王子</td></tr>
+<tr><td>ラビオリ</td><td>らびおり</td><td>nan</td><td>nan</td><td>発明BOYカニパン</td><td>ビー・ネット，えん</td></tr>
+<tr><td>ラファエロ</td><td>らふぁえろ</td><td>nan</td><td>nan</td><td>チョコボの不思議なダンジョン 時忘れの迷宮</td><td>スクウェア・エニックス</td></tr>
+<tr><td>ラプター</td><td>らぷたー</td><td>nan</td><td>nan</td><td>スーパーカセキホリダー</td><td>任天堂/レッド・エンタテイメント</td></tr>
+<tr><td>ラリー・ドーソン</td><td>らりーどーそん</td><td>nan</td><td>nan</td><td>遊☆戯☆王5D's</td><td>テレビ東京</td></tr>
+<tr><td>ランス</td><td>らんす</td><td>nan</td><td>nan</td><td>パズドラクロス</td><td>ガンホー</td></tr>
+<tr><td>ランタ</td><td>らんた</td><td>nan</td><td>nan</td><td>灰と幻想のグリムガル</td><td>	十文字青</td></tr>
+<tr><td>ランディ</td><td>らんでぃ</td><td>16歳</td><td>16</td><td>聖剣伝説2</td><td>スクウェアエニックス</td></tr>
+<tr><td>リーフ</td><td>りーふ</td><td>16歳</td><td>16</td><td>デルトラ・クエスト</td><td>エミリー・ロッダ</td></tr>
+<tr><td>リーフ・ラング・ド・シャー・ハルヴァー</td><td>りーふらんぐどしゃーはるゔぁー</td><td>nan</td><td>nan</td><td>DOG DAYS</td><td>都築真紀</td></tr>
+<tr><td>リーヤ</td><td>りーや</td><td>nan</td><td>nan</td><td>赤ずきんチャチャ</td><td>彩花みん</td></tr>
+<tr><td>リオ・バクスター</td><td>りおばくすたー</td><td>12歳</td><td>12</td><td>悠久幻想曲 2nd Album</td><td>スターライトマリー、メディアワークス</td></tr>
+<tr><td>リク</td><td>りく</td><td>15歳</td><td>15</td><td>キングダム ハーツ</td><td>スクウェアエニックス</td></tr>
+<tr><td>リク（ミカミ・リク）</td><td>りく(みかみりく)</td><td>14歳</td><td>14</td><td>ガンダムビルドダイバーズ</td><td>矢立肇</td></tr>
+<tr><td>リクト・エイプリル</td><td>りくとえいぷりる</td><td>nan</td><td>nan</td><td>最強銀河 究極ゼロ 〜バトルスピリッツ〜</td><td>矢立肇</td></tr>
+<tr><td>李健良</td><td>りじぇんりゃ</td><td>10歳</td><td>10</td><td>デジモンテイマーズ</td><td>本郷あきよし</td></tr>
+<tr><td>李・小狼</td><td>りしゃおらん</td><td>小4</td><td>10</td><td>カードキャプターさくら</td><td>CLAMP</td></tr>
+<tr><td>リゼルグ・ダイゼル</td><td>りぜるぐだいぜる</td><td>nan</td><td>nan</td><td>シャーマンキング</td><td>武井宏之</td></tr>
+<tr><td>リッケルト</td><td>りっけると</td><td>nan</td><td>nan</td><td>ベルセルク</td><td>三浦建太郎</td></tr>
+<tr><td>リッチバーン</td><td>りっちばーん</td><td>nan</td><td>nan</td><td>サモンナイト クラフトソード物語～はじまりの石～</td><td>バンプレスト</td></tr>
+<tr><td>リッツ</td><td>りっつ</td><td>nan</td><td>nan</td><td>Riviera 〜約束の地リヴィエラ〜</td><td>スティング</td></tr>
+<tr><td>リヒト</td><td>りひと</td><td>nan</td><td>nan</td><td>ファイアーエムブレム 覚醒</td><td>任天堂、インテリジェントシステムズ</td></tr>
+<tr><td>リムル=テンペスト</td><td>りむるてんぺすと</td><td>nan</td><td>nan</td><td>転生したらスライムだった件</td><td>伏瀬</td></tr>
+<tr><td>リュウ</td><td>りゅう</td><td>nan</td><td>nan</td><td>北斗の拳</td><td>武論尊</td></tr>
+<tr><td>リュウ</td><td>りゅう</td><td>12歳</td><td>12</td><td>赤髪の白雪姫</td><td>あきづき空太</td></tr>
+<tr><td>リュウ</td><td>りゅう</td><td>nan</td><td>nan</td><td>戦国時代へタイムワープ</td><td>トリル</td></tr>
+<tr><td>龍炎寺タスク</td><td>りゅうえんじたすく</td><td>中1</td><td>13</td><td>フューチャーカード バディファイト</td><td>ブシロード</td></tr>
+<tr><td>龍ヶ崎カケル</td><td>りゅうがさきかける</td><td>小学生</td><td>nan</td><td>クロスファイト ビーダマン</td><td>タカラトミー</td></tr>
+<tr><td>竜ヶ崎ヒイロ</td><td>りゅうがさきひいろ</td><td>中2</td><td>14</td><td>シャドウバース</td><td>Cygames</td></tr>
+<tr><td>流崎力哉</td><td>りゅうがさきりきや</td><td>小4</td><td>10</td><td>元気爆発ガンバルガー</td><td>矢立肇</td></tr>
+<tr><td>竜ヶ峰帝人</td><td>りゅうがみねみかど</td><td>高1</td><td>16</td><td>デュラララ!!</td><td>成田良悟</td></tr>
+<tr><td>竜神翔悟</td><td>りゅうじんしょうご</td><td>16歳</td><td>16</td><td>マジンボーン</td><td>バンダイ</td></tr>
+<tr><td>リュート</td><td>りゅーと</td><td>12歳</td><td>12</td><td>モンスターハンター ストーリーズ RIDE ON</td><td>本郷みつる</td></tr>
+<tr><td>リューム</td><td>りゅーむ</td><td>nan</td><td>nan</td><td>サモンナイト4</td><td>バンプレスト</td></tr>
+<tr><td>リュカ</td><td>りゅか</td><td>nan</td><td>nan</td><td>MOTHER3</td><td>任天堂・糸井重里</td></tr>
+<tr><td>リョウタ・セキグチ(関口良太)</td><td>りょうたせきぐち</td><td>10</td><td>10</td><td>転生したらスライムだった件</td><td>伏瀬</td></tr>
+<tr><td>リンク</td><td>りんく</td><td>7-8,9,12歳</td><td>7</td><td>ゼルダの伝説シリーズ</td><td>任天堂</td></tr>
+<tr><td>龍亞</td><td>るあ</td><td>小学生</td><td>nan</td><td>遊☆戯☆王5D's</td><td>テレビ東京</td></tr>
+<tr><td>ルイージ＝ディ＝シルフィース</td><td>るいーじでぃしふふぃーす</td><td>15歳</td><td>15</td><td>ウィザーズ・ハーモニー2</td><td>アークシステムワークス</td></tr>
+<tr><td>ルゥ</td><td>るぅ</td><td>13歳(?)</td><td>13</td><td>ファイアーエムブレム 封印の剣</td><td>任天堂、インテリジェントシステムズ</td></tr>
+<tr><td>ルウ</td><td>るう</td><td>nan</td><td>nan</td><td>デュープリズム</td><td>スクウェアソフト</td></tr>
+<tr><td>ルーク・ウェヌス</td><td>るーくうぇぬす</td><td>nan</td><td>nan</td><td>ポップアップストーリー 魔法の本と聖樹の学園</td><td>スクウェア・エニックス</td></tr>
+<tr><td>ルークス＝ルナシオン</td><td>るーくするなしおん</td><td>16歳</td><td>16</td><td>ウィザーズ・ハーモニー2</td><td>アークシステムワークス</td></tr>
+<tr><td>ルーク・トライトン</td><td>るーくとらいとん</td><td>nan</td><td>nan</td><td>レイトン教授シリーズ</td><td>レベルファイブ</td></tr>
+<tr><td>ルーザ・デイモン</td><td>るーざでいもん</td><td>14歳</td><td>14</td><td>ファンタジーライフ</td><td>レベルファイブ</td></tr>
+<tr><td>ルージ・ファミロン</td><td>るーじふぁみろん</td><td>13歳</td><td>13</td><td>ゾイドジェネシス</td><td>タカラトミー</td></tr>
+<tr><td>ルーデウス・グレイラット</td><td>るーでうすぐれいらっと</td><td>(元は34歳)</td><td>nan</td><td>無職転生</td><td>理不尽な孫の手</td></tr>
+<tr><td>ルカ・アンジェローニ</td><td>るかあんじぇろーに</td><td>15歳</td><td>15</td><td>マクロスF</td><td>河森正治、スタジオぬえ</td></tr>
+<tr><td>ルガイン</td><td>るがいん</td><td>nan</td><td>nan</td><td>バトルスピリッツ ブレイヴ</td><td>矢立肇</td></tr>
+<tr><td>ルカ＝グラム</td><td>るかぐらむ</td><td>16歳(?)</td><td>16</td><td>女王騎士物語</td><td>下村トモヒロ</td></tr>
+<tr><td>ルカ・ミルダ</td><td>るかみるだ</td><td>15歳</td><td>15</td><td>テイルズ オブ イノセンス</td><td>バンダイナムコゲームス</td></tr>
+<tr><td>ルクス・アーカディア</td><td>るくすあーかでぃあ</td><td>nan</td><td>nan</td><td>最弱無敗の神装機竜</td><td>明月千里</td></tr>
+<tr><td>ルシアン</td><td>るしあん</td><td>14歳</td><td>14</td><td>サモンナイト4</td><td>バンプレスト</td></tr>
+<tr><td>ルズ・サワムラ</td><td>るずさわむら</td><td>15歳</td><td>15</td><td>女神候補生</td><td>杉崎ゆきる</td></tr>
+<tr><td>ルック</td><td>るっく</td><td>15歳</td><td>15</td><td>幻想水滸伝</td><td>コナミ</td></tr>
+<tr><td>ルッツ</td><td>るっつ</td><td>nan</td><td>nan</td><td>本好きの下剋上</td><td>香月美夜</td></tr>
+<tr><td>ルワイ＝オーラティベスティ</td><td>るわいおーらてぃべすてぃ</td><td>nan</td><td>nan</td><td>Dimension W</td><td>岩原裕二</td></tr>
+<tr><td>レイ</td><td>れい</td><td>13歳(?)</td><td>13</td><td>ファイアーエムブレム 封印の剣</td><td>任天堂、インテリジェントシステムズ</td></tr>
+<tr><td>レイ</td><td>れい</td><td>nan</td><td>nan</td><td>ドラゴンコレクション</td><td>コナミ</td></tr>
+<tr><td>レイ</td><td>れい</td><td>11歳</td><td>11</td><td>約束のネバーランド</td><td>白井カイウ</td></tr>
+<tr><td>レイ＝クラウス</td><td>れいくらうす</td><td>15歳</td><td>15</td><td>ウィザーズ・ハーモニー2</td><td>アークシステムワークス</td></tr>
+<tr><td>レイジ</td><td>れいじ</td><td>nan</td><td>nan</td><td>ガンダムビルドファイターズ</td><td>矢立肇 富野由悠季</td></tr>
+<tr><td>レイド</td><td>れいど</td><td>nan</td><td>nan</td><td>魔法陣グルグル</td><td>衛藤ヒロユキ</td></tr>
+<tr><td>レイナート</td><td>れいなーと</td><td>nan</td><td>nan</td><td>ドラゴンフォース</td><td>セガ</td></tr>
+<tr><td>零羅</td><td>れいら</td><td>nan</td><td>nan</td><td>遊☆戯☆王ARC-V</td><td>三好直人</td></tr>
+<tr><td>レーヤ</td><td>れーや</td><td>11歳</td><td>11</td><td>イースVIII -Lacrimosa of DANA-</td><td>日本ファルコム</td></tr>
+<tr><td>レオ</td><td>れお</td><td>nan</td><td>nan</td><td>小さな王様と約束の国 ファイナルファンタジー・クリスタルクロニクル</td><td>スクウェア・エニックス</td></tr>
+<tr><td>レオナ・ウェスト</td><td>れおなうぇすと</td><td>中2</td><td>14</td><td>プリパラ</td><td>タカラトミーアーツ、シンソフィア</td></tr>
+<tr><td>レオナルド・ウォッチ</td><td>れおなるどうぉっち</td><td>nan</td><td>nan</td><td>血界戦線</td><td>内藤泰弘</td></tr>
+<tr><td>レオン・D・S・ゲーステ</td><td>れおんでぃえすげーすて</td><td>12歳</td><td>12</td><td>スターオーシャン セカンドストーリー</td><td>トライエース</td></tr>
+<tr><td>レオンハルト・フォン・シュレイダー</td><td>れおんはるとふぉんしゅれいだー</td><td>nan</td><td>nan</td><td>遊☆戯☆王</td><td>高橋和希</td></tr>
+<tr><td>レグ</td><td>れぐ</td><td>nan</td><td>nan</td><td>メイドインアビス</td><td>つくしあきひと</td></tr>
+<tr><td>レシィ</td><td>れしぃ</td><td>nan</td><td>nan</td><td>サモンナイト2</td><td>バンプレスト</td></tr>
+<tr><td>レックス</td><td>れっくす</td><td>nan</td><td>nan</td><td>ゼノブレイド2</td><td>モノリスソフト</td></tr>
+<tr><td>レックス・オーエン</td><td>れっくすおーえん</td><td>12歳</td><td>12</td><td>古代王者恐竜キング</td><td>セガ</td></tr>
+<tr><td>レッド</td><td>れっど</td><td>10歳</td><td>10</td><td>ポケットモンスター THE ORIGIN</td><td>加藤初重</td></tr>
+<tr><td>レッド</td><td>れっど</td><td>11歳</td><td>11</td><td>ポケットモンスターSPECIAL</td><td>日下秀憲・真斗</td></tr>
+<tr><td>レド・ヴァッサー</td><td>れどヴぁっさー</td><td>nan</td><td>nan</td><td>ポップアップストーリー 魔法の本と聖樹の学園</td><td>スクウェア・エニックス</td></tr>
+<tr><td>レド少尉</td><td>れどしょうい</td><td>16歳</td><td>16</td><td>翠星のガルガンティア</td><td>オケアノス</td></tr>
+<tr><td>レン</td><td>れん</td><td>nan</td><td>nan</td><td>New ポケモンスナップ</td><td>バンダイナムコスタジオ</td></tr>
+<tr><td>レントン・サーストン</td><td>れんとんさーすとん</td><td>14歳</td><td>14</td><td>交響詩篇エウレカセブン</td><td>BONES</td></tr>
+<tr><td>レンレン</td><td>れんれん</td><td>nan</td><td>nan</td><td>初恋モンスター</td><td>日吉丸晃</td></tr>
+<tr><td>ロイド・ベラドンナ</td><td>ろいどべらどんな</td><td>nan</td><td>nan</td><td>たとえばラストダンジョン前の村の少年が序盤の街で暮らすような物語</td><td>サトウとシオ</td></tr>
+<tr><td>ロカ</td><td>ろか</td><td>nan</td><td>nan</td><td>ヤマトタケル</td><td>井内秀治</td></tr>
+<tr><td>ロキ</td><td>ろき</td><td>nan</td><td>nan</td><td>魔探偵ロキ</td><td>木下さくら</td></tr>
+<tr><td>ロクサス</td><td>ろくさす</td><td>nan</td><td>nan</td><td>キングダム ハーツII</td><td>スクウェアエニックス</td></tr>
+<tr><td>六条壬晴</td><td>ろくじょうみはる</td><td>14歳</td><td>14</td><td>隠の王</td><td>鎌谷悠希</td></tr>
+<tr><td>ロクスリー</td><td>ろくすりー</td><td>nan</td><td>nan</td><td>魔界皇子 虎王伝</td><td>井内秀治</td></tr>
+<tr><td>六道りんね</td><td>ろくどうりんね</td><td>高1</td><td>16</td><td>境界のRINNE</td><td>高橋留美子</td></tr>
+<tr><td>鹿鳴敬介</td><td>ろくめいけいすけ</td><td>小5</td><td>11</td><td>少年探偵 鹿鳴敬介</td><td>まんだ林檎</td></tr>
+<tr><td>ロコ</td><td>ろこ</td><td>nan</td><td>nan</td><td>Wonderland ONLINE -暗黒の禁術-</td><td>GAMESPACE24</td></tr>
+<tr><td>ロジャー・Ｓ・ハクスリー</td><td>ろじゃーえすはくすりー</td><td>12歳</td><td>12</td><td>スターオーシャン Till the End of Time</td><td>スクウェア・エニックス</td></tr>
+<tr><td>ロックマン</td><td>ろっくまん</td><td>nan</td><td>nan</td><td>ロックマン</td><td>カプコン</td></tr>
+<tr><td>ロップル</td><td>ろっぷる</td><td>nan</td><td>nan</td><td>ドラえもん</td><td>藤子・F・不二雄</td></tr>
+<tr><td>ロディ</td><td>ろでぃ</td><td>nan</td><td>nan</td><td>Laughter Land</td><td>郎猫儿</td></tr>
+<tr><td>ロミオ</td><td>ろみお</td><td>11歳</td><td>11</td><td>ロミオの青い空</td><td>リザ・テツナー</td></tr>
+<tr><td>ロロ・ランペルージ</td><td>ろろらんぺるーじ</td><td>高1</td><td>16</td><td>コードギアス 反逆のルルーシュ</td><td>サンライズ</td></tr>
+<tr><td>鷲崎セイラン</td><td>わしざきせいらん</td><td>小5</td><td>11</td><td>テンカイナイト</td><td>ボンズ</td></tr>
+<tr><td>渡狸卍里</td><td>わたぬきばんり</td><td>nan</td><td>nan</td><td>妖狐×僕SS</td><td>藤原ここあ</td></tr>
+<tr><td>綿貫琉宇</td><td>わたぬきるう</td><td>小学生</td><td>nan</td><td>神無ノ鳥</td><td>すたじおみりす</td></tr>
+<tr><td>綿谷新</td><td>わたやあらた</td><td>小学生</td><td>nan</td><td>ちはやふる</td><td>末次由紀</td></tr>
+<tr><td>わっくん</td><td>わっくん</td><td>nan</td><td>nan</td><td>絶対少年</td><td>NHK</td></tr>
+<tr><td>ワッフル・ライブレッド</td><td>わっふるらいぶれっど</td><td>nan</td><td>nan</td><td>テイルコンチェルト</td><td>サイバーコネクト</td></tr>
+<tr><td>鰐島亜紀人(咢)</td><td>わにじまあきと</td><td>14歳</td><td>14</td><td>エア・ギア</td><td>テレビ東京・あにてれ</td></tr>
+<tr><td>和谷義高</td><td>わやよしたか</td><td>15歳</td><td>15</td><td>ヒカルの碁</td><td>ほったゆみ</td></tr>
+<tr><td>ベイグラントのコア(名前無し)</td><td>不明</td><td>nan</td><td>nan</td><td>蒼穹のファフナー</td><td>XEBEC</td></tr>
+</tbody>
+</table>
+<script>
+$(function(){
+	$('#button1').on("click",function(){
+		var re = new RegExp($('#search').val());
+		$('#result tbody tr').each(function(){
+			var tr = $(this);
+			tr.hide();
+			$('td', this).each(function(){
+				var txt = $(this).html();
+				if(txt.match(re) != null){
+					tr.show();
+				}
+			});
+		});
+	});
+	$('#button2').on("click",function(){
+		$('#result tr').show();
+	});
+});
+</script>
+</body>
+</html>
